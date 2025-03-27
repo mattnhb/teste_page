@@ -5,7 +5,7 @@ This is my professional portfolio website built with GitHub Pages. The site show
 ## Features
 
 - Responsive design that works on all devices
-- Modern dark theme with blue-teal gradient accents appropriate for data professionals
+- Elegant dark theme with purple and black gradient accents
 - Support for PDF file links (resume, project documentation, publications)
 - Image support for profile photo, project screenshots, and certifications
 - Lightbox view for certification images

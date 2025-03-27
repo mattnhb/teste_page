@@ -10,12 +10,12 @@
     />
     <style>
       :root {
-        --primary: #2b6cb0; /* Blue shade for data engineer */
-        --secondary: #00c0a3; /* Teal accent */
-        --dark: #0f172a; /* Darker blue background */
-        --light: #f8fafc;
-        --accent: #7e22ce; /* Purple accent */
-        --chart: #eab308; /* Yellow for data viz highlights */
+        --primary: #9d4edd; /* Vibrant purple */
+        --secondary: #5a189a; /* Deep purple */
+        --dark: #10002b; /* Very dark purple/black */
+        --light: #f8f9fa; /* Light gray */
+        --accent: #c77dff; /* Light purple accent */
+        --chart: #ff9e00; /* Orange-gold for contrast */
       }
 
       * {
@@ -131,7 +131,7 @@
         background: linear-gradient(
           45deg,
           transparent,
-          rgba(43, 108, 176, 0.2),
+          rgba(157, 78, 221, 0.2),
           transparent
         );
         transform: translateX(-100%);
@@ -416,7 +416,7 @@
       }
 
       .skill-tag:hover {
-        background: var(--primary);
+        background: var(--accent);
         transform: translateY(-3px);
       }
 
@@ -620,7 +620,7 @@
           <a href="https://twitter.com/mattnhb" target="_blank"
             ><i class="fab fa-twitter"></i
           ></a>
-          <a href="mailto:matheus.contact@example.com"
+          <a href="mailto:mateus.contact@example.com"
             ><i class="fas fa-envelope"></i
           ></a>
           <a
@@ -988,7 +988,7 @@
             out if you'd like to collaborate or just chat about data
             technologies!
           </p>
-          <a href="mailto:matheus.contact@example.com" class="btn"
+          <a href="mailto:mateus.contact@example.com" class="btn"
             >Send Email <i class="fas fa-envelope"></i
           ></a>
         </div>
@@ -1030,31 +1030,31 @@
         img.onerror = function () {
           if (img.id === "profile-img") {
             this.src =
-              "https://via.placeholder.com/200x200/2b6cb0/ffffff?text=Mateus+Nicolas";
+              "https://via.placeholder.com/200x200/9d4edd/ffffff?text=Mateus+Nicolas";
           } else if (img.alt.includes("Real-time")) {
             this.src =
-              "https://via.placeholder.com/800x450/2b6cb0/ffffff?text=Real-time+Data+Processing";
+              "https://via.placeholder.com/800x450/9d4edd/ffffff?text=Real-time+Data+Processing";
           } else if (img.alt.includes("Cloud")) {
             this.src =
-              "https://via.placeholder.com/800x450/00c0a3/ffffff?text=Cloud+Data+Lake";
+              "https://via.placeholder.com/800x450/5a189a/ffffff?text=Cloud+Data+Lake";
           } else if (img.alt.includes("ML")) {
             this.src =
-              "https://via.placeholder.com/800x450/7e22ce/ffffff?text=ML+Feature+Engineering";
+              "https://via.placeholder.com/800x450/c77dff/10002b?text=ML+Feature+Engineering";
           } else if (img.alt.includes("AWS")) {
             this.src =
-              "https://via.placeholder.com/500x300/ff9900/ffffff?text=AWS+Certification";
+              "https://via.placeholder.com/500x300/ff9900/10002b?text=AWS+Certification";
           } else if (img.alt.includes("Google")) {
             this.src =
-              "https://via.placeholder.com/500x300/4285f4/ffffff?text=Google+Cloud+Certification";
+              "https://via.placeholder.com/500x300/5a189a/ffffff?text=Google+Cloud+Certification";
           } else if (img.alt.includes("Databricks")) {
             this.src =
-              "https://via.placeholder.com/500x300/ff3621/ffffff?text=Databricks+Certification";
+              "https://via.placeholder.com/500x300/9d4edd/ffffff?text=Databricks+Certification";
           } else if (img.alt.includes("Kafka")) {
             this.src =
-              "https://via.placeholder.com/500x300/231f20/ffffff?text=Kafka+Certification";
+              "https://via.placeholder.com/500x300/10002b/ffffff?text=Kafka+Certification";
           } else {
             this.src =
-              "https://via.placeholder.com/800x450/2b6cb0/ffffff?text=Project+Image";
+              "https://via.placeholder.com/800x450/5a189a/ffffff?text=Project+Image";
           }
         };
         // Trigger error check
