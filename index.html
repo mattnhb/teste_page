@@ -452,16 +452,105 @@
         }
       }
 
-      @keyframes float {
-        0% {
+      /* Animations on scroll */
+      .fade-in {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+      }
+
+      .fade-in.appear {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .slide-in-left {
+        opacity: 0;
+        transform: translateX(-50px);
+        transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+      }
+
+      .slide-in-left.appear {
+        opacity: 1;
+        transform: translateX(0);
+      }
+
+      .slide-in-right {
+        opacity: 0;
+        transform: translateX(50px);
+        transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+      }
+
+      .slide-in-right.appear {
+        opacity: 1;
+        transform: translateX(0);
+      }
+
+      .scale-in {
+        opacity: 0;
+        transform: scale(0.8);
+        transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+      }
+
+      .scale-in.appear {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      /* Staggered animation for skill tags */
+      @keyframes tagAppear {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
           transform: translateY(0);
         }
-        50% {
-          transform: translateY(-15px);
-        }
-        100% {
-          transform: translateY(0);
-        }
+      }
+
+      .skill-tag {
+        opacity: 0;
+      }
+
+      .skill-tag.appear {
+        animation: tagAppear 0.5s forwards;
+      }
+
+      /* Grid pattern background */
+      .grid-pattern {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-size: 50px 50px;
+        background-image: linear-gradient(
+            rgba(157, 78, 221, 0.03) 1px,
+            transparent 1px
+          ),
+          linear-gradient(90deg, rgba(157, 78, 221, 0.03) 1px, transparent 1px);
+        z-index: -2;
+        pointer-events: none;
+      }
+
+      .header-content .pdf-link {
+        color: var(--light);
+        background: rgba(255, 158, 0, 0.2);
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+        margin-top: 0;
+      }
+
+      .header-content .pdf-link:hover {
+        background: var(--chart);
+        transform: translateY(-5px);
+        box-shadow: 0 5px 15px rgba(255, 158, 0, 0.4);
       }
 
       .skills {
@@ -605,195 +694,16 @@
           font-size: 2rem;
         }
       }
-
-      /* Cursor animation */
-      .typing-effect::after {
-        content: "|";
-        animation: blink 1s infinite;
-      }
-
-      @keyframes blink {
-        0%,
-        100% {
-          opacity: 1;
-        }
-        50% {
-          opacity: 0;
-        }
-      }
-
-      /* Floating shape backgrounds */
-      .shape {
-        position: absolute;
-        opacity: 0.05;
-        z-index: -1;
-        filter: blur(3px);
-      }
-
-      .shape-1 {
-        top: 15%;
-        left: 5%;
-        width: 350px;
-        height: 350px;
-        background: linear-gradient(45deg, var(--primary), var(--secondary));
-        border-radius: 32% 58% 69% 43% / 48% 32% 59% 55%;
-        animation: morph 15s linear infinite alternate,
-          float 20s ease-in-out infinite;
-      }
-
-      .shape-2 {
-        bottom: 15%;
-        right: 8%;
-        width: 250px;
-        height: 250px;
-        background: linear-gradient(135deg, var(--secondary), var(--primary));
-        border-radius: 41% 44% 72% 41% / 42% 65% 31% 43%;
-        animation: morph 12s linear infinite alternate,
-          float 15s ease-in-out infinite 2s;
-      }
-
-      .shape-3 {
-        top: 50%;
-        right: 15%;
-        width: 180px;
-        height: 180px;
-        background: linear-gradient(225deg, var(--accent), var(--secondary));
-        border-radius: 33% 47% 41% 66% / 63% 46% 52% 37%;
-        animation: morph 10s linear infinite alternate,
-          float 18s ease-in-out infinite 1s;
-      }
-
-      @keyframes morph {
-        0% {
-          border-radius: 40% 60% 60% 40% / 40% 60% 40% 60%;
-        }
-        25% {
-          border-radius: 50% 50% 30% 70% / 60% 40% 60% 40%;
-        }
-        50% {
-          border-radius: 30% 70% 70% 30% / 50% 60% 30% 60%;
-        }
-        75% {
-          border-radius: 60% 40% 40% 60% / 30% 60% 70% 40%;
-        }
-        100% {
-          border-radius: 40% 60% 30% 70% / 60% 30% 60% 40%;
-        }
-      }
-
-      /* Grid pattern background */
-      .grid-pattern {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-size: 50px 50px;
-        background-image: linear-gradient(
-            rgba(157, 78, 221, 0.03) 1px,
-            transparent 1px
-          ),
-          linear-gradient(90deg, rgba(157, 78, 221, 0.03) 1px, transparent 1px);
-        z-index: -2;
-        pointer-events: none;
-      }
-
-      .header-content .pdf-link {
-        color: var(--light);
-        background: rgba(255, 158, 0, 0.2);
-        border-radius: 50%;
-        width: 50px;
-        height: 50px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: all 0.3s ease;
-        margin-top: 0;
-      }
-
-      .header-content .pdf-link:hover {
-        background: var(--chart);
-        transform: translateY(-5px);
-        box-shadow: 0 5px 15px rgba(255, 158, 0, 0.4);
-      }
-
-      /* Animations on scroll */
-      .fade-in {
-        opacity: 0;
-        transform: translateY(30px);
-        transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-      }
-
-      .fade-in.appear {
-        opacity: 1;
-        transform: translateY(0);
-      }
-
-      .slide-in-left {
-        opacity: 0;
-        transform: translateX(-50px);
-        transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-      }
-
-      .slide-in-left.appear {
-        opacity: 1;
-        transform: translateX(0);
-      }
-
-      .slide-in-right {
-        opacity: 0;
-        transform: translateX(50px);
-        transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-      }
-
-      .slide-in-right.appear {
-        opacity: 1;
-        transform: translateX(0);
-      }
-
-      .scale-in {
-        opacity: 0;
-        transform: scale(0.8);
-        transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-      }
-
-      .scale-in.appear {
-        opacity: 1;
-        transform: scale(1);
-      }
-
-      /* Staggered animation for skill tags */
-      @keyframes tagAppear {
-        from {
-          opacity: 0;
-          transform: translateY(20px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-
-      .skill-tag {
-        opacity: 0;
-      }
-
-      .skill-tag.appear {
-        animation: tagAppear 0.5s forwards;
-      }
     </style>
   </head>
   <body>
     <!-- Background elements -->
     <div class="grid-pattern"></div>
-    <div class="shape shape-1"></div>
-    <div class="shape shape-2"></div>
-    <div class="shape shape-3"></div>
 
     <header>
       <div class="header-bg"></div>
       <div class="header-content">
-        <h1><span class="typing-effect">Mateus Nicolas H. Balestrin</span></h1>
+        <h1>Mateus Nicolas H. Balestrin</h1>
         <p class="subtitle">
           Data Engineer | Big Data Architecture | Cloud Specialist
         </p>
@@ -1209,27 +1119,6 @@
       document.getElementById("current-year").textContent =
         new Date().getFullYear();
 
-      // Add simple typing effect for the name
-      const text = "Mateus Nicolas H. Balestrin";
-      const typingElement = document.querySelector(".typing-effect");
-      let i = 0;
-
-      // Clear the initial text
-      typingElement.textContent = "";
-
-      function typeWriter() {
-        if (i < text.length) {
-          typingElement.textContent += text.charAt(i);
-          i++;
-          setTimeout(typeWriter, 150);
-        } else {
-          // Remove the typing effect class when done
-          setTimeout(() => {
-            typingElement.classList.remove("typing-effect");
-          }, 1000);
-        }
-      }
-
       // Handle image errors with a fallback
       function handleImageError(img) {
         // Set fallback images if any image fails to load
@@ -1310,10 +1199,8 @@
         }
       }
 
-      // Start the typing effect and other functions when the page loads
+      // Initialize when the page loads
       window.onload = function () {
-        setTimeout(typeWriter, 1000);
-
         // Add animation classes to elements
         document.querySelectorAll("section h2").forEach((heading) => {
           heading.classList.add("slide-in-left");
