@@ -1199,12 +1199,16 @@
 
     <footer>
       <p>
-        &copy; 2023 Mateus Nicolas Hechenblaichner Balestrin. All Rights
-        Reserved.
+        &copy; <span id="current-year"></span> Mateus Nicolas Hechenblaichner
+        Balestrin. All Rights Reserved.
       </p>
     </footer>
 
     <script>
+      // Set current year in footer
+      document.getElementById("current-year").textContent =
+        new Date().getFullYear();
+
       // Add simple typing effect for the name
       const text = "Mateus Nicolas H. Balestrin";
       const typingElement = document.querySelector(".typing-effect");
