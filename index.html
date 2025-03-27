@@ -716,6 +716,71 @@
         transform: translateY(-5px);
         box-shadow: 0 5px 15px rgba(255, 158, 0, 0.4);
       }
+
+      /* Animations on scroll */
+      .fade-in {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+      }
+
+      .fade-in.appear {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .slide-in-left {
+        opacity: 0;
+        transform: translateX(-50px);
+        transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+      }
+
+      .slide-in-left.appear {
+        opacity: 1;
+        transform: translateX(0);
+      }
+
+      .slide-in-right {
+        opacity: 0;
+        transform: translateX(50px);
+        transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+      }
+
+      .slide-in-right.appear {
+        opacity: 1;
+        transform: translateX(0);
+      }
+
+      .scale-in {
+        opacity: 0;
+        transform: scale(0.8);
+        transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+      }
+
+      .scale-in.appear {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      /* Staggered animation for skill tags */
+      @keyframes tagAppear {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .skill-tag {
+        opacity: 0;
+      }
+
+      .skill-tag.appear {
+        animation: tagAppear 0.5s forwards;
+      }
     </style>
   </head>
   <body>
@@ -771,13 +836,28 @@
           <div class="profile-content">
             <div class="card-icon"><i class="fas fa-database"></i></div>
             <p>
-              Hi, I'm Mateus! As a dedicated Data Engineer, I specialize in
-              building robust data pipelines, designing scalable data
-              architectures, and implementing efficient ETL processes. With
-              expertise in cloud platforms and big data technologies, I help
-              organizations transform raw data into valuable insights. I'm
-              passionate about creating data solutions that drive business
-              growth and enable data-driven decision making.
+              As a Senior Data Engineer with expertise in Python, AWS, and
+              PySpark, I focus on building scalable ETL/ELT frameworks and
+              automating data workflows. I've developed a comprehensive
+              framework tailored for data engineering teams, along with a
+              Feature Store factory that streamlines the creation and
+              availability of features across various projects.
+            </p>
+            <p>
+              My experience spans technologies like Airflow, Kafka, AWS Glue,
+              AWS EMR, and Spark, allowing me to effectively integrate both
+              proprietary and open-source tools to tackle complex challenges.
+            </p>
+            <p>
+              I'm passionate about staying current with advancements in cloud
+              computing and big data, and I enjoy continuously learning to
+              refine my skills and deliver practical, efficient solutions. My
+              work centers on creating reliable systems that empower data
+              engineering teams in their daily operations.
+            </p>
+            <p>
+              If you're interested in discussing data engineering or exploring
+              new ideas, feel free to reach out.
             </p>
             <div class="skills">
               <span class="skill-tag">Python</span>
@@ -1183,30 +1263,73 @@
         img.src = img.src;
       }
 
-      // Start the typing effect and other functions when the page loads
-      window.onload = function () {
-        setTimeout(typeWriter, 1000);
+      // Animation on scroll function
+      function animateOnScroll() {
+        const elements = document.querySelectorAll(
+          ".fade-in, .slide-in-left, .slide-in-right, .scale-in"
+        );
+        const skillTags = document.querySelectorAll(".skill-tag");
 
-        // Add scroll reveal effect for cards
-        const cards = document.querySelectorAll(".card");
         const observer = new IntersectionObserver(
           (entries) => {
             entries.forEach((entry) => {
               if (entry.isIntersecting) {
-                entry.target.style.opacity = 1;
-                entry.target.style.transform = "translateY(0)";
+                entry.target.classList.add("appear");
+                observer.unobserve(entry.target);
               }
             });
           },
-          { threshold: 0.1 }
+          { threshold: 0.15 }
         );
 
-        cards.forEach((card) => {
-          card.style.opacity = 0;
-          card.style.transform = "translateY(20px)";
-          card.style.transition = "opacity 0.5s ease, transform 0.5s ease";
-          observer.observe(card);
+        elements.forEach((element) => {
+          observer.observe(element);
         });
+
+        // Special observer for skill tags with staggered animation
+        const skillObserver = new IntersectionObserver(
+          (entries) => {
+            if (entries[0].isIntersecting) {
+              skillTags.forEach((tag, index) => {
+                setTimeout(() => {
+                  tag.classList.add("appear");
+                }, index * 100); // 100ms delay between each tag
+              });
+              skillObserver.unobserve(entries[0].target);
+            }
+          },
+          { threshold: 0.5 }
+        );
+
+        if (skillTags.length > 0) {
+          skillObserver.observe(document.querySelector(".skills"));
+        }
+      }
+
+      // Start the typing effect and other functions when the page loads
+      window.onload = function () {
+        setTimeout(typeWriter, 1000);
+
+        // Add animation classes to elements
+        document.querySelectorAll("section h2").forEach((heading) => {
+          heading.classList.add("slide-in-left");
+        });
+
+        document.querySelectorAll(".card").forEach((card) => {
+          card.classList.add("fade-in");
+        });
+
+        document.querySelector(".profile-image").classList.add("scale-in");
+        document.querySelectorAll(".timeline-item").forEach((item) => {
+          item.classList.add("slide-in-right");
+        });
+
+        document.querySelectorAll(".cert-card").forEach((cert) => {
+          cert.classList.add("fade-in");
+        });
+
+        // Initialize animations
+        animateOnScroll();
 
         // Handle all images with error fallbacks
         const images = document.querySelectorAll("img");
