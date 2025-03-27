@@ -1,4 +1,4 @@
-# Matheus Barbosa - Data Engineer Portfolio
+# Mateus Nicolas Hechenblaichner Balestrin - Data Engineer Portfolio
 
 This is my professional portfolio website built with GitHub Pages. The site showcases my data engineering skills, projects, experience, and publications in a modern, responsive design.
 
@@ -63,7 +63,7 @@ Feel free to reach out if you have any questions or would like to collaborate!
 
 - GitHub: [mattnhb](https://github.com/mattnhb)
 - LinkedIn: [mattnhb](https://linkedin.com/in/mattnhb)
-- Email: matheus.contact@example.com
+- Email: mateus.contact@example.com
 
 ## License
 
