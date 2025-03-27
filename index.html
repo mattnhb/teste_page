@@ -8,6 +8,12 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <style>
       :root {
         --primary: #9d4edd; /* Vibrant purple */
@@ -22,7 +28,7 @@
         margin: 0;
         padding: 0;
         box-sizing: border-box;
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        font-family: "Inter", sans-serif;
       }
 
       body {
@@ -30,6 +36,27 @@
         color: var(--light);
         min-height: 100vh;
         overflow-x: hidden;
+        background-image: radial-gradient(
+            circle at 10% 20%,
+            rgba(157, 78, 221, 0.05) 0%,
+            transparent 20%
+          ),
+          radial-gradient(
+            circle at 80% 40%,
+            rgba(157, 78, 221, 0.03) 0%,
+            transparent 20%
+          ),
+          radial-gradient(
+            circle at 40% 80%,
+            rgba(90, 24, 154, 0.05) 0%,
+            transparent 20%
+          ),
+          radial-gradient(
+            circle at 90% 90%,
+            rgba(90, 24, 154, 0.03) 0%,
+            transparent 15%
+          );
+        background-attachment: fixed;
       }
 
       header {
@@ -59,6 +86,7 @@
           0 0 30px rgba(157, 78, 221, 0.3);
         animation: fadeIn 1s ease-out;
         color: var(--light);
+        font-weight: 700;
       }
 
       .subtitle {
@@ -69,6 +97,7 @@
         opacity: 0;
         color: var(--accent);
         font-weight: 300;
+        letter-spacing: 1px;
       }
 
       .social-icons {
@@ -154,11 +183,13 @@
         color: var(--secondary);
         margin-bottom: 1rem;
         font-size: 1.8rem;
+        font-weight: 600;
       }
 
       .card p {
         line-height: 1.6;
         margin-bottom: 1.5rem;
+        font-weight: 400;
       }
 
       .card-icon {
@@ -255,26 +286,51 @@
         color: white;
         border-radius: 30px;
         text-decoration: none;
-        font-weight: bold;
+        font-weight: 500;
         transition: all 0.3s ease;
         border: none;
         cursor: pointer;
         box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        position: relative;
+        z-index: 1;
+        overflow: hidden;
       }
 
-      .btn-secondary {
-        background: rgba(255, 255, 255, 0.1);
-        backdrop-filter: blur(5px);
-        border: 1px solid rgba(255, 255, 255, 0.2);
+      .btn::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, var(--secondary), var(--primary));
+        z-index: -1;
+        transition: opacity 0.5s ease;
+        opacity: 0;
       }
 
-      .btn-secondary:hover {
-        background: rgba(255, 255, 255, 0.2);
+      .btn:hover::before {
+        opacity: 1;
       }
 
       .btn:hover {
         transform: translateY(-3px);
         box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+      }
+
+      .btn-secondary {
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(5px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        background-image: none;
+      }
+
+      .btn-secondary::before {
+        background: rgba(157, 78, 221, 0.2);
+      }
+
+      .btn-secondary:hover {
+        border-color: var(--primary);
       }
 
       /* Certifications section */
@@ -352,7 +408,10 @@
         position: relative;
         display: inline-block;
         margin-bottom: 2.5rem;
-        font-size: 2.5rem;
+        font-size: 2.2rem;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        color: var(--light);
       }
 
       .section-title::after {
@@ -361,7 +420,7 @@
         bottom: -10px;
         left: 0;
         width: 60px;
-        height: 4px;
+        height: 3px;
         background: linear-gradient(to right, var(--primary), var(--secondary));
         border-radius: 2px;
       }
@@ -413,19 +472,23 @@
       }
 
       .skill-tag {
-        background: rgba(255, 255, 255, 0.1);
+        background: rgba(255, 255, 255, 0.05);
         color: var(--light);
         padding: 0.5rem 1rem;
         border-radius: 30px;
         font-size: 0.9rem;
         backdrop-filter: blur(5px);
-        border: 1px solid rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(157, 78, 221, 0.15);
         transition: all 0.3s ease;
+        display: inline-flex;
+        align-items: center;
+        font-weight: 500;
       }
 
       .skill-tag:hover {
         background: var(--accent);
         transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(157, 78, 221, 0.2);
       }
 
       .timeline {
@@ -562,47 +625,77 @@
       /* Floating shape backgrounds */
       .shape {
         position: absolute;
-        opacity: 0.1;
+        opacity: 0.05;
         z-index: -1;
-        filter: blur(5px);
+        filter: blur(3px);
       }
 
       .shape-1 {
-        top: 20%;
+        top: 15%;
         left: 5%;
-        width: 300px;
-        height: 300px;
-        border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-        background: var(--primary);
-        animation: morph 15s linear infinite alternate;
+        width: 350px;
+        height: 350px;
+        background: linear-gradient(45deg, var(--primary), var(--secondary));
+        border-radius: 32% 58% 69% 43% / 48% 32% 59% 55%;
+        animation: morph 15s linear infinite alternate,
+          float 20s ease-in-out infinite;
       }
 
       .shape-2 {
-        bottom: 10%;
-        right: 10%;
-        width: 200px;
-        height: 200px;
-        border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
-        background: var(--secondary);
-        animation: morph 8s linear infinite alternate;
+        bottom: 15%;
+        right: 8%;
+        width: 250px;
+        height: 250px;
+        background: linear-gradient(135deg, var(--secondary), var(--primary));
+        border-radius: 41% 44% 72% 41% / 42% 65% 31% 43%;
+        animation: morph 12s linear infinite alternate,
+          float 15s ease-in-out infinite 2s;
+      }
+
+      .shape-3 {
+        top: 50%;
+        right: 15%;
+        width: 180px;
+        height: 180px;
+        background: linear-gradient(225deg, var(--accent), var(--secondary));
+        border-radius: 33% 47% 41% 66% / 63% 46% 52% 37%;
+        animation: morph 10s linear infinite alternate,
+          float 18s ease-in-out infinite 1s;
       }
 
       @keyframes morph {
         0% {
-          border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+          border-radius: 40% 60% 60% 40% / 40% 60% 40% 60%;
         }
         25% {
           border-radius: 50% 50% 30% 70% / 60% 40% 60% 40%;
         }
         50% {
-          border-radius: 70% 30% 50% 50% / 40% 60% 40% 60%;
+          border-radius: 30% 70% 70% 30% / 50% 60% 30% 60%;
         }
         75% {
-          border-radius: 40% 60% 70% 30% / 60% 30% 70% 40%;
+          border-radius: 60% 40% 40% 60% / 30% 60% 70% 40%;
         }
         100% {
-          border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+          border-radius: 40% 60% 30% 70% / 60% 30% 60% 40%;
         }
+      }
+
+      /* Grid pattern background */
+      .grid-pattern {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-size: 50px 50px;
+        background-image: linear-gradient(
+            rgba(157, 78, 221, 0.03) 1px,
+            transparent 1px
+          ),
+          linear-gradient(90deg, rgba(157, 78, 221, 0.03) 1px, transparent 1px);
+        z-index: -2;
+        pointer-events: none;
       }
 
       .header-content .pdf-link {
@@ -626,9 +719,11 @@
     </style>
   </head>
   <body>
-    <!-- Background shapes -->
+    <!-- Background elements -->
+    <div class="grid-pattern"></div>
     <div class="shape shape-1"></div>
     <div class="shape shape-2"></div>
+    <div class="shape shape-3"></div>
 
     <header>
       <div class="header-bg"></div>
