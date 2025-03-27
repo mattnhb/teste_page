@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Awesome GitHub Page</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      :root {
+        --primary: #8a2be2;
+        --secondary: #00bfff;
+        --dark: #121212;
+        --light: #f5f5f5;
+        --accent: #ff4500;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      body {
+        background-color: var(--dark);
+        color: var(--light);
+        min-height: 100vh;
+        overflow-x: hidden;
+      }
+
+      header {
+        padding: 2rem;
+        background: linear-gradient(135deg, var(--primary), var(--secondary));
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .header-content {
+        position: relative;
+        z-index: 1;
+      }
+
+      .header-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(circle, transparent 20%, var(--dark) 150%);
+        opacity: 0.8;
+      }
+
+      h1 {
+        font-size: 3.5rem;
+        margin-bottom: 1rem;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        animation: fadeIn 1s ease-out;
+      }
+
+      .subtitle {
+        font-size: 1.5rem;
+        opacity: 0.9;
+        margin-bottom: 2rem;
+        animation: slideUp 1s ease-out 0.3s forwards;
+        opacity: 0;
+      }
+
+      .social-icons {
+        display: flex;
+        justify-content: center;
+        gap: 1.5rem;
+        margin-top: 2rem;
+        animation: fadeIn 1s ease-out 0.6s forwards;
+        opacity: 0;
+      }
+
+      .social-icons a {
+        color: var(--light);
+        font-size: 1.8rem;
+        transition: all 0.3s ease;
+      }
+
+      .social-icons a:hover {
+        color: var(--accent);
+        transform: translateY(-5px);
+      }
+
+      main {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 3rem 2rem;
+      }
+
+      .card-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        margin-top: 3rem;
+      }
+
+      .card {
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 10px;
+        padding: 2rem;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        position: relative;
+        overflow: hidden;
+        backdrop-filter: blur(5px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      }
+
+      .card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          45deg,
+          transparent,
+          rgba(138, 43, 226, 0.2),
+          transparent
+        );
+        transform: translateX(-100%);
+        transition: transform 0.6s ease;
+      }
+
+      .card:hover::before {
+        transform: translateX(100%);
+      }
+
+      .card h2 {
+        color: var(--secondary);
+        margin-bottom: 1rem;
+        font-size: 1.8rem;
+      }
+
+      .card p {
+        line-height: 1.6;
+        margin-bottom: 1.5rem;
+      }
+
+      .card-icon {
+        font-size: 2.5rem;
+        margin-bottom: 1.5rem;
+        color: var(--primary);
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 0.8rem 1.5rem;
+        background: linear-gradient(135deg, var(--primary), var(--secondary));
+        color: white;
+        border-radius: 30px;
+        text-decoration: none;
+        font-weight: bold;
+        transition: all 0.3s ease;
+        border: none;
+        cursor: pointer;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      }
+
+      .btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+      }
+
+      section {
+        margin-bottom: 5rem;
+      }
+
+      .section-title {
+        position: relative;
+        display: inline-block;
+        margin-bottom: 2.5rem;
+        font-size: 2.5rem;
+      }
+
+      .section-title::after {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        left: 0;
+        width: 60px;
+        height: 4px;
+        background: linear-gradient(to right, var(--primary), var(--secondary));
+        border-radius: 2px;
+      }
+
+      footer {
+        text-align: center;
+        padding: 2rem;
+        background-color: rgba(0, 0, 0, 0.2);
+        margin-top: 3rem;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      @keyframes slideUp {
+        from {
+          transform: translateY(20px);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+
+      @keyframes float {
+        0% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-15px);
+        }
+        100% {
+          transform: translateY(0);
+        }
+      }
+
+      .skills {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        margin-top: 2rem;
+      }
+
+      .skill-tag {
+        background: rgba(255, 255, 255, 0.1);
+        color: var(--light);
+        padding: 0.5rem 1rem;
+        border-radius: 30px;
+        font-size: 0.9rem;
+        backdrop-filter: blur(5px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        transition: all 0.3s ease;
+      }
+
+      .skill-tag:hover {
+        background: var(--primary);
+        transform: translateY(-3px);
+      }
+
+      .timeline {
+        position: relative;
+        margin-top: 3rem;
+        padding-left: 2rem;
+      }
+
+      .timeline::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 2px;
+        background: linear-gradient(
+          to bottom,
+          var(--primary),
+          var(--secondary)
+        );
+      }
+
+      .timeline-item {
+        position: relative;
+        margin-bottom: 2rem;
+        padding-left: 1.5rem;
+      }
+
+      .timeline-item::before {
+        content: "";
+        position: absolute;
+        left: -10px;
+        top: 5px;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background: var(--dark);
+        border: 2px solid var(--primary);
+        z-index: 1;
+      }
+
+      .timeline-date {
+        font-weight: bold;
+        color: var(--secondary);
+        margin-bottom: 0.5rem;
+      }
+
+      .project-gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+        margin-top: 2rem;
+      }
+
+      .project {
+        position: relative;
+        border-radius: 10px;
+        overflow: hidden;
+        height: 200px;
+        transition: all 0.3s ease;
+      }
+
+      .project:hover {
+        transform: scale(1.05);
+      }
+
+      .project img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: all 0.5s ease;
+      }
+
+      .project:hover img {
+        transform: scale(1.1);
+      }
+
+      .project-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+        padding: 1.5rem;
+        transform: translateY(100%);
+        transition: transform 0.5s ease;
+      }
+
+      .project:hover .project-overlay {
+        transform: translateY(0);
+      }
+
+      .project-title {
+        color: var(--light);
+        font-size: 1.2rem;
+        margin-bottom: 0.5rem;
+      }
+
+      /* Responsive adjustments */
+      @media (max-width: 768px) {
+        h1 {
+          font-size: 2.5rem;
+        }
+
+        .subtitle {
+          font-size: 1.2rem;
+        }
+
+        .card-container {
+          grid-template-columns: 1fr;
+        }
+
+        .section-title {
+          font-size: 2rem;
+        }
+      }
+
+      /* Cursor animation */
+      .typing-effect::after {
+        content: "|";
+        animation: blink 1s infinite;
+      }
+
+      @keyframes blink {
+        0%,
+        100% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0;
+        }
+      }
+
+      /* Floating shape backgrounds */
+      .shape {
+        position: absolute;
+        opacity: 0.1;
+        z-index: -1;
+        filter: blur(5px);
+      }
+
+      .shape-1 {
+        top: 20%;
+        left: 5%;
+        width: 300px;
+        height: 300px;
+        border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+        background: var(--primary);
+        animation: morph 15s linear infinite alternate;
+      }
+
+      .shape-2 {
+        bottom: 10%;
+        right: 10%;
+        width: 200px;
+        height: 200px;
+        border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+        background: var(--secondary);
+        animation: morph 8s linear infinite alternate;
+      }
+
+      @keyframes morph {
+        0% {
+          border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+        }
+        25% {
+          border-radius: 50% 50% 30% 70% / 60% 40% 60% 40%;
+        }
+        50% {
+          border-radius: 70% 30% 50% 50% / 40% 60% 40% 60%;
+        }
+        75% {
+          border-radius: 40% 60% 70% 30% / 60% 30% 70% 40%;
+        }
+        100% {
+          border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Background shapes -->
+    <div class="shape shape-1"></div>
+    <div class="shape shape-2"></div>
+
+    <header>
+      <div class="header-bg"></div>
+      <div class="header-content">
+        <h1><span class="typing-effect">Developer Name</span></h1>
+        <p class="subtitle">Full-Stack Developer | Open Source Enthusiast</p>
+        <div class="social-icons">
+          <a href="https://github.com/yourusername" target="_blank"
+            ><i class="fab fa-github"></i
+          ></a>
+          <a href="https://linkedin.com/in/yourusername" target="_blank"
+            ><i class="fab fa-linkedin"></i
+          ></a>
+          <a href="https://twitter.com/yourusername" target="_blank"
+            ><i class="fab fa-twitter"></i
+          ></a>
+          <a href="mailto:your.email@example.com"
+            ><i class="fas fa-envelope"></i
+          ></a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section id="about">
+        <h2 class="section-title">About Me</h2>
+        <div class="card">
+          <div class="card-icon"><i class="fas fa-user-astronaut"></i></div>
+          <p>
+            Welcome to my GitHub Page! I'm a passionate developer with expertise
+            in building modern web applications. My goal is to create beautiful,
+            efficient, and user-friendly software that solves real-world
+            problems. I love learning new technologies and contributing to open
+            source projects.
+          </p>
+          <div class="skills">
+            <span class="skill-tag">JavaScript</span>
+            <span class="skill-tag">React</span>
+            <span class="skill-tag">Node.js</span>
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">Git</span>
+            <span class="skill-tag">Docker</span>
+            <span class="skill-tag">AWS</span>
+            <span class="skill-tag">TypeScript</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects">
+        <h2 class="section-title">Projects</h2>
+        <div class="card-container">
+          <div class="card">
+            <div class="card-icon"><i class="fas fa-code"></i></div>
+            <h2>Project 1</h2>
+            <p>
+              A full-stack web application built with React, Node.js, and
+              MongoDB. Features include user authentication, real-time updates,
+              and responsive design.
+            </p>
+            <a href="#" class="btn"
+              >View Project <i class="fas fa-arrow-right"></i
+            ></a>
+          </div>
+          <div class="card">
+            <div class="card-icon"><i class="fas fa-robot"></i></div>
+            <h2>Project 2</h2>
+            <p>
+              An AI-powered tool that helps analyze data and generate meaningful
+              insights. Built with Python, TensorFlow, and Flask.
+            </p>
+            <a href="#" class="btn"
+              >View Project <i class="fas fa-arrow-right"></i
+            ></a>
+          </div>
+          <div class="card">
+            <div class="card-icon"><i class="fas fa-mobile-alt"></i></div>
+            <h2>Project 3</h2>
+            <p>
+              A cross-platform mobile app developed with React Native that helps
+              users track their fitness goals and maintain healthy habits.
+            </p>
+            <a href="#" class="btn"
+              >View Project <i class="fas fa-arrow-right"></i
+            ></a>
+          </div>
+        </div>
+      </section>
+
+      <section id="experience">
+        <h2 class="section-title">Experience</h2>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-date">2022 - Present</div>
+            <h3>Senior Developer at Tech Company</h3>
+            <p>
+              Leading the frontend development team, implementing new features,
+              and improving performance.
+            </p>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-date">2019 - 2022</div>
+            <h3>Software Engineer at Startup</h3>
+            <p>
+              Developed and maintained web applications, collaborated with
+              cross-functional teams.
+            </p>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-date">2017 - 2019</div>
+            <h3>Junior Developer at Agency</h3>
+            <p>
+              Built responsive websites and implemented UI designs using modern
+              web technologies.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact">
+        <h2 class="section-title">Get In Touch</h2>
+        <div class="card">
+          <div class="card-icon"><i class="fas fa-paper-plane"></i></div>
+          <p>
+            I'm always open to new opportunities, collaborations, or just a
+            friendly chat about technology and development.
+          </p>
+          <a href="mailto:your.email@example.com" class="btn"
+            >Send Email <i class="fas fa-envelope"></i
+          ></a>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2023 Developer Name. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+      // Add simple typing effect for the name
+      const text = "Developer Name";
+      const typingElement = document.querySelector(".typing-effect");
+      let i = 0;
+
+      // Clear the initial text
+      typingElement.textContent = "";
+
+      function typeWriter() {
+        if (i < text.length) {
+          typingElement.textContent += text.charAt(i);
+          i++;
+          setTimeout(typeWriter, 150);
+        } else {
+          // Remove the typing effect class when done
+          setTimeout(() => {
+            typingElement.classList.remove("typing-effect");
+          }, 1000);
+        }
+      }
+
+      // Start the typing effect when the page loads
+      window.onload = function () {
+        setTimeout(typeWriter, 1000);
+
+        // Add scroll reveal effect for cards
+        const cards = document.querySelectorAll(".card");
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.style.opacity = 1;
+                entry.target.style.transform = "translateY(0)";
+              }
+            });
+          },
+          { threshold: 0.1 }
+        );
+
+        cards.forEach((card) => {
+          card.style.opacity = 0;
+          card.style.transform = "translateY(20px)";
+          card.style.transition = "opacity 0.5s ease, transform 0.5s ease";
+          observer.observe(card);
+        });
+      };
+    </script>
+  </body>
+</html>
