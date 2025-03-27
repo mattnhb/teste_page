@@ -3,18 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Awesome GitHub Page</title>
+    <title>Data Engineer Portfolio</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
     <style>
       :root {
-        --primary: #8a2be2;
-        --secondary: #00bfff;
-        --dark: #121212;
-        --light: #f5f5f5;
-        --accent: #ff4500;
+        --primary: #2b6cb0; /* Blue shade for data engineer */
+        --secondary: #00c0a3; /* Teal accent */
+        --dark: #0f172a; /* Darker blue background */
+        --light: #f8fafc;
+        --accent: #7e22ce; /* Purple accent */
+        --chart: #eab308; /* Yellow for data viz highlights */
       }
 
       * {
@@ -130,7 +131,7 @@
         background: linear-gradient(
           45deg,
           transparent,
-          rgba(138, 43, 226, 0.2),
+          rgba(43, 108, 176, 0.2),
           transparent
         );
         transform: translateX(-100%);
@@ -158,6 +159,87 @@
         color: var(--primary);
       }
 
+      /* Profile card with image */
+      .profile-card {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+      }
+
+      @media (min-width: 768px) {
+        .profile-card {
+          flex-direction: row;
+        }
+      }
+
+      .profile-image {
+        flex: 0 0 200px;
+      }
+
+      .profile-image img {
+        width: 100%;
+        border-radius: 50%;
+        border: 3px solid var(--secondary);
+        box-shadow: 0 0 20px rgba(0, 192, 163, 0.3);
+        transition: all 0.3s ease;
+      }
+
+      .profile-image img:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 30px rgba(0, 192, 163, 0.5);
+      }
+
+      .profile-content {
+        flex: 1;
+      }
+
+      /* Project images */
+      .project-image {
+        margin-bottom: 1.5rem;
+        border-radius: 8px;
+        overflow: hidden;
+        height: 200px;
+      }
+
+      .project-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: all 0.5s ease;
+      }
+
+      .card:hover .project-image img {
+        transform: scale(1.05);
+      }
+
+      /* PDF links */
+      .pdf-link {
+        display: inline-flex;
+        align-items: center;
+        color: var(--light);
+        text-decoration: none;
+        gap: 0.5rem;
+        transition: all 0.3s ease;
+        margin-top: 0.5rem;
+        font-size: 0.9rem;
+      }
+
+      .pdf-link i {
+        color: var(--chart);
+      }
+
+      .pdf-link:hover {
+        color: var(--secondary);
+        transform: translateX(5px);
+      }
+
+      /* Button container for multiple buttons */
+      .btn-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+
       .btn {
         display: inline-block;
         padding: 0.8rem 1.5rem;
@@ -172,9 +254,86 @@
         box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
       }
 
+      .btn-secondary {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(5px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+      }
+
+      .btn-secondary:hover {
+        background: rgba(255, 255, 255, 0.2);
+      }
+
       .btn:hover {
         transform: translateY(-3px);
         box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+      }
+
+      /* Certifications section */
+      .cert-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        margin-top: 2rem;
+      }
+
+      .cert-card {
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 10px;
+        overflow: hidden;
+        transition: all 0.3s ease;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .cert-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      }
+
+      .cert-card img {
+        width: 100%;
+        height: 150px;
+        object-fit: cover;
+      }
+
+      .cert-card h3 {
+        padding: 1rem;
+        font-size: 1.2rem;
+        color: var(--light);
+      }
+
+      .cert-card .pdf-link {
+        display: block;
+        padding: 0 1rem 1rem;
+      }
+
+      /* Publication list */
+      .publication-list {
+        list-style: none;
+      }
+
+      .publication-list li {
+        margin-bottom: 2rem;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .publication-list li:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+        padding-bottom: 0;
+      }
+
+      .publication-list h3 {
+        color: var(--secondary);
+        margin-bottom: 0.5rem;
+        font-size: 1.3rem;
+      }
+
+      .publication-list p {
+        margin-bottom: 0.5rem;
+        font-style: italic;
+        opacity: 0.8;
       }
 
       section {
@@ -447,8 +606,10 @@
     <header>
       <div class="header-bg"></div>
       <div class="header-content">
-        <h1><span class="typing-effect">Developer Name</span></h1>
-        <p class="subtitle">Full-Stack Developer | Open Source Enthusiast</p>
+        <h1><span class="typing-effect">Data Engineer</span></h1>
+        <p class="subtitle">
+          Big Data | Cloud Infrastructure | ETL & Analytics
+        </p>
         <div class="social-icons">
           <a href="https://github.com/yourusername" target="_blank"
             ><i class="fab fa-github"></i
@@ -462,6 +623,14 @@
           <a href="mailto:your.email@example.com"
             ><i class="fas fa-envelope"></i
           ></a>
+          <a
+            href="resume.pdf"
+            target="_blank"
+            class="pdf-link"
+            title="Download Resume"
+          >
+            <i class="fas fa-file-pdf"></i>
+          </a>
         </div>
       </div>
     </header>
@@ -469,24 +638,33 @@
     <main>
       <section id="about">
         <h2 class="section-title">About Me</h2>
-        <div class="card">
-          <div class="card-icon"><i class="fas fa-user-astronaut"></i></div>
-          <p>
-            Welcome to my GitHub Page! I'm a passionate developer with expertise
-            in building modern web applications. My goal is to create beautiful,
-            efficient, and user-friendly software that solves real-world
-            problems. I love learning new technologies and contributing to open
-            source projects.
-          </p>
-          <div class="skills">
-            <span class="skill-tag">JavaScript</span>
-            <span class="skill-tag">React</span>
-            <span class="skill-tag">Node.js</span>
-            <span class="skill-tag">Python</span>
-            <span class="skill-tag">Git</span>
-            <span class="skill-tag">Docker</span>
-            <span class="skill-tag">AWS</span>
-            <span class="skill-tag">TypeScript</span>
+        <div class="card profile-card">
+          <div class="profile-image">
+            <img src="profile.jpg" alt="Profile Photo" id="profile-img" />
+          </div>
+          <div class="profile-content">
+            <div class="card-icon"><i class="fas fa-database"></i></div>
+            <p>
+              Welcome to my portfolio! I'm a passionate Data Engineer with
+              expertise in building scalable data pipelines and ETL processes. I
+              specialize in designing data architecture that transforms raw data
+              into valuable insights. With a strong background in both SQL and
+              NoSQL databases, cloud platforms, and data processing frameworks,
+              I help organizations make data-driven decisions.
+            </p>
+            <div class="skills">
+              <span class="skill-tag">Python</span>
+              <span class="skill-tag">SQL</span>
+              <span class="skill-tag">Spark</span>
+              <span class="skill-tag">Hadoop</span>
+              <span class="skill-tag">AWS</span>
+              <span class="skill-tag">Airflow</span>
+              <span class="skill-tag">Kafka</span>
+              <span class="skill-tag">Snowflake</span>
+              <span class="skill-tag">Docker</span>
+              <span class="skill-tag">dbt</span>
+              <span class="skill-tag">Terraform</span>
+            </div>
           </div>
         </div>
       </section>
@@ -495,38 +673,78 @@
         <h2 class="section-title">Projects</h2>
         <div class="card-container">
           <div class="card">
-            <div class="card-icon"><i class="fas fa-code"></i></div>
-            <h2>Project 1</h2>
+            <div class="card-icon"><i class="fas fa-chart-line"></i></div>
+            <h2>Data Pipeline Automation</h2>
+            <div class="project-image">
+              <img src="project1.jpg" alt="Data Pipeline Automation" />
+            </div>
             <p>
-              A full-stack web application built with React, Node.js, and
-              MongoDB. Features include user authentication, real-time updates,
-              and responsive design.
+              Built a robust ETL pipeline using Apache Airflow and Spark that
+              processes 10TB+ of data daily. Implemented data quality checks and
+              monitoring to ensure 99.9% uptime.
             </p>
-            <a href="#" class="btn"
-              >View Project <i class="fas fa-arrow-right"></i
-            ></a>
+            <div class="btn-container">
+              <a href="#" class="btn"
+                >View Project <i class="fas fa-arrow-right"></i
+              ></a>
+              <a
+                href="project1_details.pdf"
+                class="btn btn-secondary"
+                target="_blank"
+              >
+                <i class="fas fa-file-pdf"></i> Documentation
+              </a>
+            </div>
           </div>
+
           <div class="card">
-            <div class="card-icon"><i class="fas fa-robot"></i></div>
-            <h2>Project 2</h2>
+            <div class="card-icon"><i class="fas fa-cloud"></i></div>
+            <h2>Cloud Data Warehouse</h2>
+            <div class="project-image">
+              <img src="project2.jpg" alt="Cloud Data Warehouse" />
+            </div>
             <p>
-              An AI-powered tool that helps analyze data and generate meaningful
-              insights. Built with Python, TensorFlow, and Flask.
+              Designed and implemented a Snowflake data warehouse with Terraform
+              IaC. Reduced query times by 75% through optimized data modeling
+              and partitioning.
             </p>
-            <a href="#" class="btn"
-              >View Project <i class="fas fa-arrow-right"></i
-            ></a>
+            <div class="btn-container">
+              <a href="#" class="btn"
+                >View Project <i class="fas fa-arrow-right"></i
+              ></a>
+              <a
+                href="project2_details.pdf"
+                class="btn btn-secondary"
+                target="_blank"
+              >
+                <i class="fas fa-file-pdf"></i> Case Study
+              </a>
+            </div>
           </div>
+
           <div class="card">
-            <div class="card-icon"><i class="fas fa-mobile-alt"></i></div>
-            <h2>Project 3</h2>
+            <div class="card-icon"><i class="fas fa-stream"></i></div>
+            <h2>Real-time Analytics Platform</h2>
+            <div class="project-image">
+              <img src="project3.jpg" alt="Real-time Analytics Platform" />
+            </div>
             <p>
-              A cross-platform mobile app developed with React Native that helps
-              users track their fitness goals and maintain healthy habits.
+              Built a streaming data platform using Kafka, Spark Streaming, and
+              Elasticsearch that processes events in near real-time for a
+              high-traffic e-commerce platform.
             </p>
-            <a href="#" class="btn"
-              >View Project <i class="fas fa-arrow-right"></i
-            ></a>
+            <div class="btn-container">
+              <a href="#" class="btn"
+                >View Project <i class="fas fa-arrow-right"></i
+              ></a>
+              <a
+                href="project3_details.pdf"
+                class="btn btn-secondary"
+                target="_blank"
+              >
+                <i class="fas fa-file-pdf"></i> Whitepaper
+              </a>
+            </div>
           </div>
         </div>
       </section>
@@ -536,28 +754,96 @@
         <div class="timeline">
           <div class="timeline-item">
             <div class="timeline-date">2022 - Present</div>
-            <h3>Senior Developer at Tech Company</h3>
+            <h3>Senior Data Engineer at Tech Company</h3>
             <p>
-              Leading the frontend development team, implementing new features,
-              and improving performance.
+              Leading the data platform team, designing and implementing
+              scalable data solutions, and optimizing data pipelines for
+              performance and cost efficiency.
             </p>
+            <a href="experience1.pdf" class="pdf-link" target="_blank">
+              <i class="fas fa-file-pdf"></i> View Reference Letter
+            </a>
           </div>
           <div class="timeline-item">
             <div class="timeline-date">2019 - 2022</div>
-            <h3>Software Engineer at Startup</h3>
+            <h3>Data Engineer at Analytics Startup</h3>
             <p>
-              Developed and maintained web applications, collaborated with
-              cross-functional teams.
+              Built and maintained ETL processes, collaborated with data
+              scientists to implement ML pipelines, and optimized database
+              performance.
             </p>
+            <a href="experience2.pdf" class="pdf-link" target="_blank">
+              <i class="fas fa-file-pdf"></i> View Recommendation
+            </a>
           </div>
           <div class="timeline-item">
             <div class="timeline-date">2017 - 2019</div>
-            <h3>Junior Developer at Agency</h3>
+            <h3>Data Analyst at Enterprise Corp</h3>
             <p>
-              Built responsive websites and implemented UI designs using modern
-              web technologies.
+              Created data visualizations, wrote SQL queries for business
+              analytics, and developed automated reporting solutions.
             </p>
+            <a href="experience3.pdf" class="pdf-link" target="_blank">
+              <i class="fas fa-file-pdf"></i> View Certificate
+            </a>
           </div>
+        </div>
+      </section>
+
+      <section id="certifications">
+        <h2 class="section-title">Certifications</h2>
+        <div class="cert-container">
+          <div class="cert-card">
+            <img src="cert1.jpg" alt="AWS Data Engineer Certification" />
+            <h3>AWS Certified Data Analytics - Specialty</h3>
+            <a href="aws_cert.pdf" class="pdf-link" target="_blank">
+              <i class="fas fa-file-pdf"></i> View Certificate
+            </a>
+          </div>
+          <div class="cert-card">
+            <img src="cert2.jpg" alt="Databricks Certification" />
+            <h3>Databricks Certified Data Engineer</h3>
+            <a href="databricks_cert.pdf" class="pdf-link" target="_blank">
+              <i class="fas fa-file-pdf"></i> View Certificate
+            </a>
+          </div>
+          <div class="cert-card">
+            <img src="cert3.jpg" alt="Google Cloud Certification" />
+            <h3>Google Professional Data Engineer</h3>
+            <a href="google_cert.pdf" class="pdf-link" target="_blank">
+              <i class="fas fa-file-pdf"></i> View Certificate
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section id="publications">
+        <h2 class="section-title">Publications & Talks</h2>
+        <div class="card">
+          <div class="card-icon"><i class="fas fa-book"></i></div>
+          <ul class="publication-list">
+            <li>
+              <h3>"Modern Data Architecture Patterns for Scale"</h3>
+              <p>Published in Data Engineering Journal, 2022</p>
+              <a href="publication1.pdf" class="pdf-link" target="_blank">
+                <i class="fas fa-file-pdf"></i> Read Paper
+              </a>
+            </li>
+            <li>
+              <h3>"Building Real-time Data Pipelines with Kafka and Spark"</h3>
+              <p>Conference talk at DataCon 2021</p>
+              <a href="talk_slides.pdf" class="pdf-link" target="_blank">
+                <i class="fas fa-file-pdf"></i> View Slides
+              </a>
+            </li>
+            <li>
+              <h3>"Data Quality Monitoring at Scale"</h3>
+              <p>Technical blog post series, 2020</p>
+              <a href="blog_series.pdf" class="pdf-link" target="_blank">
+                <i class="fas fa-file-pdf"></i> Read Series
+              </a>
+            </li>
+          </ul>
         </div>
       </section>
 
@@ -566,8 +852,8 @@
         <div class="card">
           <div class="card-icon"><i class="fas fa-paper-plane"></i></div>
           <p>
-            I'm always open to new opportunities, collaborations, or just a
-            friendly chat about technology and development.
+            I'm always open to discussing data engineering projects, data
+            architecture challenges, or opportunities to collaborate.
           </p>
           <a href="mailto:your.email@example.com" class="btn"
             >Send Email <i class="fas fa-envelope"></i
@@ -577,12 +863,12 @@
     </main>
 
     <footer>
-      <p>&copy; 2023 Developer Name. All Rights Reserved.</p>
+      <p>&copy; 2023 Your Name. All Rights Reserved.</p>
     </footer>
 
     <script>
       // Add simple typing effect for the name
-      const text = "Developer Name";
+      const text = "Data Engineer";
       const typingElement = document.querySelector(".typing-effect");
       let i = 0;
 
@@ -602,7 +888,21 @@
         }
       }
 
-      // Start the typing effect when the page loads
+      // Handle image errors with a fallback
+      function handleImageError(img) {
+        // Set fallback images if any image fails to load
+        img.onerror = function () {
+          if (img.id === "profile-img") {
+            this.src = "https://via.placeholder.com/200x200?text=Profile+Photo";
+          } else {
+            this.src = "https://via.placeholder.com/400x200?text=Project+Image";
+          }
+        };
+        // Trigger error check
+        img.src = img.src;
+      }
+
+      // Start the typing effect and other functions when the page loads
       window.onload = function () {
         setTimeout(typeWriter, 1000);
 
@@ -625,6 +925,49 @@
           card.style.transform = "translateY(20px)";
           card.style.transition = "opacity 0.5s ease, transform 0.5s ease";
           observer.observe(card);
+        });
+
+        // Handle all images with error fallbacks
+        const images = document.querySelectorAll("img");
+        images.forEach(handleImageError);
+
+        // Add lightbox effect for certificate images
+        const certImages = document.querySelectorAll(".cert-card img");
+        certImages.forEach((img) => {
+          img.addEventListener("click", function () {
+            // Create a simple lightbox effect
+            const lightbox = document.createElement("div");
+            lightbox.style.position = "fixed";
+            lightbox.style.top = "0";
+            lightbox.style.left = "0";
+            lightbox.style.width = "100%";
+            lightbox.style.height = "100%";
+            lightbox.style.backgroundColor = "rgba(0,0,0,0.9)";
+            lightbox.style.display = "flex";
+            lightbox.style.alignItems = "center";
+            lightbox.style.justifyContent = "center";
+            lightbox.style.zIndex = "1000";
+            lightbox.style.cursor = "pointer";
+
+            const lightboxImg = document.createElement("img");
+            lightboxImg.src = this.src;
+            lightboxImg.style.maxWidth = "90%";
+            lightboxImg.style.maxHeight = "90%";
+            lightboxImg.style.objectFit = "contain";
+            lightboxImg.style.border = "5px solid white";
+            lightboxImg.style.borderRadius = "5px";
+
+            lightbox.appendChild(lightboxImg);
+            document.body.appendChild(lightbox);
+
+            // Close lightbox when clicked
+            lightbox.addEventListener("click", function () {
+              document.body.removeChild(lightbox);
+            });
+          });
+
+          // Add pointer cursor to indicate clickable
+          img.style.cursor = "pointer";
         });
       };
     </script>
