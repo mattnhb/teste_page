@@ -1,6 +1,6 @@
-# Data Engineer GitHub Pages Portfolio
+# Matheus Barbosa - Data Engineer Portfolio
 
-This is a professional portfolio website built for Data Engineers using GitHub Pages. The site showcases data engineering skills, projects, experience, and publications in a modern, responsive design.
+This is my professional portfolio website built with GitHub Pages. The site showcases my data engineering skills, projects, experience, and publications in a modern, responsive design.
 
 ## Features
 
@@ -15,7 +15,7 @@ This is a professional portfolio website built for Data Engineers using GitHub P
 - Timeline for experience display
 - Interactive skill tags with hover effects
 - Social media links including PDF resume
-- Sections for certifications and publications
+- Sections for certifications, publications, and open source projects
 
 ## Technologies Used
 
@@ -27,46 +27,43 @@ This is a professional portfolio website built for Data Engineers using GitHub P
 
 ## Setup
 
-1. Fork this repository
+To run this website locally:
+
+1. Clone this repository
+2. Open `index.html` in your browser
+
+To deploy to GitHub Pages:
+
+1. Push this repository to GitHub
 2. Enable GitHub Pages in your repository settings
-3. Add your profile photo as `profile.jpg` in the repository
-4. Add project screenshots as `project1.jpg`, `project2.jpg`, etc.
-5. Add certification images as `cert1.jpg`, `cert2.jpg`, etc.
-6. Upload PDF files for resume, project documentation, and publications
-7. Customize the content in `index.html` with your information
-8. Update the social media links
-9. Personalize the projects and experience sections
-10. Replace the default name with your name
-11. Update the copyright year if needed
+3. Your site will be available at https://mattnhb.github.io
 
-## Image and PDF Requirements
+## Image and PDF Files
 
-- **Profile photo**: Add a square image named `profile.jpg` to the repository root
-- **Project images**: Add images named `project1.jpg`, `project2.jpg`, etc. (16:9 ratio recommended)
-- **Certification images**: Add images named `cert1.jpg`, `cert2.jpg`, etc.
-- **PDF files**: Add your resume as `resume.pdf` and other documents with descriptive names like `project1_details.pdf`
+For the portfolio to display correctly, add the following files to the repository:
+
+- `profile.jpg` - Your profile photo
+- `project1.jpg`, `project2.jpg`, `project3.jpg` - Project screenshots
+- `cert1.jpg`, `cert2.jpg`, `cert3.jpg`, `cert4.jpg` - Certification images
+- `resume.pdf` - Your resume
+- PDF files for project documentation and other linked resources
 
 ## Customization
 
-You can easily customize this template by:
+You can further customize this template by:
 
+- Updating your project descriptions and links
+- Adding more skills or certifications
 - Changing the color scheme (edit the CSS variables in `:root`)
-- Adding more projects or changing project details
-- Updating the skills listed to match your expertise
-- Adding or removing certification images
-- Customizing publication entries
-- Modifying the background shapes
 - Adding or removing sections as needed
 
-## Data Engineering Focus
+## Contact
 
-This template is specifically designed for data engineers with:
+Feel free to reach out if you have any questions or would like to collaborate!
 
-- Appropriate icons for data pipelines, databases, and analytics
-- Skills section focused on data engineering technologies
-- Project descriptions that highlight data infrastructure achievements
-- Sections for publications and talks relevant to data professionals
-- Certification showcase for data-related credentials
+- GitHub: [mattnhb](https://github.com/mattnhb)
+- LinkedIn: [mattnhb](https://linkedin.com/in/mattnhb)
+- Email: matheus.contact@example.com
 
 ## License
 
@@ -74,4 +71,4 @@ Feel free to use this template for your personal GitHub Pages website!
 
 ## Preview
 
-Visit [https://yourusername.github.io](https://yourusername.github.io) to see the live site.
+Visit [https://mattnhb.github.io](https://mattnhb.github.io) to see the live site.

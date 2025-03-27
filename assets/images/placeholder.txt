@@ -1,0 +1,1 @@
+This is a text file that will be used as a placeholder to show how the fallback image works.
