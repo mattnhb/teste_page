@@ -297,9 +297,251 @@
         color: var(--light);
       }
 
-      .cert-card .pdf-link {
-        display: block;
-        padding: 0 1rem 1rem;
+      /* Certifications carousel */
+      .carousel-container {
+        position: relative;
+        margin: 2rem auto;
+        max-width: 800px;
+        overflow: hidden;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(10px);
+      }
+
+      .carousel-track {
+        display: flex;
+        transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+        position: relative;
+      }
+
+      .carousel-slide {
+        min-width: 100%;
+        padding: 2rem;
+        position: relative;
+      }
+
+      .carousel-nav {
+        display: flex;
+        justify-content: center;
+        margin: 1.5rem 0;
+        gap: 0.8rem;
+      }
+
+      .carousel-dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.2);
+        cursor: pointer;
+        transition: all 0.3s ease;
+        border: 2px solid transparent;
+      }
+
+      .carousel-dot:hover {
+        background: rgba(255, 255, 255, 0.4);
+        transform: scale(1.1);
+      }
+
+      .carousel-dot.active {
+        background: var(--primary);
+        transform: scale(1.2);
+        box-shadow: 0 0 10px var(--primary);
+        border: 2px solid rgba(255, 255, 255, 0.5);
+      }
+
+      .carousel-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: rgba(0, 0, 0, 0.6);
+        color: white;
+        border: none;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2rem;
+        transition: all 0.3s ease;
+        z-index: 10;
+        opacity: 0.7;
+        backdrop-filter: blur(5px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .carousel-btn:hover {
+        background: var(--primary);
+        transform: translateY(-50%) scale(1.1);
+        opacity: 1;
+        box-shadow: 0 0 15px rgba(157, 78, 221, 0.5);
+      }
+
+      .carousel-btn.prev {
+        left: 15px;
+      }
+
+      .carousel-btn.next {
+        right: 15px;
+      }
+
+      .carousel-slide-content {
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 10px;
+        overflow: hidden;
+        padding: 2rem;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        backdrop-filter: blur(5px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        transition: all 0.3s ease;
+        min-height: 300px;
+        justify-content: center;
+      }
+
+      .carousel-slide-content:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        border-color: var(--primary);
+      }
+
+      .carousel-slide-content img {
+        width: auto;
+        max-width: 90%;
+        height: 180px;
+        margin-bottom: 1.5rem;
+        border-radius: 8px;
+        transition: all 0.4s ease;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        border: 3px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .carousel-slide-content:hover img {
+        transform: scale(1.05);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+        border-color: var(--accent);
+      }
+
+      .carousel-slide-content h3 {
+        color: var(--light);
+        margin-bottom: 1rem;
+        text-align: center;
+        font-size: 1.4rem;
+        position: relative;
+        padding-bottom: 0.8rem;
+      }
+
+      .carousel-slide-content h3::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 40px;
+        height: 3px;
+        background: linear-gradient(to right, var(--primary), var(--accent));
+        border-radius: 3px;
+      }
+
+      .carousel-slide-content .cert-info {
+        width: 100%;
+        text-align: center;
+      }
+
+      .cert-issuer, .cert-date {
+        color: var(--light);
+        opacity: 0.9;
+        margin-top: 0.5rem;
+        font-size: 0.95rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+      }
+
+      .cert-issuer i, .cert-date i {
+        color: var(--accent);
+        font-size: 0.9rem;
+      }
+
+      .cert-date {
+        margin-top: 0.3rem;
+        opacity: 0.7;
+      }
+
+      .cert-issuer {
+        font-weight: 500;
+      }
+
+      .carousel-slide-content:hover .cert-issuer,
+      .carousel-slide-content:hover .cert-date {
+        opacity: 1;
+      }
+
+      .loading-indicator {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-top: 2rem;
+      }
+
+      .loading-indicator i {
+        margin-bottom: 1rem;
+      }
+
+      /* Add a gentle pulsating animation to the loading spinner */
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
+          opacity: 0.8;
+        }
+        50% {
+          transform: scale(1.1);
+          opacity: 1;
+        }
+        100% {
+          transform: scale(1);
+          opacity: 0.8;
+        }
+      }
+
+      .loading-indicator i {
+        animation: pulse 1.5s infinite ease-in-out;
+      }
+
+      @media (max-width: 768px) {
+        .carousel-container {
+          max-width: 100%;
+        }
+        
+        .carousel-slide {
+          padding: 1rem;
+        }
+        
+        .carousel-slide-content {
+          padding: 1.5rem;
+          min-height: 280px;
+        }
+        
+        .carousel-slide-content h3 {
+          font-size: 1.2rem;
+        }
+        
+        .carousel-slide-content img {
+          height: 150px;
+        }
+        
+        .carousel-btn {
+          width: 35px;
+          height: 35px;
+          font-size: 1rem;
+        }
       }
 
       /* Publication list */
@@ -685,6 +927,26 @@
           font-size: 2rem;
         }
       }
+
+      .carousel-counter {
+        position: absolute;
+        bottom: 1rem;
+        right: 1rem;
+        background: rgba(0, 0, 0, 0.6);
+        color: white;
+        padding: 0.3rem 0.8rem;
+        border-radius: 20px;
+        font-size: 0.85rem;
+        opacity: 0.8;
+        transition: opacity 0.3s ease;
+        backdrop-filter: blur(5px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        z-index: 5;
+      }
+
+      .carousel-container:hover .carousel-counter {
+        opacity: 1;
+      }
     </style>
   </head>
   <body>
@@ -922,12 +1184,22 @@
       <section id="certifications">
         <h2 class="section-title">Certifications</h2>
         <div class="card">
-          <div class="card-icon"><i class="fas fa-certificate"></i> <span style="font-size: 1rem; opacity: 0.8; font-weight: normal; margin-left: 0.5rem;">(Click to Verify)</span></div>
-          <ul class="publication-list" id="certifications-container">
-            <li class="loading-certifications">
-              <h3>Loading certifications...</h3>
-            </li>
-          </ul>
+          <div class="carousel-container">
+            <div class="carousel-track">
+              <div class="carousel-slide">
+                <div class="carousel-slide-content">
+                  <h3>Loading certifications...</h3>
+                  <div class="loading-indicator">
+                    <i class="fas fa-spinner fa-pulse" style="font-size: 2rem; color: var(--primary);"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-nav">
+              <!-- Navigation dots will be added dynamically -->
+            </div>
+            <!-- Prev/Next buttons will be added dynamically -->
+          </div>
         </div>
       </section>
 
@@ -1063,7 +1335,7 @@
         // Load publications from publications.md
         loadPublications();
         
-        // Load certifications from certifications.md
+        // Load certifications from JSON and initialize carousel
         loadCertifications();
       };
       
@@ -1078,60 +1350,292 @@
           })
           .then(certifications => {
             console.log("Loaded certifications:", certifications);
-            displayCertifications(certifications);
+            initCarousel(certifications);
           })
           .catch(error => {
             console.error('Error loading certifications:', error);
-            document.getElementById('certifications-container').innerHTML = `
-              <li>
-                <h3>Error loading certifications</h3>
-                <p>Please try again later.</p>
-              </li>
+            document.querySelector('.carousel-track').innerHTML = `
+              <div class="carousel-slide">
+                <div class="carousel-slide-content">
+                  <h3>Error loading certifications</h3>
+                  <p>Please try again later.</p>
+                </div>
+              </div>
             `;
           });
       }
       
-      // Display certifications in the DOM
-      function displayCertifications(certifications) {
-        const container = document.getElementById('certifications-container');
+      // Initialize the carousel with certification data
+      function initCarousel(certifications) {
+        const carouselTrack = document.querySelector('.carousel-track');
+        const navContainer = document.querySelector('.carousel-nav');
+        
+        // Clear placeholder content
+        carouselTrack.innerHTML = '';
+        navContainer.innerHTML = '';
         
         if (!certifications || certifications.length === 0) {
-          container.innerHTML = `
-            <li>
-              <h3>No certifications found</h3>
-              <p>Check back later for updates.</p>
-            </li>
+          carouselTrack.innerHTML = `
+            <div class="carousel-slide">
+              <div class="carousel-slide-content">
+                <h3>No certifications found</h3>
+                <p>Check back later for updates.</p>
+              </div>
+            </div>
           `;
           return;
         }
         
-        let html = '';
-        console.log("Building HTML for", certifications.length, "certifications");
-        
+        // Create slides
         certifications.forEach((cert, index) => {
-          console.log(`Processing certification ${index + 1}:`, cert.title);
-          html += `
-            <li>
-              <a href="${cert.verifyUrl}" target="_blank" title="Click to verify certification" style="text-decoration: none;">
-                <h3 style="color: var(--light);">${cert.title}</h3>
+          const slide = document.createElement('div');
+          slide.className = 'carousel-slide';
+          
+          // Format issue date if available
+          let issueDateText = '';
+          if (cert.issueDate) {
+            try {
+              const issueDate = new Date(cert.issueDate);
+              issueDateText = issueDate.toLocaleDateString('en-US', { 
+                year: 'numeric', 
+                month: 'long' 
+              });
+            } catch (e) {
+              issueDateText = cert.issueDate; // Use as is if parsing fails
+            }
+          }
+          
+          slide.innerHTML = `
+            <div class="carousel-slide-content">
+              <a href="${cert.verifyUrl}" target="_blank" title="Click to verify certification">
+                <img src="${cert.imageUrl}" alt="${cert.title}" 
+                     onerror="this.onerror=null; this.src='https://via.placeholder.com/500x300/ff9900/10002b?text=${encodeURIComponent(cert.title)}';" />
               </a>
-              <p>
-                <a href="${cert.verifyUrl}" target="_blank" title="Click to verify certification">
-                  <img src="${cert.imageUrl}" alt="${cert.title}" 
-                       style="height: 120px; margin-bottom: 15px; display: block; cursor: pointer; transition: transform 0.3s ease;" 
-                       onmouseover="this.style.transform='scale(1.05)'" 
-                       onmouseout="this.style.transform='scale(1)'"
-                       onerror="this.onerror=null; this.src='https://via.placeholder.com/500x300/ff9900/10002b?text=AWS+Certification';" />
+              <div class="cert-info">
+                <a href="${cert.verifyUrl}" target="_blank" title="Click to verify certification" style="text-decoration: none;">
+                  <h3>${cert.title}</h3>
                 </a>
-              </p>
-            </li>
+                ${cert.organization ? `<div class="cert-issuer"><i class="fas fa-building"></i> ${cert.organization}</div>` : ''}
+                ${issueDateText ? `<div class="cert-date"><i class="fas fa-calendar-alt"></i> ${issueDateText}</div>` : ''}
+              </div>
+            </div>
           `;
+          
+          carouselTrack.appendChild(slide);
+          
+          // Create navigation dot
+          const dot = document.createElement('div');
+          dot.className = 'carousel-dot';
+          if (index === 0) dot.classList.add('active');
+          dot.dataset.index = index;
+          navContainer.appendChild(dot);
         });
         
-        console.log("Final HTML length:", html.length);
-        container.innerHTML = html;
+        // Add counter
+        const counter = document.createElement('div');
+        counter.className = 'carousel-counter';
+        counter.textContent = `1 of ${certifications.length}`;
+        
+        // Add prev/next buttons
+        const prevBtn = document.createElement('button');
+        prevBtn.className = 'carousel-btn prev';
+        prevBtn.innerHTML = '<i class="fas fa-chevron-left"></i>';
+        
+        const nextBtn = document.createElement('button');
+        nextBtn.className = 'carousel-btn next';
+        nextBtn.innerHTML = '<i class="fas fa-chevron-right"></i>';
+        
+        const carouselContainer = document.querySelector('.carousel-container');
+        carouselContainer.appendChild(counter);
+        carouselContainer.appendChild(prevBtn);
+        carouselContainer.appendChild(nextBtn);
+        
+        // Initialize carousel functionality
+        setupCarousel();
       }
-
+      
+      // Set up carousel navigation and controls
+      function setupCarousel() {
+        const track = document.querySelector('.carousel-track');
+        const slides = Array.from(track.children);
+        const nextButton = document.querySelector('.carousel-btn.next');
+        const prevButton = document.querySelector('.carousel-btn.prev');
+        const dotsNav = document.querySelector('.carousel-nav');
+        const dots = Array.from(dotsNav.children);
+        const carouselContainer = document.querySelector('.carousel-container');
+        const counter = document.querySelector('.carousel-counter');
+        
+        if (slides.length <= 1) {
+          // Hide navigation if only one slide
+          nextButton.style.display = 'none';
+          prevButton.style.display = 'none';
+          dotsNav.style.display = 'none';
+          counter.style.display = 'none';
+          return;
+        }
+        
+        const slideWidth = slides[0].getBoundingClientRect().width;
+        
+        // Arrange the slides next to one another
+        const setSlidePosition = (slide, index) => {
+          slide.style.left = slideWidth * index + 'px';
+        };
+        
+        slides.forEach(setSlidePosition);
+        
+        const moveToSlide = (track, currentSlide, targetSlide) => {
+          const targetIndex = slides.findIndex(slide => slide === targetSlide);
+          track.style.transform = 'translateX(-' + (targetIndex * slideWidth) + 'px)';
+          
+          // Update active dot
+          const currentDot = dotsNav.querySelector('.active');
+          const targetDot = dots[targetIndex];
+          if (currentDot) currentDot.classList.remove('active');
+          if (targetDot) targetDot.classList.add('active');
+          
+          // Update counter
+          if (counter) {
+            counter.textContent = `${targetIndex + 1} of ${slides.length}`;
+          }
+          
+          // Update ARIA attributes for accessibility
+          slides.forEach((slide, index) => {
+            slide.setAttribute('aria-hidden', index !== targetIndex);
+            
+            // Make links in inactive slides unfocusable
+            const focusableElements = slide.querySelectorAll('a, button');
+            focusableElements.forEach(el => {
+              if (index !== targetIndex) {
+                el.setAttribute('tabindex', '-1');
+              } else {
+                el.removeAttribute('tabindex');
+              }
+            });
+          });
+        };
+        
+        // Move to previous slide
+        const moveToPrevSlide = () => {
+          const currentSlide = track.querySelector('.carousel-slide[style*="left: 0px"]') || slides[0];
+          const prevSlide = currentSlide.previousElementSibling || slides[slides.length - 1];
+          moveToSlide(track, currentSlide, prevSlide);
+        };
+        
+        // Move to next slide
+        const moveToNextSlide = () => {
+          const currentSlide = track.querySelector('.carousel-slide[style*="left: 0px"]') || slides[0];
+          const nextSlide = currentSlide.nextElementSibling || slides[0];
+          moveToSlide(track, currentSlide, nextSlide);
+        };
+        
+        // Add click event listeners
+        prevButton.addEventListener('click', moveToPrevSlide);
+        nextButton.addEventListener('click', moveToNextSlide);
+        
+        // When I click the nav indicators, move to that slide
+        dotsNav.addEventListener('click', e => {
+          const targetDot = e.target.closest('div.carousel-dot');
+          
+          if (!targetDot) return;
+          
+          const currentSlide = track.querySelector('.carousel-slide[style*="left: 0px"]') || slides[0];
+          const targetIndex = dots.findIndex(dot => dot === targetDot);
+          const targetSlide = slides[targetIndex];
+          
+          moveToSlide(track, currentSlide, targetSlide);
+        });
+        
+        // Touch swipe functionality
+        let touchStartX = 0;
+        let touchEndX = 0;
+        
+        carouselContainer.addEventListener('touchstart', e => {
+          touchStartX = e.changedTouches[0].screenX;
+        }, { passive: true });
+        
+        carouselContainer.addEventListener('touchend', e => {
+          touchEndX = e.changedTouches[0].screenX;
+          handleSwipe();
+        }, { passive: true });
+        
+        function handleSwipe() {
+          const swipeThreshold = 50; // Minimum distance required for a swipe
+          
+          if (touchEndX + swipeThreshold < touchStartX) {
+            moveToNextSlide();
+          } else if (touchEndX > touchStartX + swipeThreshold) {
+            moveToPrevSlide();
+          }
+        }
+        
+        // Keyboard navigation
+        carouselContainer.setAttribute('tabindex', '0');
+        carouselContainer.setAttribute('role', 'region');
+        carouselContainer.setAttribute('aria-label', 'Certifications carousel');
+        
+        carouselContainer.addEventListener('keydown', e => {
+          if (e.key === 'ArrowLeft') {
+            e.preventDefault();
+            moveToPrevSlide();
+          } else if (e.key === 'ArrowRight') {
+            e.preventDefault();
+            moveToNextSlide();
+          }
+        });
+        
+        // Make dots keyboard navigable
+        dots.forEach((dot, index) => {
+          dot.setAttribute('tabindex', '0');
+          dot.setAttribute('role', 'button');
+          dot.setAttribute('aria-label', `Show certification ${index + 1}`);
+          
+          dot.addEventListener('keydown', e => {
+            if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault();
+              const currentSlide = track.querySelector('.carousel-slide[style*="left: 0px"]') || slides[0];
+              moveToSlide(track, currentSlide, slides[index]);
+            }
+          });
+        });
+        
+        // Auto-advance the carousel
+        let interval = setInterval(moveToNextSlide, 5000);
+        
+        // Pause auto-advance on hover or focus
+        carouselContainer.addEventListener('mouseenter', () => {
+          clearInterval(interval);
+        });
+        
+        carouselContainer.addEventListener('mouseleave', () => {
+          interval = setInterval(moveToNextSlide, 5000);
+        });
+        
+        carouselContainer.addEventListener('focus', () => {
+          clearInterval(interval);
+        }, true);
+        
+        carouselContainer.addEventListener('blur', () => {
+          interval = setInterval(moveToNextSlide, 5000);
+        }, true);
+        
+        // Set initial slide (for accessibility)
+        slides.forEach((slide, index) => {
+          if (index === 0) {
+            slide.setAttribute('aria-hidden', 'false');
+          } else {
+            slide.setAttribute('aria-hidden', 'true');
+            // Make links in inactive slides unfocusable
+            const focusableElements = slide.querySelectorAll('a, button');
+            focusableElements.forEach(el => {
+              el.setAttribute('tabindex', '-1');
+            });
+          }
+        });
+        
+        // Initial positioning
+        moveToSlide(track, slides[0], slides[0]);
+      }
+      
       // Function to load publications from markdown file
       function loadPublications() {
         fetch('assets/data/publications.md')
