@@ -1,0 +1,1281 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Data Engineer Portfolio</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Modular CSS files -->
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/animations.css" />
+    <link rel="stylesheet" href="css/carousel.css" />
+    <link rel="stylesheet" href="css/sections.css" />
+  </head>
+  <body>
+    <!-- Background elements -->
+    <div class="grid-pattern"></div>
+
+    <header>
+      <h1>
+        <span class="name-text">Mateus</span> 
+        <span class="name-text">Nicolas</span> 
+        <span class="name-text">Hechenblaichner</span> 
+        <span class="name-text">Balestrin</span>
+      </h1>
+        <p class="subtitle">
+        Senior Data Engineer | Cloud & Big Data Architect | 4x AWS Certified | Spark & Terraform Expert
+        </p>
+        <div class="social-icons">
+        <a href="https://linkedin.com/in/mattnhb" target="_blank">
+          <i class="fab fa-linkedin"></i>
+        </a>
+      </div>
+    </header>
+
+    <main>
+      <section id="about">
+        <h2 class="section-title">About Me</h2>
+        <div class="card profile-card">
+          <div class="profile-image">
+            <img
+              src="assets/images/profile.jpeg"
+              alt="Mateus Nicolas Hechenblaichner Balestrin"
+              id="profile-img"
+            />
+          </div>
+          <div class="profile-content">
+            <div class="card-icon"><i class="fas fa-database"></i></div>
+            <p>
+              As a Senior Data Engineer with expertise in Python, AWS, and
+              PySpark, I focus on building scalable ETL/ELT frameworks and
+              automating data workflows. I've developed a comprehensive
+              framework tailored for data engineering teams, along with a
+              Feature Store factory that streamlines the creation and
+              availability of features across various projects.
+            </p>
+            <p>
+              My experience spans technologies like Airflow, Kafka, AWS Glue,
+              AWS EMR, and Spark, allowing me to effectively integrate both
+              proprietary and open-source tools to tackle complex challenges.
+            </p>
+            <p>
+              I'm passionate about staying current with advancements in cloud
+              computing and big data, and I enjoy continuously learning to
+              refine my skills and deliver practical, efficient solutions. My
+              work centers on creating reliable systems that empower data
+              engineering teams in their daily operations.
+            </p>
+            <p>
+              If you're interested in discussing data engineering or exploring
+              new ideas, feel free to reach out.
+            </p>
+            <div class="skills">
+              <span class="skill-tag">AWS</span>
+              <span class="skill-tag">Python</span>
+              <span class="skill-tag">Spark</span>
+              <span class="skill-tag">Airflow</span>
+              <span class="skill-tag">Kafka</span>
+              <span class="skill-tag">SQL</span>
+              <span class="skill-tag">Terraform</span>
+              <span class="skill-tag">Linux</span>
+              <span class="skill-tag">Git</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects">
+        <h2 class="section-title">Projects</h2>
+        <div class="card-container">
+          <div class="card">
+            <div class="card-icon"><i class="fas fa-stream"></i></div>
+            <h2>Real-time Data Processing Platform</h2>
+            <div class="project-image">
+              <img
+                src="assets/images/project1.jpg"
+                alt="Real-time Data Processing Platform"
+              />
+            </div>
+            <p>
+              Designed and implemented a real-time data processing system using
+              Apache Kafka and PySpark Streaming that handles 50+ million events
+              daily. Reduced data processing latency from hours to seconds and
+              implemented fault-tolerance with exactly-once semantics.
+            </p>
+            <div class="btn-container">
+              <a
+                href="https://github.com/mattnhb/data-streaming-platform"
+                class="btn"
+                target="_blank"
+                >View Code <i class="fas fa-arrow-right"></i
+              ></a>
+              <a
+                href="assets/pdf/project1_details.pdf"
+                class="btn btn-secondary"
+                target="_blank"
+              >
+                <i class="fas fa-file-pdf"></i> Documentation
+              </a>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-icon"><i class="fas fa-cloud"></i></div>
+            <h2>Cloud-based Data Lake Architecture</h2>
+            <div class="project-image">
+              <img
+                src="assets/images/project2.jpg"
+                alt="Cloud-based Data Lake"
+              />
+            </div>
+            <p>
+              Built a multi-layer data lake on AWS using S3, Glue, Athena, and
+              Lambda, creating a scalable architecture with bronze, silver, and
+              gold data layers. Implemented automated data quality checks and
+              metadata management, reducing query costs by 40%.
+            </p>
+            <div class="btn-container">
+              <a
+                href="https://github.com/mattnhb/aws-data-lake"
+                class="btn"
+                target="_blank"
+                >View Code <i class="fas fa-arrow-right"></i
+              ></a>
+              <a
+                href="assets/pdf/project2_details.pdf"
+                class="btn btn-secondary"
+                target="_blank"
+              >
+                <i class="fas fa-file-pdf"></i> Case Study
+              </a>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-icon"><i class="fas fa-robot"></i></div>
+            <h2>ML Feature Engineering Pipeline</h2>
+            <div class="project-image">
+              <img
+                src="assets/images/project3.jpg"
+                alt="ML Feature Engineering Pipeline"
+              />
+            </div>
+            <p>
+              Created an automated feature engineering pipeline using Airflow,
+              dbt, and Snowflake that transforms raw data into ML-ready
+              features. Built a feature store with proper versioning and
+              monitoring, accelerating ML model development cycles by 60%.
+            </p>
+            <div class="btn-container">
+              <a
+                href="https://github.com/mattnhb/feature-engineering"
+                class="btn"
+                target="_blank"
+                >View Code <i class="fas fa-arrow-right"></i
+              ></a>
+              <a
+                href="assets/pdf/project3_details.pdf"
+                class="btn btn-secondary"
+                target="_blank"
+              >
+                <i class="fas fa-file-pdf"></i> Technical Paper
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="experience">
+        <h2 class="section-title">Experience</h2>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-date">2021 - Present</div>
+            <h3>Senior Data Engineer at Tech Solutions Inc.</h3>
+            <p>
+              Leading a team of data engineers in designing and implementing
+              scalable data platforms. Architecting cloud-based data solutions
+              on AWS and GCP, optimizing data pipelines, and establishing data
+              governance practices. Reduced processing costs by 35% while
+              increasing data throughput.
+            </p>
+            <a
+              href="assets/pdf/experience1.pdf"
+              class="pdf-link"
+              target="_blank"
+            >
+              <i class="fas fa-file-pdf"></i> View Project Summary
+            </a>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-date">2019 - 2021</div>
+            <h3>Data Engineer at DataStream Analytics</h3>
+            <p>
+              Developed and maintained data pipelines using Apache Airflow,
+              Spark, and Kafka. Built real-time streaming solutions for
+              high-volume data processing. Collaborated with data scientists to
+              implement ML models in production environments.
+            </p>
+            <a
+              href="assets/pdf/experience2.pdf"
+              class="pdf-link"
+              target="_blank"
+            >
+              <i class="fas fa-file-pdf"></i> View Achievements
+            </a>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-date">2017 - 2019</div>
+            <h3>Data Analyst at Global Insights Corp</h3>
+            <p>
+              Created data visualizations and dashboards for business metrics
+              using Tableau and PowerBI. Wrote complex SQL queries for data
+              analysis and reporting. Automated reporting workflows, saving over
+              20 hours of manual work weekly.
+            </p>
+            <a
+              href="assets/pdf/experience3.pdf"
+              class="pdf-link"
+              target="_blank"
+            >
+              <i class="fas fa-file-pdf"></i> View Portfolio
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section id="certifications">
+        <h2 class="section-title">Certifications</h2>
+        <div class="card">
+          <div class="carousel-container">
+            <div class="carousel-track">
+              <div class="loading-slide">
+                <div class="loading-content">
+                  <h3>Loading certifications...</h3>
+                  <div class="loading-indicator">
+                    <i class="fas fa-spinner fa-pulse" style="font-size: 2rem; color: var(--primary);"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-nav">
+              <!-- Navigation dots will be added dynamically -->
+            </div>
+            <!-- Prev/Next buttons will be added dynamically -->
+          </div>
+        </div>
+      </section>
+
+      <section id="publications">
+        <h2 class="section-title">Publications & Medium Articles</h2>
+        <div class="card">
+          <div class="card-icon"><i class="fas fa-book"></i></div>
+          <ul class="publication-list" id="publications-container">
+            <!-- Publications will be loaded dynamically from publications.md -->
+            <li class="loading-publications">
+              <h3>Loading publications...</h3>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>
+        &copy; <span id="current-year"></span> Mateus Nicolas Hechenblaichner
+        Balestrin. All Rights Reserved.
+      </p>
+    </footer>
+
+    <!-- Modular JavaScript files -->
+    <script src="js/main.js"></script>
+    <script src="js/publications.js"></script>
+    <script src="js/carousel.js"></script>
+  </body>
+</html>
+
+      .skill-tag.appear {
+        animation: tagAppear 0.5s forwards;
+      }
+
+      /* Grid pattern background */
+      .grid-pattern {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-size: 50px 50px;
+        background-image: linear-gradient(
+            rgba(157, 78, 221, 0.03) 1px,
+            transparent 1px
+          ),
+          linear-gradient(90deg, rgba(157, 78, 221, 0.03) 1px, transparent 1px);
+        z-index: -2;
+        pointer-events: none;
+      }
+
+      .skills {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        margin-top: 2rem;
+      }
+
+      .skill-tag {
+        background: rgba(255, 255, 255, 0.05);
+        color: var(--light);
+        padding: 0.5rem 1rem;
+        border-radius: 30px;
+        font-size: 0.9rem;
+        backdrop-filter: blur(5px);
+        border: 1px solid rgba(157, 78, 221, 0.15);
+        transition: all 0.3s ease;
+        display: inline-flex;
+        align-items: center;
+        font-weight: 500;
+      }
+
+      .skill-tag:hover {
+        background: var(--accent);
+        transform: translateY(-3px);
+      }
+
+      .timeline {
+        position: relative;
+        margin-top: 3rem;
+        padding-left: 2rem;
+      }
+
+      .timeline::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 2px;
+        background: linear-gradient(
+          to bottom,
+          var(--primary),
+          var(--secondary)
+        );
+      }
+
+      .timeline-item {
+        position: relative;
+        margin-bottom: 2rem;
+        padding-left: 1.5rem;
+      }
+
+      .timeline-item::before {
+        content: "";
+        position: absolute;
+        left: -10px;
+        top: 5px;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background: var(--dark);
+        border: 2px solid var(--primary);
+        z-index: 1;
+      }
+
+      .timeline-date {
+        font-weight: bold;
+        color: var(--secondary);
+        margin-bottom: 0.5rem;
+      }
+
+      .project-gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+        margin-top: 2rem;
+      }
+
+      .project {
+        position: relative;
+        border-radius: 10px;
+        overflow: hidden;
+        height: 200px;
+        transition: all 0.3s ease;
+      }
+
+      .project:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      }
+
+      .project img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: all 0.5s ease;
+      }
+
+      .project:hover img {
+        transform: scale(1.05);
+      }
+
+      .project-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+        padding: 1.5rem;
+        transform: translateY(100%);
+        transition: transform 0.5s ease;
+      }
+
+      .project:hover .project-overlay {
+        transform: translateY(0);
+      }
+
+      .project-title {
+        color: var(--light);
+        font-size: 1.2rem;
+        margin-bottom: 0.5rem;
+      }
+
+      /* Responsive adjustments */
+      @media (max-width: 768px) {
+        h1 {
+          font-size: 2.5rem;
+        }
+
+        .subtitle {
+          font-size: 1.2rem;
+        }
+
+        .card-container {
+          grid-template-columns: 1fr;
+        }
+
+        .section-title {
+          font-size: 2rem;
+        }
+      }
+
+      .carousel-counter {
+        position: absolute;
+        bottom: 1rem;
+        right: 1rem;
+        background: rgba(0, 0, 0, 0.6);
+        color: white;
+        padding: 0.3rem 0.8rem;
+        border-radius: 20px;
+        font-size: 0.85rem;
+        opacity: 0.8;
+        transition: opacity 0.3s ease;
+        backdrop-filter: blur(5px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        z-index: 5;
+      }
+
+      .carousel-container:hover .carousel-counter {
+        opacity: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Background elements -->
+    <div class="grid-pattern"></div>
+
+    <header>
+      <h1>
+        <span class="name-text">Mateus</span> 
+        <span class="name-text">Nicolas</span> 
+        <span class="name-text">Hechenblaichner</span> 
+        <span class="name-text">Balestrin</span>
+      </h1>
+        <p class="subtitle">
+        Senior Data Engineer | Cloud & Big Data Architect | 4x AWS Certified | Spark & Terraform Expert
+        </p>
+        <div class="social-icons">
+        <a href="https://linkedin.com/in/mattnhb" target="_blank">
+          <i class="fab fa-linkedin"></i>
+        </a>
+      </div>
+    </header>
+
+    <main>
+      <section id="about">
+        <h2 class="section-title">About Me</h2>
+        <div class="card profile-card">
+          <div class="profile-image">
+            <img
+              src="assets/images/profile.jpeg"
+              alt="Mateus Nicolas Hechenblaichner Balestrin"
+              id="profile-img"
+            />
+          </div>
+          <div class="profile-content">
+            <div class="card-icon"><i class="fas fa-database"></i></div>
+            <p>
+              As a Senior Data Engineer with expertise in Python, AWS, and
+              PySpark, I focus on building scalable ETL/ELT frameworks and
+              automating data workflows. I've developed a comprehensive
+              framework tailored for data engineering teams, along with a
+              Feature Store factory that streamlines the creation and
+              availability of features across various projects.
+            </p>
+            <p>
+              My experience spans technologies like Airflow, Kafka, AWS Glue,
+              AWS EMR, and Spark, allowing me to effectively integrate both
+              proprietary and open-source tools to tackle complex challenges.
+            </p>
+            <p>
+              I'm passionate about staying current with advancements in cloud
+              computing and big data, and I enjoy continuously learning to
+              refine my skills and deliver practical, efficient solutions. My
+              work centers on creating reliable systems that empower data
+              engineering teams in their daily operations.
+            </p>
+            <p>
+              If you're interested in discussing data engineering or exploring
+              new ideas, feel free to reach out.
+            </p>
+            <div class="skills">
+              <span class="skill-tag">AWS</span>
+              <span class="skill-tag">Python</span>
+              <span class="skill-tag">Spark</span>
+              <span class="skill-tag">Airflow</span>
+              <span class="skill-tag">Kafka</span>
+              <span class="skill-tag">SQL</span>
+              <span class="skill-tag">Terraform</span>
+              <span class="skill-tag">Linux</span>
+              <span class="skill-tag">Git</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects">
+        <h2 class="section-title">Projects</h2>
+        <div class="card-container">
+          <div class="card">
+            <div class="card-icon"><i class="fas fa-stream"></i></div>
+            <h2>Real-time Data Processing Platform</h2>
+            <div class="project-image">
+              <img
+                src="assets/images/project1.jpg"
+                alt="Real-time Data Processing Platform"
+              />
+            </div>
+            <p>
+              Designed and implemented a real-time data processing system using
+              Apache Kafka and PySpark Streaming that handles 50+ million events
+              daily. Reduced data processing latency from hours to seconds and
+              implemented fault-tolerance with exactly-once semantics.
+            </p>
+            <div class="btn-container">
+              <a
+                href="https://github.com/mattnhb/data-streaming-platform"
+                class="btn"
+                target="_blank"
+                >View Code <i class="fas fa-arrow-right"></i
+              ></a>
+              <a
+                href="assets/pdf/project1_details.pdf"
+                class="btn btn-secondary"
+                target="_blank"
+              >
+                <i class="fas fa-file-pdf"></i> Documentation
+              </a>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-icon"><i class="fas fa-cloud"></i></div>
+            <h2>Cloud-based Data Lake Architecture</h2>
+            <div class="project-image">
+              <img
+                src="assets/images/project2.jpg"
+                alt="Cloud-based Data Lake"
+              />
+            </div>
+            <p>
+              Built a multi-layer data lake on AWS using S3, Glue, Athena, and
+              Lambda, creating a scalable architecture with bronze, silver, and
+              gold data layers. Implemented automated data quality checks and
+              metadata management, reducing query costs by 40%.
+            </p>
+            <div class="btn-container">
+              <a
+                href="https://github.com/mattnhb/aws-data-lake"
+                class="btn"
+                target="_blank"
+                >View Code <i class="fas fa-arrow-right"></i
+              ></a>
+              <a
+                href="assets/pdf/project2_details.pdf"
+                class="btn btn-secondary"
+                target="_blank"
+              >
+                <i class="fas fa-file-pdf"></i> Case Study
+              </a>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-icon"><i class="fas fa-robot"></i></div>
+            <h2>ML Feature Engineering Pipeline</h2>
+            <div class="project-image">
+              <img
+                src="assets/images/project3.jpg"
+                alt="ML Feature Engineering Pipeline"
+              />
+            </div>
+            <p>
+              Created an automated feature engineering pipeline using Airflow,
+              dbt, and Snowflake that transforms raw data into ML-ready
+              features. Built a feature store with proper versioning and
+              monitoring, accelerating ML model development cycles by 60%.
+            </p>
+            <div class="btn-container">
+              <a
+                href="https://github.com/mattnhb/feature-engineering"
+                class="btn"
+                target="_blank"
+                >View Code <i class="fas fa-arrow-right"></i
+              ></a>
+              <a
+                href="assets/pdf/project3_details.pdf"
+                class="btn btn-secondary"
+                target="_blank"
+              >
+                <i class="fas fa-file-pdf"></i> Technical Paper
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="experience">
+        <h2 class="section-title">Experience</h2>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-date">2021 - Present</div>
+            <h3>Senior Data Engineer at Tech Solutions Inc.</h3>
+            <p>
+              Leading a team of data engineers in designing and implementing
+              scalable data platforms. Architecting cloud-based data solutions
+              on AWS and GCP, optimizing data pipelines, and establishing data
+              governance practices. Reduced processing costs by 35% while
+              increasing data throughput.
+            </p>
+            <a
+              href="assets/pdf/experience1.pdf"
+              class="pdf-link"
+              target="_blank"
+            >
+              <i class="fas fa-file-pdf"></i> View Project Summary
+            </a>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-date">2019 - 2021</div>
+            <h3>Data Engineer at DataStream Analytics</h3>
+            <p>
+              Developed and maintained data pipelines using Apache Airflow,
+              Spark, and Kafka. Built real-time streaming solutions for
+              high-volume data processing. Collaborated with data scientists to
+              implement ML models in production environments.
+            </p>
+            <a
+              href="assets/pdf/experience2.pdf"
+              class="pdf-link"
+              target="_blank"
+            >
+              <i class="fas fa-file-pdf"></i> View Achievements
+            </a>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-date">2017 - 2019</div>
+            <h3>Data Analyst at Global Insights Corp</h3>
+            <p>
+              Created data visualizations and dashboards for business metrics
+              using Tableau and PowerBI. Wrote complex SQL queries for data
+              analysis and reporting. Automated reporting workflows, saving over
+              20 hours of manual work weekly.
+            </p>
+            <a
+              href="assets/pdf/experience3.pdf"
+              class="pdf-link"
+              target="_blank"
+            >
+              <i class="fas fa-file-pdf"></i> View Portfolio
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section id="certifications">
+        <h2 class="section-title">Certifications</h2>
+        <div class="card">
+          <div class="carousel-container">
+            <div class="carousel-track">
+              <div class="loading-slide">
+                <div class="loading-content">
+                  <h3>Loading certifications...</h3>
+                  <div class="loading-indicator">
+                    <i class="fas fa-spinner fa-pulse" style="font-size: 2rem; color: var(--primary);"></i>
+          </div>
+          </div>
+          </div>
+            </div>
+            <div class="carousel-nav">
+              <!-- Navigation dots will be added dynamically -->
+            </div>
+            <!-- Prev/Next buttons will be added dynamically -->
+          </div>
+        </div>
+      </section>
+
+      <section id="publications">
+        <h2 class="section-title">Publications & Medium Articles</h2>
+        <div class="card">
+          <div class="card-icon"><i class="fas fa-book"></i></div>
+          <ul class="publication-list" id="publications-container">
+            <!-- Publications will be loaded dynamically from publications.md -->
+            <li class="loading-publications">
+              <h3>Loading publications...</h3>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>
+        &copy; <span id="current-year"></span> Mateus Nicolas Hechenblaichner
+        Balestrin. All Rights Reserved.
+      </p>
+    </footer>
+
+    <script>
+      // Set current year in footer
+      document.getElementById("current-year").textContent =
+        new Date().getFullYear();
+
+      // Handle image errors with a fallback
+      function handleImageError(img) {
+        // Set fallback images if any image fails to load
+        img.onerror = function () {
+          if (img.id === "profile-img") {
+            this.src =
+              "https://via.placeholder.com/200x200/9d4edd/ffffff?text=Mateus+Nicolas";
+          } else if (img.alt.includes("Real-time")) {
+            this.src =
+              "https://via.placeholder.com/800x450/9d4edd/ffffff?text=Real-time+Data+Processing";
+          } else if (img.alt.includes("Cloud")) {
+            this.src =
+              "https://via.placeholder.com/800x450/5a189a/ffffff?text=Cloud+Data+Lake";
+          } else if (img.alt.includes("ML")) {
+            this.src =
+              "https://via.placeholder.com/800x450/c77dff/10002b?text=ML+Feature+Engineering";
+          } else if (img.alt.includes("AWS")) {
+            this.src =
+              "https://via.placeholder.com/500x300/ff9900/10002b?text=AWS+Certification";
+          } else if (img.alt.includes("Google")) {
+            this.src =
+              "https://via.placeholder.com/500x300/5a189a/ffffff?text=Google+Cloud+Certification";
+          } else if (img.alt.includes("Databricks")) {
+            this.src =
+              "https://via.placeholder.com/500x300/9d4edd/ffffff?text=Databricks+Certification";
+          } else if (img.alt.includes("Kafka")) {
+            this.src =
+              "https://via.placeholder.com/500x300/10002b/ffffff?text=Kafka+Certification";
+          } else {
+            this.src =
+              "https://via.placeholder.com/800x450/5a189a/ffffff?text=Project+Image";
+          }
+        };
+        // Trigger error check
+        img.src = img.src;
+      }
+
+      // Animation on scroll function
+      function animateOnScroll() {
+        const elements = document.querySelectorAll(
+          ".fade-in, .slide-in-left, .slide-in-right, .scale-in"
+        );
+        const skillTags = document.querySelectorAll(".skill-tag");
+
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("appear");
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.15 }
+        );
+
+        elements.forEach((element) => {
+          observer.observe(element);
+        });
+
+        // Special observer for skill tags with staggered animation
+        const skillObserver = new IntersectionObserver(
+          (entries) => {
+            if (entries[0].isIntersecting) {
+              skillTags.forEach((tag, index) => {
+                setTimeout(() => {
+                  tag.classList.add("appear");
+                }, index * 100); // 100ms delay between each tag
+              });
+              skillObserver.unobserve(entries[0].target);
+            }
+          },
+          { threshold: 0.5 }
+        );
+
+        if (skillTags.length > 0) {
+          skillObserver.observe(document.querySelector(".skills"));
+        }
+      }
+
+      // Initialize when the page loads
+      window.onload = function () {
+        // Add animation classes to elements
+        document.querySelectorAll("section h2").forEach((heading) => {
+          heading.classList.add("slide-in-left");
+        });
+
+        document.querySelectorAll(".card").forEach((card) => {
+          card.classList.add("fade-in");
+        });
+
+        document.querySelector(".profile-image").classList.add("scale-in");
+        document.querySelectorAll(".timeline-item").forEach((item) => {
+          item.classList.add("slide-in-right");
+        });
+
+        // Initialize animations
+        animateOnScroll();
+
+        // Handle all images with error fallbacks
+        const images = document.querySelectorAll("img");
+        images.forEach(handleImageError);
+
+        // Load publications from publications.md
+        loadPublications();
+        
+        // Load certifications from JSON and initialize carousel
+        loadCertifications();
+      };
+      
+      // Function to load certifications from JSON file
+      function loadCertifications() {
+        console.log('Loading certifications from JSON...');
+        fetch('assets/data/certifications.json')
+          .then(response => {
+            if (!response.ok) {
+              console.error('Failed to load certifications - response not OK');
+              throw new Error('Failed to load certifications');
+            }
+            return response.json();
+          })
+          .then(certifications => {
+            console.log("Loaded certifications:", certifications);
+            console.log(`Found ${certifications.length} certification items`);
+            if (certifications.length > 0) {
+              console.log('First certification:', certifications[0]);
+            }
+            initCarousel(certifications);
+          })
+          .catch(error => {
+            console.error('Error loading certifications:', error);
+            document.querySelector('.carousel-track').innerHTML = `
+              <div class="loading-slide">
+                <div class="loading-content">
+                  <h3>Error loading certifications</h3>
+                  <p>Please try again later.</p>
+                  <div class="loading-indicator">
+                    <i class="fas fa-exclamation-circle" style="font-size: 2rem; color: #ff6b6b;"></i>
+                  </div>
+                </div>
+              </div>
+            `;
+          });
+      }
+      
+      // Initialize the carousel with certification data
+      function initCarousel(certifications) {
+        const carouselTrack = document.querySelector('.carousel-track');
+        const navContainer = document.querySelector('.carousel-nav');
+        
+        // Clear placeholder content
+        carouselTrack.innerHTML = '';
+        navContainer.innerHTML = '';
+        
+        if (!certifications || certifications.length === 0) {
+          carouselTrack.innerHTML = `
+            <div class="loading-slide">
+              <div class="loading-content">
+                <h3>No certifications found</h3>
+                <p>Check back later for updates.</p>
+                <div class="loading-indicator">
+                  <i class="fas fa-certificate" style="font-size: 2rem; color: var(--primary); opacity: 0.5;"></i>
+                </div>
+              </div>
+            </div>
+          `;
+          return;
+        }
+
+        // Group certifications into slides of 3
+        const itemsPerSlide = 3;
+        const numberOfSlides = Math.ceil(certifications.length / itemsPerSlide);
+        
+        console.log(`Creating carousel with ${certifications.length} items across ${numberOfSlides} slides`);
+        
+        // Create slides
+        for(let slideIndex = 0; slideIndex < numberOfSlides; slideIndex++) {
+          const slide = document.createElement('div');
+          slide.className = 'carousel-slide';
+          
+          // Calculate range for this slide
+          const startIndex = slideIndex * itemsPerSlide;
+          const endIndex = Math.min(startIndex + itemsPerSlide, certifications.length);
+          
+          console.log(`Slide ${slideIndex+1}: Items ${startIndex+1} to ${endIndex} (of ${certifications.length})`);
+          
+          // Add certification items to this slide
+          for(let certIndex = startIndex; certIndex < endIndex; certIndex++) {
+            const cert = certifications[certIndex];
+            
+            // Format issue date if available
+            let issueDateText = '';
+            if (cert.issueDate) {
+              try {
+                const issueDate = new Date(cert.issueDate);
+                issueDateText = issueDate.toLocaleDateString('en-US', { 
+                  year: 'numeric', 
+                  month: 'long' 
+                });
+              } catch (e) {
+                issueDateText = cert.issueDate; // Use as is if parsing fails
+              }
+            }
+            
+            const certItem = document.createElement('div');
+            certItem.className = 'carousel-slide-content';
+            certItem.innerHTML = `
+              <a href="${cert.verifyUrl}" target="_blank" title="Click to verify certification">
+                <img src="${cert.imageUrl}" alt="${cert.title}" 
+                     onerror="this.onerror=null; this.src='https://via.placeholder.com/500x300/ff9900/10002b?text=${encodeURIComponent(cert.title)}';" />
+              </a>
+              <div class="cert-info">
+                <a href="${cert.verifyUrl}" target="_blank" title="Click to verify certification" style="text-decoration: none;">
+                  <h3>${cert.title}</h3>
+                </a>
+                ${cert.organization ? `<div class="cert-issuer"><i class="fas fa-building"></i> ${cert.organization}</div>` : ''}
+                ${issueDateText ? `<div class="cert-date"><i class="fas fa-calendar-alt"></i> ${issueDateText}</div>` : ''}
+              </div>
+            `;
+            
+            slide.appendChild(certItem);
+          }
+          
+          carouselTrack.appendChild(slide);
+          
+          // Create navigation dot
+          const dot = document.createElement('div');
+          dot.className = 'carousel-dot';
+          if (slideIndex === 0) dot.classList.add('active');
+          dot.dataset.index = slideIndex;
+          navContainer.appendChild(dot);
+        }
+        
+        // Add counter
+        const counter = document.createElement('div');
+        counter.className = 'carousel-counter';
+        counter.textContent = `1 of ${numberOfSlides}`;
+        
+        // Add prev/next buttons
+        const prevBtn = document.createElement('button');
+        prevBtn.className = 'carousel-btn prev';
+        prevBtn.innerHTML = '<i class="fas fa-chevron-left"></i>';
+        prevBtn.setAttribute('aria-label', 'Previous slide');
+        
+        const nextBtn = document.createElement('button');
+        nextBtn.className = 'carousel-btn next';
+        nextBtn.innerHTML = '<i class="fas fa-chevron-right"></i>';
+        nextBtn.setAttribute('aria-label', 'Next slide');
+        
+        const carouselContainer = document.querySelector('.carousel-container');
+        carouselContainer.appendChild(counter);
+        carouselContainer.appendChild(prevBtn);
+        carouselContainer.appendChild(nextBtn);
+        
+        // Initialize carousel functionality
+        setupCarousel();
+      }
+      
+      // Set up carousel navigation and controls
+      function setupCarousel() {
+        const track = document.querySelector('.carousel-track');
+        const slides = Array.from(track.children);
+        const nextButton = document.querySelector('.carousel-btn.next');
+        const prevButton = document.querySelector('.carousel-btn.prev');
+        const dotsNav = document.querySelector('.carousel-nav');
+        const dots = Array.from(dotsNav.children);
+        const carouselContainer = document.querySelector('.carousel-container');
+        const counter = document.querySelector('.carousel-counter');
+        
+        if (slides.length <= 1) {
+          // Hide navigation if only one slide
+          nextButton.style.display = 'none';
+          prevButton.style.display = 'none';
+          dotsNav.style.display = 'none';
+          counter.style.display = 'none';
+          return;
+        }
+        
+        console.log(`Carousel setup: ${slides.length} slides detected`);
+        
+        // Set the width of track based on the number of slides
+        const slideWidth = slides[0].getBoundingClientRect().width;
+        track.style.width = slideWidth * slides.length + 'px';
+        
+        // Position slides next to one another
+        slides.forEach((slide, index) => {
+          slide.style.left = slideWidth * index + 'px';
+          console.log(`Positioned slide ${index+1} at ${slideWidth * index}px`);
+        });
+
+        // Track the current slide
+        let currentSlideIndex = 0;
+        
+        const moveToSlide = (targetIndex) => {
+          // Ensure targetIndex is within bounds
+          if (targetIndex < 0) targetIndex = slides.length - 1;
+          if (targetIndex >= slides.length) targetIndex = 0;
+          
+          console.log(`Moving to slide ${targetIndex + 1} of ${slides.length}`);
+          
+          currentSlideIndex = targetIndex;
+          
+          // Move the track to the target slide
+          track.style.transform = `translateX(-${slideWidth * targetIndex}px)`;
+          
+          // Update active dot
+          dots.forEach((dot, index) => {
+            dot.classList.toggle('active', index === targetIndex);
+          });
+          
+          // Update counter
+          if (counter) {
+            counter.textContent = `${targetIndex + 1} of ${slides.length}`;
+          }
+          
+          // Update ARIA attributes for accessibility
+          slides.forEach((slide, index) => {
+            const isCurrentSlide = index === targetIndex;
+            slide.setAttribute('aria-hidden', !isCurrentSlide);
+            
+            // Make links in inactive slides unfocusable
+            const focusableElements = slide.querySelectorAll('a, button');
+            focusableElements.forEach(el => {
+              el.setAttribute('tabindex', isCurrentSlide ? '0' : '-1');
+            });
+        });
+      };
+        
+        // Move to next slide
+        const moveToNextSlide = () => {
+          moveToSlide(currentSlideIndex + 1);
+        };
+        
+        // Move to previous slide
+        const moveToPrevSlide = () => {
+          moveToSlide(currentSlideIndex - 1);
+        };
+        
+        // Add click event listeners
+        prevButton.addEventListener('click', (e) => {
+          e.preventDefault();
+          moveToPrevSlide();
+        });
+        
+        nextButton.addEventListener('click', (e) => {
+          e.preventDefault();
+          moveToNextSlide();
+        });
+        
+        // When I click the nav indicators, move to that slide
+        dotsNav.addEventListener('click', e => {
+          const targetDot = e.target.closest('div.carousel-dot');
+          if (!targetDot) return;
+          
+          const targetIndex = parseInt(targetDot.dataset.index);
+          moveToSlide(targetIndex);
+        });
+        
+        // Touch swipe functionality
+        let touchStartX = 0;
+        let touchEndX = 0;
+        
+        carouselContainer.addEventListener('touchstart', e => {
+          touchStartX = e.changedTouches[0].screenX;
+        }, { passive: true });
+        
+        carouselContainer.addEventListener('touchend', e => {
+          touchEndX = e.changedTouches[0].screenX;
+          handleSwipe();
+        }, { passive: true });
+        
+        function handleSwipe() {
+          const swipeThreshold = 50; // Minimum distance required for a swipe
+          
+          if (touchEndX + swipeThreshold < touchStartX) {
+            moveToNextSlide();
+          } else if (touchEndX > touchStartX + swipeThreshold) {
+            moveToPrevSlide();
+          }
+        }
+        
+        // Keyboard navigation
+        carouselContainer.setAttribute('tabindex', '0');
+        carouselContainer.setAttribute('role', 'region');
+        carouselContainer.setAttribute('aria-label', 'Certifications carousel');
+        
+        carouselContainer.addEventListener('keydown', e => {
+          if (e.key === 'ArrowLeft') {
+            e.preventDefault();
+            moveToPrevSlide();
+          } else if (e.key === 'ArrowRight') {
+            e.preventDefault();
+            moveToNextSlide();
+          }
+        });
+        
+        // Make dots keyboard navigable
+        dots.forEach((dot, index) => {
+          dot.setAttribute('tabindex', '0');
+          dot.setAttribute('role', 'button');
+          dot.setAttribute('aria-label', `Show certifications group ${index + 1}`);
+          
+          dot.addEventListener('keydown', e => {
+            if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault();
+              moveToSlide(index);
+            }
+          });
+        });
+        
+        // Set initial state
+        moveToSlide(0);
+        
+        console.log('Carousel setup complete - manual navigation only');
+      }
+      
+      // Function to load publications from markdown file
+      function loadPublications() {
+        fetch('assets/data/publications.md')
+          .then(response => {
+            if (!response.ok) {
+              throw new Error('Failed to load publications');
+            }
+            return response.text();
+          })
+          .then(markdown => {
+            const publications = parsePublicationsMarkdown(markdown);
+            displayPublications(publications);
+          })
+          .catch(error => {
+            console.error('Error loading publications:', error);
+            document.getElementById('publications-container').innerHTML = `
+              <li>
+                <h3>Error loading publications</h3>
+                <p>Please try again later.</p>
+              </li>
+            `;
+          });
+      }
+
+      // Parse markdown content to extract publications
+      function parsePublicationsMarkdown(markdown) {
+        const publications = [];
+        let currentPublication = null;
+        
+        const lines = markdown.split('\n').filter(line => line.trim());
+        
+        for (const line of lines) {
+          if (line.startsWith('## ')) {
+            // If we were processing a publication, push it to the array
+            if (currentPublication) {
+              publications.push(currentPublication);
+            }
+            
+            // Start a new publication
+            currentPublication = {
+              title: line.replace('## ', '').trim(),
+              details: '',
+              url: ''
+            };
+          } else if (line.startsWith('http')) {
+            // This is a URL
+            if (currentPublication) {
+              currentPublication.url = line.trim();
+            }
+          } else if (currentPublication && !line.startsWith('#')) {
+            // This is publication details
+            currentPublication.details += currentPublication.details ? ' ' + line : line;
+          }
+        }
+        
+        // Don't forget to add the last publication
+        if (currentPublication) {
+          publications.push(currentPublication);
+        }
+        
+        return publications;
+      }
+
+      // Display publications in the DOM
+      function displayPublications(publications) {
+        const container = document.getElementById('publications-container');
+        
+        if (!publications || publications.length === 0) {
+          container.innerHTML = `
+            <li>
+              <h3>No publications found</h3>
+              <p>Check back later for updates.</p>
+            </li>
+          `;
+          return;
+        }
+        
+        let html = '';
+        
+        publications.forEach(pub => {
+          html += `
+            <li>
+              <h3>"${pub.title}"</h3>
+              <p>${pub.details}</p>
+              <a href="${pub.url}" class="pdf-link" target="_blank">
+                <i class="fab fa-medium"></i> Read on Medium
+              </a>
+            </li>
+          `;
+        });
+        
+        container.innerHTML = html;
+      }
+    </script>
+  </body>
+</html>

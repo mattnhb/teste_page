@@ -1,0 +1,160 @@
+/* Timeline section */
+.timeline {
+  position: relative;
+  margin-top: 3rem;
+  padding-left: 2rem;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 2px;
+  background: linear-gradient(
+    to bottom,
+    var(--primary),
+    var(--secondary)
+  );
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 2rem;
+  padding-left: 1.5rem;
+}
+
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: -10px;
+  top: 5px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--dark);
+  border: 2px solid var(--primary);
+  z-index: 1;
+}
+
+.timeline-date {
+  font-weight: bold;
+  color: var(--secondary);
+  margin-bottom: 0.5rem;
+}
+
+/* Certifications section */
+.cert-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.cert-card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.cert-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.cert-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.cert-card h3 {
+  padding: 1rem;
+  font-size: 1.2rem;
+  color: var(--light);
+}
+
+/* Publication list */
+.publication-list {
+  list-style: none;
+}
+
+.publication-list li {
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.publication-list li:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.publication-list h3 {
+  color: var(--secondary);
+  margin-bottom: 0.5rem;
+  font-size: 1.3rem;
+}
+
+.publication-list p {
+  margin-bottom: 0.5rem;
+  font-style: italic;
+  opacity: 0.8;
+}
+
+/* Project gallery */
+.project-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.project {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  height: 200px;
+  transition: all 0.3s ease;
+}
+
+.project:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.project img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.5s ease;
+}
+
+.project:hover img {
+  transform: scale(1.05);
+}
+
+.project-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+  padding: 1.5rem;
+  transform: translateY(100%);
+  transition: transform 0.5s ease;
+}
+
+.project:hover .project-overlay {
+  transform: translateY(0);
+}
+
+.project-title {
+  color: var(--light);
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+} 

@@ -1,0 +1,154 @@
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Text reveal effects */
+@keyframes subtleNeonGlow {
+  0%, 100% {
+    text-shadow: 0 0 1px #fff, 0 0 3px var(--accent), 0 0 6px var(--primary);
+  }
+  50% {
+    text-shadow: 0 0 2px #fff, 0 0 5px var(--accent), 0 0 10px var(--primary);
+  }
+}
+
+.name-text {
+  display: inline-block;
+  padding: 0 3px;
+  font-weight: 600;
+  color: #fff;
+  animation: subtleNeonGlow 3s ease-in-out infinite;
+}
+
+.name-text:nth-child(1) {
+  animation-delay: 0.2s;
+}
+
+.name-text:nth-child(2) {
+  animation-delay: 0.4s;
+}
+
+.name-text:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+.name-text:nth-child(4) {
+  animation-delay: 0.8s;
+}
+
+h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1.2rem;
+  color: var(--accent);
+  animation: fadeIn 1s ease-out;
+}
+
+.subtitle {
+  font-size: 1.4rem;
+  margin-bottom: 2rem;
+  animation: slideUp 1s ease-out;
+  color: var(--primary);
+  font-weight: 500;
+}
+
+/* Animations on scroll */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in.appear {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.slide-in-left {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.slide-in-left.appear {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.slide-in-right {
+  opacity: 0;
+  transform: translateX(50px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.slide-in-right.appear {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.scale-in {
+  opacity: 0;
+  transform: scale(0.8);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.scale-in.appear {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Staggered animation for skill tags */
+@keyframes tagAppear {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.skill-tag {
+  opacity: 0;
+}
+
+.skill-tag.appear {
+  animation: tagAppear 0.5s forwards;
+}
+
+/* Loading animation */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+}
+
+.loading-indicator i {
+  animation: pulse 1.5s infinite ease-in-out;
+} 

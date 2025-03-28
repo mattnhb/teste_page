@@ -1,0 +1,126 @@
+:root {
+  --primary: #9d4edd; /* Vibrant purple */
+  --secondary: #5a189a; /* Deep purple */
+  --dark: #10002b; /* Very dark purple/black */
+  --light: #f8f9fa; /* Light gray */
+  --accent: #c77dff; /* Light purple accent */
+  --chart: #ff9e00; /* Orange-gold for contrast */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+body {
+  background-color: var(--dark);
+  color: var(--light);
+  min-height: 100vh;
+  overflow-x: hidden;
+  background-image: radial-gradient(
+      circle at 10% 20%,
+      rgba(157, 78, 221, 0.05) 0%,
+      transparent 20%
+    ),
+    radial-gradient(
+      circle at 80% 40%,
+      rgba(157, 78, 221, 0.03) 0%,
+      transparent 20%
+    ),
+    radial-gradient(
+      circle at 40% 80%,
+      rgba(90, 24, 154, 0.05) 0%,
+      transparent 20%
+    ),
+    radial-gradient(
+      circle at 90% 90%,
+      rgba(90, 24, 154, 0.03) 0%,
+      transparent 15%
+    );
+  background-attachment: fixed;
+}
+
+header {
+  text-align: center;
+  padding: 2rem;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+}
+
+section {
+  margin-bottom: 5rem;
+}
+
+.section-title {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 2.5rem;
+  font-size: 2.2rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: var(--light);
+}
+
+.section-title::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(to right, var(--primary), var(--secondary));
+  border-radius: 2px;
+}
+
+footer {
+  text-align: center;
+  padding: 2rem;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.copyright {
+  margin-top: 3rem;
+}
+
+/* Grid pattern background */
+.grid-pattern {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: 50px 50px;
+  background-image: linear-gradient(
+      rgba(157, 78, 221, 0.03) 1px,
+      transparent 1px
+    ),
+    linear-gradient(90deg, rgba(157, 78, 221, 0.03) 1px, transparent 1px);
+  z-index: -2;
+  pointer-events: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  .subtitle {
+    font-size: 1.2rem;
+  }
+
+  .card-container {
+    grid-template-columns: 1fr;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+} 
