@@ -37,6 +37,7 @@
         backdrop-filter: blur(10px);
         padding: 2rem;
         margin: 2rem auto;
+        max-width: 100%;
       }
       .carousel-control-prev,
       .carousel-control-next {
@@ -79,25 +80,14 @@
         align-items: center;
         backdrop-filter: blur(5px);
         border: 1px solid rgba(255, 255, 255, 0.1);
-        transition: all 0.3s ease;
         min-height: 280px;
-      }
-      .cert-item:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-        border-color: var(--primary);
       }
       .cert-item img {
         max-width: 90%;
         height: 140px;
         margin-bottom: 1rem;
         border-radius: 8px;
-        transition: all 0.4s ease;
         border: 3px solid rgba(255, 255, 255, 0.1);
-      }
-      .cert-item:hover img {
-        transform: scale(1.05);
-        border-color: var(--accent);
       }
       .cert-item h3 {
         color: var(--light);
@@ -378,32 +368,30 @@
 
       <section id="certifications">
         <h2 class="section-title">Certifications</h2>
-        <div class="card">
-          <div id="certificationsCarousel" class="carousel carousel-certifications slide" data-bs-ride="false">
-            <div class="carousel-inner">
-              <!-- Loading state, will be replaced with certifications -->
-              <div class="carousel-item active">
-                <div class="loading-certifications">
-                  <div class="text-center">
-                    <div class="spinner-border text-primary mb-3" role="status">
-                      <span class="visually-hidden">Loading...</span>
-                    </div>
-                    <h3>Loading certifications...</h3>
+        <div id="certificationsCarousel" class="carousel carousel-certifications slide" data-bs-ride="false">
+          <div class="carousel-inner">
+            <!-- Loading state, will be replaced with certifications -->
+            <div class="carousel-item active">
+              <div class="loading-certifications">
+                <div class="text-center">
+                  <div class="spinner-border text-primary mb-3" role="status">
+                    <span class="visually-hidden">Loading...</span>
                   </div>
+                  <h3>Loading certifications...</h3>
                 </div>
               </div>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#certificationsCarousel" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#certificationsCarousel" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
-            </button>
-            <div class="carousel-indicators">
-              <!-- Will be filled dynamically -->
-            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#certificationsCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#certificationsCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+          <div class="carousel-indicators">
+            <!-- Will be filled dynamically -->
           </div>
         </div>
       </section>

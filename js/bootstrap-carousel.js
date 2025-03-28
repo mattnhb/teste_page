@@ -119,12 +119,12 @@ function initBootstrapCarousel(certifications) {
       // Create certification item
       col.innerHTML = `
         <div class="cert-item">
-          <a href="${cert.verifyUrl}" target="_blank" title="Click to verify certification">
+          <a href="${cert.verifyUrl}" target="_blank" title="View certification">
             <img src="${cert.imageUrl}" alt="${cert.title}" 
                  onerror="this.onerror=null; this.src='https://via.placeholder.com/500x300/ff9900/10002b?text=${encodeURIComponent(cert.title)}';" />
           </a>
           <div class="cert-info">
-            <a href="${cert.verifyUrl}" target="_blank" title="Click to verify certification" style="text-decoration: none;">
+            <a href="${cert.verifyUrl}" target="_blank" title="View certification" style="text-decoration: none;">
               <h3>${cert.title}</h3>
             </a>
             ${cert.organization ? `<div class="cert-issuer"><i class="fas fa-building"></i> ${cert.organization}</div>` : ''}
