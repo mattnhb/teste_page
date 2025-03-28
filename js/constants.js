@@ -37,7 +37,7 @@ const API = {
 // Default images
 const DEFAULT_IMAGES = {
   PROFILE: "https://via.placeholder.com/200x200/9d4edd/ffffff?text=Mateus+Nicolas",
-  COMPANY_LOGO: "assets/images/default-company.png",
+  COMPANY_LOGO: "assets/images/companies/default-company.png",
 };
 
 // Export all constants

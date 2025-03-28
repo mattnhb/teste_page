@@ -3,7 +3,7 @@
     "period": "Nov 2024 - Present",
     "role": "Senior Data Engineer - Asset Custody Services",
     "company": "Itaú Unibanco",
-    "logo": "assets/images/itau_logo.jpg",
+    "logo": "assets/images/companies/itau_logo.jpg",
     "description": "",
     "highlights": [
     ],
@@ -13,7 +13,7 @@
     "period": "Jun 2023 - Oct 2024",
     "role": "Senior Data Engineer - Fraud Prevention",
     "company": "Itaú Unibanco",
-    "logo": "assets/images/itau_logo.jpg",
+    "logo": "assets/images/companies/itau_logo.jpg",
     "description": "",
     "highlights": [
     ],
@@ -23,7 +23,7 @@
     "period": "Nov 2022 - Jun 2023",
     "role": "Senior Data Engineer",
     "company": "Banco Inter",
-    "logo": "assets/images/inter_logo.jpg",
+    "logo": "assets/images/companies/inter_logo.jpg",
     "description": "",
     "highlights": [
     ],
@@ -33,7 +33,7 @@
     "period": "Jan 2022 - Nov 2022",
     "role": "Data Engineer",
     "company": "Banco Inter",
-    "logo": "assets/images/inter_logo.jpg",
+    "logo": "assets/images/companies/inter_logo.jpg",
     "description": "",
     "highlights": [
     ],
@@ -43,7 +43,7 @@
     "period": "Jan 2021 - Jan 2022",
     "role": "Junior Data Engineer",
     "company": "Banco Inter",
-    "logo": "assets/images/inter_logo.jpg",
+    "logo": "assets/images/companies/inter_logo.jpg",
     "description": "",
     "highlights": [
     ],
@@ -53,7 +53,7 @@
     "period": "Mar 2020 - Jan 2021",
     "role": "Intern Data Engineer",
     "company": "Opala Studios",
-    "logo": "assets/images/opalastudios_logo.jpg",
+    "logo": "assets/images/companies/opalastudios_logo.jpg",
     "description": "",
     "highlights": [
     ],
@@ -63,7 +63,7 @@
     "period": "Apr 2019 - Mar 2020",
     "role": "Python Developer",
     "company": "Universidade Federal do Paraná",
-    "logo": "assets/images/ufpr_logo.jpg",
+    "logo": "assets/images/companies/ufpr_logo.jpg",
     "description": "",
     "highlights": [
     ],
