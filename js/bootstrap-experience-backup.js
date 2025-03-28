@@ -65,20 +65,12 @@ function renderExperience(experienceData) {
         </ul>
       </div>
       ` : '';
-
-    // Default logo if none is provided
-    const logoSrc = experience.logo || 'assets/images/default-company.png';
     
     html += `
       <div class="experience-card">
-        <div class="experience-header">
-          <img src="${logoSrc}" alt="${experience.company} logo" class="company-logo" onerror="this.src='assets/images/default-company.png';">
-          <div class="experience-title">
-            <span class="experience-period">${experience.period}</span>
-            <h3 class="experience-role">${experience.role}</h3>
-            <h4 class="experience-company">${experience.company}</h4>
-          </div>
-        </div>
+        <span class="experience-period">${experience.period}</span>
+        <h3 class="experience-role">${experience.role}</h3>
+        <h4 class="experience-company">${experience.company}</h4>
         <p class="experience-description">${experience.description}</p>
         ${highlights}
         ${techTags ? `<div class="experience-tech">${techTags}</div>` : ''}

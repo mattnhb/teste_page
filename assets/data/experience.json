@@ -1,8 +1,9 @@
 [
   {
     "period": "2021 - Present",
-    "role": "Senior Data Engineer",
-    "company": "Tech Solutions Inc.",
+    "role": "Senior Data Engineer - Asset Custody Services",
+    "company": "Itaú Unibanco",
+    "logo": "assets/images/itau_logo.jpg",
     "description": "Leading a team of data engineers in designing and implementing scalable data platforms. Architecting cloud-based data solutions on AWS and GCP, optimizing data pipelines, and establishing data governance practices. Reduced processing costs by 35% while increasing data throughput.",
     "highlights": [
       "Led a team of 5 data engineers across 3 major projects",
@@ -13,8 +14,9 @@
   },
   {
     "period": "2019 - 2021",
-    "role": "Data Engineer",
-    "company": "DataStream Analytics",
+    "role": "Senior Data Engineer - Fraud Prevention",
+    "company": "Itaú Unibanco",
+    "logo": "assets/images/itau_logo.jpg",
     "description": "Developed and maintained data pipelines using Apache Airflow, Spark, and Kafka. Built real-time streaming solutions for high-volume data processing. Collaborated with data scientists to implement ML models in production environments.",
     "highlights": [
       "Architected real-time streaming pipeline processing 50M+ events daily",
@@ -27,6 +29,7 @@
     "period": "2017 - 2019",
     "role": "Data Analyst",
     "company": "Global Insights Corp",
+    "logo": "assets/images/company-global-insights.png",
     "description": "Created data visualizations and dashboards for business metrics using Tableau and PowerBI. Wrote complex SQL queries for data analysis and reporting. Automated reporting workflows, saving over 20 hours of manual work weekly.",
     "highlights": [
       "Created executive dashboards used by C-level management for decision making",
