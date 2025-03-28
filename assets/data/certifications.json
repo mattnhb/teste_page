@@ -10,8 +10,8 @@
     "verifyUrl": "https://www.credly.com/badges/3884c795-e125-4199-8897-f498fd3109ca/public_url"
   },
   {
-    "title": "AWS Certified Solutions Architect - Associate",
-    "imageUrl": "assets/images/SAA.png",
-    "verifyUrl": "https://www.credly.com/badges/47aab480-9f01-4be1-b5f5-2cff9adab13b/public_url"
+    "title": "AWS Certified Developer - Associate",
+    "imageUrl": "https://d1.awsstatic.com/training-and-certification/certification-badges/AWS-Certified-Developer-Associate_badge.5c083fa855fe82c1cf2d0c8b883c265ec72bbc86.png",
+    "verifyUrl": "https://www.credly.com/badges/aws-certified-developer-associate"
   }
 ] 
