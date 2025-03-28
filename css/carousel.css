@@ -3,3 +3,181 @@
  * The custom carousel styles have been replaced with Bootstrap's carousel styles
  * and custom overrides are now directly in index.html or in dedicated CSS classes.
  */ 
+
+/* Bootstrap carousel styles */
+.carousel-certifications {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  padding: 2rem;
+  margin: 2rem auto;
+  max-width: 100%;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  width: 40px;
+  height: 40px;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0.7;
+}
+
+.carousel-control-prev {
+  left: 15px;
+}
+
+.carousel-control-next {
+  right: 15px;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+  background: var(--primary);
+  opacity: 1;
+}
+
+.carousel-indicators button {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.2);
+  margin: 0 6px;
+}
+
+.carousel-indicators button.active {
+  background-color: var(--primary);
+}
+
+.cert-item {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  padding: 1.2rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  min-height: 280px;
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.cert-item:hover {
+  box-shadow: 0 5px 15px rgba(157, 78, 221, 0.3);
+  border-color: var(--primary);
+}
+
+.cert-item img {
+  max-width: 90%;
+  height: 140px;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  border: 3px solid rgba(255, 255, 255, 0.1);
+  transition: border-color 0.3s ease;
+}
+
+.cert-item:hover img {
+  border-color: var(--accent);
+}
+
+.cert-item h3 {
+  color: var(--light);
+  margin-bottom: 0.8rem;
+  text-align: center;
+  font-size: 1.2rem;
+  position: relative;
+  padding-bottom: 0.6rem;
+  transition: color 0.3s ease;
+}
+
+.cert-item:hover h3 {
+  color: var(--accent);
+}
+
+.cert-item h3::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 3px;
+  background: linear-gradient(to right, var(--primary), var(--accent));
+  border-radius: 3px;
+  transition: width 0.3s ease;
+}
+
+.cert-item:hover h3::after {
+  width: 70px;
+}
+
+.cert-info {
+  width: 100%;
+  text-align: center;
+}
+
+.cert-issuer, .cert-date {
+  color: var(--light);
+  opacity: 0.9;
+  margin-top: 0.5rem;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: opacity 0.3s ease;
+}
+
+.cert-issuer i, .cert-date i {
+  color: var(--accent);
+  font-size: 0.9rem;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.cert-item:hover .cert-issuer,
+.cert-item:hover .cert-date {
+  opacity: 1;
+}
+
+.cert-item:hover .cert-issuer i,
+.cert-item:hover .cert-date i {
+  color: var(--primary);
+  transform: scale(1.1);
+}
+
+.loading-certifications {
+  min-height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .cert-item {
+    min-height: 260px;
+  }
+  
+  .cert-item img {
+    height: 120px;
+  }
+  
+  .cert-item h3 {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .carousel-certifications {
+    padding: 1.5rem;
+  }
+  
+  .cert-item {
+    padding: 1rem;
+  }
+}

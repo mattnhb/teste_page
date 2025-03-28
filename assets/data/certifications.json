@@ -10,18 +10,38 @@
     "verifyUrl": "https://www.credly.com/badges/3884c795-e125-4199-8897-f498fd3109ca/public_url"
   },
   {
-    "title": "AWS Certified Cloud Practitioner",
-    "imageUrl": "assets/images/CCP.png",
-    "verifyUrl": "https://www.credly.com/badges/9c9b09dd-b597-494e-a4c3-148baa286aba/public_url"
-  },
-  {
     "title": "AWS Certified AI Practitioner",
     "imageUrl": "assets/images/AIF.png",
     "verifyUrl": "https://www.credly.com/badges/95d59989-d9d0-4117-aae2-0756f54e4765/public_url"
   },
   {
+    "title": "AWS Certified Cloud Practitioner",
+    "imageUrl": "assets/images/CCP.png",
+    "verifyUrl": "https://www.credly.com/badges/9c9b09dd-b597-494e-a4c3-148baa286aba/public_url"
+  },
+  {
     "title": "HashiCorp Certified: Terraform Associate (003)",
     "imageUrl": "assets/images/terraform.png",
     "verifyUrl": "https://www.credly.com/badges/95d59989-d9d0-4117-aae2-0756f54e4765/public_url"
+  },
+  {
+    "title": "[PCAP-31-03] PCAP™ – Certified Associate Python Programmer",
+    "imageUrl": "assets/images/pcap.png",
+    "verifyUrl": "https://www.credly.com/badges/c895c4ca-0559-413e-9bef-4a094c4e1567/public_url"
+  },
+  {
+    "title": "Astronomer Certification for Apache Airflow Fundamentals",
+    "imageUrl": "assets/images/ast1.png",
+    "verifyUrl": "https://www.credly.com/badges/b2d82adf-c395-47e1-8e9c-e4c05e16aedf/public_url"
+  },
+  {
+    "title": "Astronomer Certification DAG Authoring for Apache Airflow",
+    "imageUrl": "assets/images/ast2.png",
+    "verifyUrl": "https://www.credly.com/badges/5ae5e240-7f71-4f22-8c0a-26080a1ae213/public_url"
+  },
+  {
+    "title": "GitHub Foundations",
+    "imageUrl": "assets/images/github.png",
+    "verifyUrl": "https://www.credly.com/badges/9c9b09dd-b597-494e-a4c3-148baa286aba/public_url"
   }
 ] 
