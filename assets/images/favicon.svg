@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Database cylinder -->
+  <ellipse cx="16" cy="8" rx="12" ry="4" fill="#9D4EDD" fill-opacity="0.9"/>
+  <path d="M28 8V20C28 22.2091 22.6274 24 16 24C9.37258 24 4 22.2091 4 20V8" stroke="#9D4EDD" stroke-width="2"/>
+  <ellipse cx="16" cy="20" rx="12" ry="4" fill="#9D4EDD" fill-opacity="0.3"/>
+  
+  <!-- Cloud symbol -->
+  <path d="M20 12C22.2091 12 24 13.7909 24 16C24 18.2091 22.2091 20 20 20H14C11.7909 20 10 18.2091 10 16C10 13.7909 11.7909 12 14 12C14 9.79086 15.7909 8 18 8C20.2091 8 22 9.79086 22 12" stroke="#FFFFFF" stroke-width="1.5"/>
+</svg> 
