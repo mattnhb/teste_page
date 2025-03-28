@@ -1,0 +1,145 @@
+/* Publications styling */
+.publication-card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  padding: 1.5rem;
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.publication-card:hover {
+  box-shadow: 0 5px 15px rgba(157, 78, 221, 0.3);
+  border-color: var(--primary);
+}
+
+.publication-card h3 {
+  color: var(--light);
+  margin-bottom: 0.8rem;
+  font-size: 1.4rem;
+  position: relative;
+  padding-bottom: 0.6rem;
+  transition: color 0.3s ease;
+}
+
+.publication-card:hover h3 {
+  color: var(--accent);
+}
+
+.publication-card h3::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(to right, var(--primary), var(--accent));
+  border-radius: 3px;
+  transition: width 0.3s ease;
+}
+
+.publication-card:hover h3::after {
+  width: 100px;
+}
+
+.publication-date {
+  color: var(--light);
+  opacity: 0.8;
+  font-style: italic;
+  font-size: 0.95rem;
+  transition: opacity 0.3s ease;
+}
+
+.publication-date i {
+  color: var(--secondary);
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.publication-card:hover .publication-date {
+  opacity: 1;
+}
+
+.publication-card:hover .publication-date i {
+  color: var(--primary);
+  transform: scale(1.1);
+}
+
+.publication-card p {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+  color: var(--light);
+}
+
+.publication-link {
+  display: inline-flex;
+  align-items: center;
+  color: var(--light);
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 30px;
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.publication-link:hover {
+  background: var(--primary);
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* Bootstrap pagination styling */
+.publications-pagination {
+  margin-top: 2rem;
+}
+
+.page-item .page-link {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.1);
+  color: var(--light);
+  transition: all 0.3s ease;
+}
+
+.page-item .page-link:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: var(--primary);
+  color: var(--light);
+}
+
+.page-item.active .page-link {
+  background-color: var(--primary);
+  border-color: var(--primary);
+  color: white;
+}
+
+.page-item.disabled .page-link {
+  background-color: rgba(255, 255, 255, 0.03);
+  border-color: rgba(255, 255, 255, 0.05);
+  color: rgba(255, 255, 255, 0.3);
+}
+
+/* Loading and error states */
+.loading-publications {
+  min-height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .publication-card {
+    padding: 1.2rem;
+  }
+  
+  .publication-card h3 {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .publication-pagination .page-link {
+    padding: 0.4rem 0.8rem;
+  }
+} 

@@ -26,6 +26,7 @@
     <link rel="stylesheet" href="css/components.css" />
     <link rel="stylesheet" href="css/animations.css" />
     <link rel="stylesheet" href="css/carousel.css" />
+    <link rel="stylesheet" href="css/publications.css" />
     <link rel="stylesheet" href="css/sections.css" />
   </head>
   <body>
@@ -294,12 +295,18 @@
         <h2 class="section-title">Publications & Medium Articles</h2>
         <div class="card">
           <div class="card-icon"><i class="fas fa-book"></i></div>
-          <ul class="publication-list" id="publications-container">
-            <!-- Publications will be loaded dynamically from publications.md -->
-            <li class="loading-publications">
-              <h3>Loading publications...</h3>
-            </li>
-          </ul>
+          <div id="publications-container">
+            <!-- Publications will be loaded dynamically -->
+            <div class="loading-publications">
+              <div class="text-center">
+                <div class="spinner-border text-primary mb-3" role="status">
+                  <span class="visually-hidden">Loading...</span>
+                </div>
+                <h3>Loading publications...</h3>
+              </div>
+            </div>
+          </div>
+          <!-- Pagination will be added here dynamically -->
         </div>
       </section>
     </main>
@@ -317,7 +324,7 @@
     
     <!-- Modular JavaScript files -->
     <script src="js/main.js"></script>
-    <script src="js/publications.js"></script>
     <script src="js/bootstrap-carousel.js"></script>
+    <script src="js/bootstrap-publications.js"></script>
   </body>
 </html> 

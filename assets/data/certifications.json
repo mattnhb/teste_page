@@ -43,5 +43,10 @@
     "title": "GitHub Foundations",
     "imageUrl": "assets/images/github.png",
     "verifyUrl": "https://www.credly.com/badges/9c9b09dd-b597-494e-a4c3-148baa286aba/public_url"
+  },
+  {
+    "title": "Linux Professional Institute Linux Essentials",
+    "imageUrl": "assets/images/linux.png",
+    "verifyUrl": "https://cs.lpi.org/caf/Xamman/certification/verify/LPI000640712/vshq66j6hs"
   }
 ] 
