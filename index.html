@@ -60,71 +60,9 @@
       }
 
       header {
-        padding: 3rem 2rem;
-        background: var(--dark);
         text-align: center;
-        position: relative;
-        overflow: hidden;
-        border-bottom: 1px solid rgba(157, 78, 221, 0.2);
-      }
-
-      .header-content {
-        position: relative;
-        z-index: 1;
-      }
-
-      .header-bg {
-        display: none;
-      }
-
-      h1 {
-        font-size: 3.5rem;
-        margin-bottom: 1rem;
-        text-transform: uppercase;
-        letter-spacing: 3px;
-        text-shadow: 0 0 15px rgba(157, 78, 221, 0.5),
-          0 0 30px rgba(157, 78, 221, 0.3);
-        animation: fadeIn 1s ease-out;
-        color: var(--light);
-        font-weight: 700;
-      }
-
-      .subtitle {
-        font-size: 1.5rem;
-        opacity: 0.9;
-        margin-bottom: 2rem;
-        animation: slideUp 1s ease-out 0.3s forwards;
-        opacity: 0;
-        color: var(--accent);
-        font-weight: 300;
-        letter-spacing: 1px;
-      }
-
-      .social-icons {
-        display: flex;
-        justify-content: center;
-        gap: 1.5rem;
-        margin-top: 2rem;
-        animation: fadeIn 1s ease-out 0.6s forwards;
-        opacity: 0;
-      }
-
-      .social-icons a {
-        color: var(--light);
-        font-size: 1.8rem;
-        transition: all 0.3s ease;
-        background: rgba(157, 78, 221, 0.1);
-        border-radius: 50%;
-        width: 50px;
-        height: 50px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-
-      .social-icons a:hover {
-        color: var(--light);
-        background: var(--primary);
+        padding: 2rem;
+        background-color: rgba(0, 0, 0, 0.2);
       }
 
       main {
@@ -152,15 +90,25 @@
       }
 
       .card:hover {
-        background: rgba(255, 255, 255, 0.08);
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
       }
 
       .card::before {
-        display: none;
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background: linear-gradient(to right, var(--primary), var(--secondary));
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.3s ease;
       }
 
       .card:hover::before {
-        display: none;
+        transform: scaleX(1);
       }
 
       .card h2 {
@@ -208,7 +156,8 @@
       }
 
       .profile-image img:hover {
-        /* No hover effect */
+        transform: scale(1.05);
+        border-color: var(--primary);
       }
 
       .profile-content {
@@ -231,7 +180,7 @@
       }
 
       .card:hover .project-image img {
-        /* No hover effect */
+        transform: scale(1.05);
       }
 
       /* PDF links */
@@ -292,12 +241,12 @@
       }
 
       .btn:hover::before {
-        /* No hover effect */
-        opacity: 0;
+        opacity: 1;
       }
 
       .btn:hover {
-        background: linear-gradient(135deg, var(--secondary), var(--primary));
+        transform: translateY(-3px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
       }
 
       .btn-secondary {
@@ -332,7 +281,8 @@
       }
 
       .cert-card:hover {
-        background: rgba(255, 255, 255, 0.08);
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
       }
 
       .cert-card img {
@@ -410,9 +360,13 @@
         text-align: center;
         padding: 2rem;
         background-color: rgba(0, 0, 0, 0.2);
+      }
+
+      .copyright {
         margin-top: 3rem;
       }
 
+      /* Animations */
       @keyframes fadeIn {
         from {
           opacity: 0;
@@ -431,6 +385,81 @@
           transform: translateY(0);
           opacity: 1;
         }
+      }
+
+      /* Text reveal effect */
+      @keyframes subtleNeonGlow {
+        0%, 100% {
+          text-shadow: 0 0 1px #fff, 0 0 3px var(--accent), 0 0 6px var(--primary);
+        }
+        50% {
+          text-shadow: 0 0 2px #fff, 0 0 5px var(--accent), 0 0 10px var(--primary);
+        }
+      }
+
+      .name-text {
+        display: inline-block;
+        padding: 0 3px;
+        font-weight: 600;
+        color: #fff;
+        animation: subtleNeonGlow 3s ease-in-out infinite;
+      }
+
+      .name-text:nth-child(1) {
+        animation-delay: 0.2s;
+      }
+
+      .name-text:nth-child(2) {
+        animation-delay: 0.4s;
+      }
+
+      .name-text:nth-child(3) {
+        animation-delay: 0.6s;
+      }
+
+      .name-text:nth-child(4) {
+        animation-delay: 0.8s;
+      }
+
+      h1 {
+        font-size: 3.5rem;
+        margin-bottom: 1.2rem;
+        color: var(--accent);
+        animation: fadeIn 1s ease-out;
+      }
+
+      .subtitle {
+        font-size: 1.4rem;
+        margin-bottom: 2rem;
+        animation: slideUp 1s ease-out;
+        color: var(--primary);
+        font-weight: 500;
+      }
+
+      .social-icons {
+        display: flex;
+        justify-content: center;
+        gap: 1.5rem;
+        margin-top: 2rem;
+      }
+
+      .social-icons a {
+        color: var(--light);
+        font-size: 1.8rem;
+        transition: all 0.3s ease;
+        background: rgba(157, 78, 221, 0.1);
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .social-icons a:hover {
+        color: var(--light);
+        background: var(--primary);
+        transform: translateY(-3px);
       }
 
       /* Animations on scroll */
@@ -515,23 +544,6 @@
         pointer-events: none;
       }
 
-      .header-content .pdf-link {
-        color: var(--light);
-        background: rgba(255, 158, 0, 0.2);
-        border-radius: 50%;
-        width: 50px;
-        height: 50px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: all 0.3s ease;
-        margin-top: 0;
-      }
-
-      .header-content .pdf-link:hover {
-        background: var(--chart);
-      }
-
       .skills {
         display: flex;
         flex-wrap: wrap;
@@ -555,6 +567,7 @@
 
       .skill-tag:hover {
         background: var(--accent);
+        transform: translateY(-3px);
       }
 
       .timeline {
@@ -618,7 +631,8 @@
       }
 
       .project:hover {
-        /* No hover effect */
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
       }
 
       .project img {
@@ -629,7 +643,7 @@
       }
 
       .project:hover img {
-        /* No hover effect */
+        transform: scale(1.05);
       }
 
       .project-overlay {
@@ -644,8 +658,7 @@
       }
 
       .project:hover .project-overlay {
-        /* Keep overlay hidden */
-        transform: translateY(100%);
+        transform: translateY(0);
       }
 
       .project-title {
@@ -679,34 +692,19 @@
     <div class="grid-pattern"></div>
 
     <header>
-      <div class="header-bg"></div>
-      <div class="header-content">
-        <h1>Mateus Nicolas H. Balestrin</h1>
-        <p class="subtitle">
-          Data Engineer | Big Data Architecture | Cloud Specialist
-        </p>
-        <div class="social-icons">
-          <a href="https://github.com/mattnhb" target="_blank"
-            ><i class="fab fa-github"></i
-          ></a>
-          <a href="https://linkedin.com/in/mattnhb" target="_blank"
-            ><i class="fab fa-linkedin"></i
-          ></a>
-          <a href="https://twitter.com/mattnhb" target="_blank"
-            ><i class="fab fa-twitter"></i
-          ></a>
-          <a href="mailto:mateus.contact@example.com"
-            ><i class="fas fa-envelope"></i
-          ></a>
-          <a
-            href="assets/pdf/resume.pdf"
-            target="_blank"
-            class="pdf-link"
-            title="Download Resume"
-          >
-            <i class="fas fa-file-pdf"></i>
-          </a>
-        </div>
+      <h1>
+        <span class="name-text">Mateus</span> 
+        <span class="name-text">Nicolas</span> 
+        <span class="name-text">Hechenblaichner</span> 
+        <span class="name-text">Balestrin</span>
+      </h1>
+      <p class="subtitle">
+        Senior Data Engineer | Cloud & Big Data Architect | 4x AWS Certified | Spark & Terraform Expert
+      </p>
+      <div class="social-icons">
+        <a href="https://linkedin.com/in/mattnhb" target="_blank">
+          <i class="fab fa-linkedin"></i>
+        </a>
       </div>
     </header>
 
@@ -748,17 +746,14 @@
               new ideas, feel free to reach out.
             </p>
             <div class="skills">
-              <span class="skill-tag">Python</span>
-              <span class="skill-tag">SQL</span>
-              <span class="skill-tag">PySpark</span>
-              <span class="skill-tag">Hadoop</span>
               <span class="skill-tag">AWS</span>
-              <span class="skill-tag">GCP</span>
+              <span class="skill-tag">Python</span>
+              <span class="skill-tag">Spark</span>
               <span class="skill-tag">Airflow</span>
               <span class="skill-tag">Kafka</span>
-              <span class="skill-tag">Snowflake</span>
-              <span class="skill-tag">Docker</span>
-              <span class="skill-tag">dbt</span>
+              <span class="skill-tag">SQL</span>
+              <span class="skill-tag">Terraform</span>
+              <span class="skill-tag">Linux</span>
               <span class="skill-tag">Git</span>
             </div>
           </div>
@@ -799,7 +794,7 @@
               </a>
             </div>
           </div>
-
+          
           <div class="card">
             <div class="card-icon"><i class="fas fa-cloud"></i></div>
             <h2>Cloud-based Data Lake Architecture</h2>
@@ -926,54 +921,10 @@
 
       <section id="certifications">
         <h2 class="section-title">Certifications</h2>
-        <div class="cert-container">
-          <div class="cert-card">
-            <img
-              src="assets/images/cert1.jpg"
-              alt="AWS Certified Data Analytics"
-            />
-            <h3>AWS Certified Data Analytics - Specialty</h3>
-            <a href="assets/pdf/aws_cert.pdf" class="pdf-link" target="_blank">
-              <i class="fas fa-file-pdf"></i> Verify Certification
-            </a>
-          </div>
-          <div class="cert-card">
-            <img
-              src="assets/images/cert2.jpg"
-              alt="Google Cloud Professional Data Engineer"
-            />
-            <h3>Google Cloud Professional Data Engineer</h3>
-            <a href="assets/pdf/gcp_cert.pdf" class="pdf-link" target="_blank">
-              <i class="fas fa-file-pdf"></i> Verify Certification
-            </a>
-          </div>
-          <div class="cert-card">
-            <img
-              src="assets/images/cert3.jpg"
-              alt="Databricks Certified Associate Developer"
-            />
-            <h3>Databricks Certified Associate Developer for Apache Spark</h3>
-            <a
-              href="assets/pdf/databricks_cert.pdf"
-              class="pdf-link"
-              target="_blank"
-            >
-              <i class="fas fa-file-pdf"></i> Verify Certification
-            </a>
-          </div>
-          <div class="cert-card">
-            <img
-              src="assets/images/cert4.jpg"
-              alt="Confluent Certified Developer for Apache Kafka"
-            />
-            <h3>Confluent Certified Developer for Apache Kafka</h3>
-            <a
-              href="assets/pdf/kafka_cert.pdf"
-              class="pdf-link"
-              target="_blank"
-            >
-              <i class="fas fa-file-pdf"></i> Verify Certification
-            </a>
+        <div class="cert-container" id="certifications-container">
+          <!-- Certifications will be loaded dynamically from certifications.md -->
+          <div class="loading-certifications">
+            <h3>Loading certifications...</h3>
           </div>
         </div>
       </section>
@@ -988,70 +939,6 @@
               <h3>Loading publications...</h3>
             </li>
           </ul>
-        </div>
-      </section>
-
-      <section id="personal-projects">
-        <h2 class="section-title">Open Source & Personal Projects</h2>
-        <div class="card">
-          <div class="card-icon"><i class="fas fa-code-branch"></i></div>
-          <ul class="publication-list">
-            <li>
-              <h3>Data Pipeline Testing Framework</h3>
-              <p>
-                An open-source Python library for testing data quality in ETL
-                pipelines
-              </p>
-              <a
-                href="https://github.com/mattnhb/data-pipeline-testing"
-                class="pdf-link"
-                target="_blank"
-              >
-                <i class="fab fa-github"></i> View Repository
-              </a>
-            </li>
-            <li>
-              <h3>Kafka Schema Evolution Manager</h3>
-              <p>A tool for managing Avro schema evolution with Kafka topics</p>
-              <a
-                href="https://github.com/mattnhb/kafka-schema-manager"
-                class="pdf-link"
-                target="_blank"
-              >
-                <i class="fab fa-github"></i> View Repository
-              </a>
-            </li>
-            <li>
-              <h3>Data Engineering Resource Collection</h3>
-              <p>
-                A curated list of articles, tools, and learning resources for
-                data engineers
-              </p>
-              <a
-                href="https://github.com/mattnhb/data-engineering-resources"
-                class="pdf-link"
-                target="_blank"
-              >
-                <i class="fab fa-github"></i> View Repository
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <section id="contact">
-        <h2 class="section-title">Get In Touch</h2>
-        <div class="card">
-          <div class="card-icon"><i class="fas fa-paper-plane"></i></div>
-          <p>
-            I'm always open to discussing data engineering challenges, big data
-            architecture, or new opportunities in the field. Feel free to reach
-            out if you'd like to collaborate or just chat about data
-            technologies!
-          </p>
-          <a href="mailto:mateus.contact@example.com" class="btn"
-            >Send Email <i class="fas fa-envelope"></i
-          ></a>
         </div>
       </section>
     </main>
@@ -1164,10 +1051,6 @@
           item.classList.add("slide-in-right");
         });
 
-        document.querySelectorAll(".cert-card").forEach((cert) => {
-          cert.classList.add("fade-in");
-        });
-
         // Initialize animations
         animateOnScroll();
 
@@ -1175,48 +1058,118 @@
         const images = document.querySelectorAll("img");
         images.forEach(handleImageError);
 
-        // Add lightbox effect for certificate images
-        const certImages = document.querySelectorAll(".cert-card img");
-        certImages.forEach((img) => {
-          img.addEventListener("click", function () {
-            // Create a simple lightbox effect
-            const lightbox = document.createElement("div");
-            lightbox.style.position = "fixed";
-            lightbox.style.top = "0";
-            lightbox.style.left = "0";
-            lightbox.style.width = "100%";
-            lightbox.style.height = "100%";
-            lightbox.style.backgroundColor = "rgba(0,0,0,0.9)";
-            lightbox.style.display = "flex";
-            lightbox.style.alignItems = "center";
-            lightbox.style.justifyContent = "center";
-            lightbox.style.zIndex = "1000";
-            lightbox.style.cursor = "pointer";
-
-            const lightboxImg = document.createElement("img");
-            lightboxImg.src = this.src;
-            lightboxImg.style.maxWidth = "90%";
-            lightboxImg.style.maxHeight = "90%";
-            lightboxImg.style.objectFit = "contain";
-            lightboxImg.style.border = "5px solid white";
-            lightboxImg.style.borderRadius = "5px";
-
-            lightbox.appendChild(lightboxImg);
-            document.body.appendChild(lightbox);
-
-            // Close lightbox when clicked
-            lightbox.addEventListener("click", function () {
-              document.body.removeChild(lightbox);
-            });
-          });
-
-          // Add pointer cursor to indicate clickable
-          img.style.cursor = "pointer";
-        });
-
         // Load publications from publications.md
         loadPublications();
+        
+        // Load certifications from certifications.md
+        loadCertifications();
       };
+      
+      // Function to load certifications from markdown file
+      function loadCertifications() {
+        fetch('assets/data/certifications.md')
+          .then(response => {
+            if (!response.ok) {
+              throw new Error('Failed to load certifications');
+            }
+            return response.text();
+          })
+          .then(markdown => {
+            const certifications = parseCertificationsMarkdown(markdown);
+            displayCertifications(certifications);
+          })
+          .catch(error => {
+            console.error('Error loading certifications:', error);
+            document.getElementById('certifications-container').innerHTML = `
+              <div class="cert-card">
+                <h3>Error loading certifications</h3>
+                <p>Please try again later.</p>
+              </div>
+            `;
+          });
+      }
+      
+      // Parse markdown content to extract certifications
+      function parseCertificationsMarkdown(markdown) {
+        const certifications = [];
+        let currentCertification = null;
+        
+        const lines = markdown.split('\n').filter(line => line.trim());
+        
+        for (const line of lines) {
+          if (line.startsWith('## ')) {
+            // If we were processing a certification, push it to the array
+            if (currentCertification && currentCertification.title) {
+              certifications.push(currentCertification);
+            }
+            
+            // Start a new certification
+            currentCertification = {
+              title: line.replace('## ', '').trim(),
+              imageUrl: '',
+              verifyUrl: ''
+            };
+          } else if (line.startsWith('![') && currentCertification) {
+            // This is an image reference: ![alt text](url)
+            const match = line.match(/!\[.*?\]\((.*?)\)/);
+            if (match && match[1]) {
+              currentCertification.imageUrl = match[1].trim();
+            }
+          } else if (line.startsWith('[Verify') && currentCertification) {
+            // This is a verification link: [Verify](url)
+            const match = line.match(/\[Verify.*?\]\((.*?)\)/);
+            if (match && match[1]) {
+              currentCertification.verifyUrl = match[1].trim();
+            }
+          }
+        }
+        
+        // Don't forget to add the last certification
+        if (currentCertification && currentCertification.title) {
+          certifications.push(currentCertification);
+        }
+        
+        return certifications;
+      }
+      
+      // Display certifications in the DOM
+      function displayCertifications(certifications) {
+        const container = document.getElementById('certifications-container');
+        
+        if (!certifications || certifications.length === 0) {
+          container.innerHTML = `
+            <div class="cert-card">
+              <h3>No certifications found</h3>
+              <p>Check back later for updates.</p>
+            </div>
+          `;
+          return;
+        }
+        
+        let html = '';
+        
+        certifications.forEach(cert => {
+          html += `
+            <div class="cert-card fade-in">
+              <img src="${cert.imageUrl}" alt="${cert.title}" />
+              <h3>${cert.title}</h3>
+              <a href="${cert.verifyUrl}" class="pdf-link" target="_blank">
+                <i class="fas fa-certificate"></i> Verify Certification
+              </a>
+            </div>
+          `;
+        });
+        
+        container.innerHTML = html;
+        
+        // Initialize animation for new elements
+        document.querySelectorAll(".cert-card").forEach((cert) => {
+          cert.classList.add("fade-in");
+          setTimeout(() => {
+            cert.classList.add("appear");
+          }, 100);
+        });
+      }
 
       // Function to load publications from markdown file
       function loadPublications() {
@@ -1242,39 +1195,38 @@
           });
       }
 
-      // Parse the publications markdown file
+      // Parse markdown content to extract publications
       function parsePublicationsMarkdown(markdown) {
         const publications = [];
-        const lines = markdown.split('\n');
-        
         let currentPublication = null;
         
-        for (let i = 0; i < lines.length; i++) {
-          const line = lines[i].trim();
-          
+        const lines = markdown.split('\n').filter(line => line.trim());
+        
+        for (const line of lines) {
           if (line.startsWith('## ')) {
-            // New publication title
+            // If we were processing a publication, push it to the array
             if (currentPublication) {
               publications.push(currentPublication);
             }
             
+            // Start a new publication
             currentPublication = {
-              title: line.substring(3),
+              title: line.replace('## ', '').trim(),
               details: '',
               url: ''
             };
           } else if (line.startsWith('http')) {
-            // URL line
+            // This is a URL
             if (currentPublication) {
-              currentPublication.url = line;
+              currentPublication.url = line.trim();
             }
-          } else if (line && currentPublication && !line.startsWith('#')) {
-            // Publication details (not a markdown heading)
-            currentPublication.details = line;
+          } else if (currentPublication && !line.startsWith('#')) {
+            // This is publication details
+            currentPublication.details += currentPublication.details ? ' ' + line : line;
           }
         }
         
-        // Add the last publication
+        // Don't forget to add the last publication
         if (currentPublication) {
           publications.push(currentPublication);
         }
@@ -1282,11 +1234,11 @@
         return publications;
       }
 
-      // Display the publications in the DOM
+      // Display publications in the DOM
       function displayPublications(publications) {
         const container = document.getElementById('publications-container');
         
-        if (publications.length === 0) {
+        if (!publications || publications.length === 0) {
           container.innerHTML = `
             <li>
               <h3>No publications found</h3>
