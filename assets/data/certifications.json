@@ -13,5 +13,15 @@
     "title": "AWS Certified Cloud Practitioner",
     "imageUrl": "assets/images/CCP.png",
     "verifyUrl": "https://www.credly.com/badges/9c9b09dd-b597-494e-a4c3-148baa286aba/public_url"
+  },
+  {
+    "title": "AWS Certified AI Practitioner",
+    "imageUrl": "assets/images/AIF.png",
+    "verifyUrl": "https://www.credly.com/badges/95d59989-d9d0-4117-aae2-0756f54e4765/public_url"
+  },
+  {
+    "title": "HashiCorp Certified: Terraform Associate (003)",
+    "imageUrl": "assets/images/terraform.png",
+    "verifyUrl": "https://www.credly.com/badges/95d59989-d9d0-4117-aae2-0756f54e4765/public_url"
   }
 ] 
