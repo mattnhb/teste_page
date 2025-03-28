@@ -921,11 +921,14 @@
 
       <section id="certifications">
         <h2 class="section-title">Certifications</h2>
-        <div class="cert-container" id="certifications-container">
-          <!-- Certifications will be loaded dynamically from certifications.md -->
-          <div class="loading-certifications">
-            <h3>Loading certifications...</h3>
-          </div>
+        <div class="card">
+          <div class="card-icon"><i class="fas fa-certificate"></i></div>
+          <ul class="publication-list" id="certifications-container">
+            <!-- Certifications will be loaded dynamically from certifications.md -->
+            <li class="loading-certifications">
+              <h3>Loading certifications...</h3>
+            </li>
+          </ul>
         </div>
       </section>
 
@@ -1081,10 +1084,10 @@
           .catch(error => {
             console.error('Error loading certifications:', error);
             document.getElementById('certifications-container').innerHTML = `
-              <div class="cert-card">
+              <li>
                 <h3>Error loading certifications</h3>
                 <p>Please try again later.</p>
-              </div>
+              </li>
             `;
           });
       }
@@ -1138,10 +1141,10 @@
         
         if (!certifications || certifications.length === 0) {
           container.innerHTML = `
-            <div class="cert-card">
+            <li>
               <h3>No certifications found</h3>
               <p>Check back later for updates.</p>
-            </div>
+            </li>
           `;
           return;
         }
@@ -1150,25 +1153,19 @@
         
         certifications.forEach(cert => {
           html += `
-            <div class="cert-card fade-in">
-              <img src="${cert.imageUrl}" alt="${cert.title}" />
+            <li>
               <h3>${cert.title}</h3>
+              <p>
+                <img src="${cert.imageUrl}" alt="${cert.title}" style="height: 100px; margin-bottom: 10px; display: block;" />
+              </p>
               <a href="${cert.verifyUrl}" class="pdf-link" target="_blank">
                 <i class="fas fa-certificate"></i> Verify Certification
               </a>
-            </div>
+            </li>
           `;
         });
         
         container.innerHTML = html;
-        
-        // Initialize animation for new elements
-        document.querySelectorAll(".cert-card").forEach((cert) => {
-          cert.classList.add("fade-in");
-          setTimeout(() => {
-            cert.classList.add("appear");
-          }, 100);
-        });
       }
 
       // Function to load publications from markdown file
