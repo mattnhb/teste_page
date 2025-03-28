@@ -979,42 +979,13 @@
       </section>
 
       <section id="publications">
-        <h2 class="section-title">Publications & Talks</h2>
+        <h2 class="section-title">Publications & Medium Articles</h2>
         <div class="card">
           <div class="card-icon"><i class="fas fa-book"></i></div>
-          <ul class="publication-list">
-            <li>
-              <h3>"Optimizing Data Lakes for Analytics at Scale"</h3>
-              <p>Published in Modern Data Engineering Journal, 2022</p>
-              <a
-                href="assets/pdf/publication1.pdf"
-                class="pdf-link"
-                target="_blank"
-              >
-                <i class="fas fa-file-pdf"></i> Read Paper
-              </a>
-            </li>
-            <li>
-              <h3>"Event-Driven Architecture with Kafka and Spark"</h3>
-              <p>Conference talk at Data Engineering Summit 2021</p>
-              <a
-                href="assets/pdf/talk_slides.pdf"
-                class="pdf-link"
-                target="_blank"
-              >
-                <i class="fas fa-file-pdf"></i> View Slides
-              </a>
-            </li>
-            <li>
-              <h3>"Implementing CI/CD for Data Pipelines"</h3>
-              <p>Technical blog post series, 2020</p>
-              <a
-                href="assets/pdf/blog_series.pdf"
-                class="pdf-link"
-                target="_blank"
-              >
-                <i class="fas fa-file-pdf"></i> Read Series
-              </a>
+          <ul class="publication-list" id="publications-container">
+            <!-- Publications will be loaded dynamically from publications.md -->
+            <li class="loading-publications">
+              <h3>Loading publications...</h3>
             </li>
           </ul>
         </div>
@@ -1242,7 +1213,105 @@
           // Add pointer cursor to indicate clickable
           img.style.cursor = "pointer";
         });
+
+        // Load publications from publications.md
+        loadPublications();
       };
+
+      // Function to load publications from markdown file
+      function loadPublications() {
+        fetch('assets/data/publications.md')
+          .then(response => {
+            if (!response.ok) {
+              throw new Error('Failed to load publications');
+            }
+            return response.text();
+          })
+          .then(markdown => {
+            const publications = parsePublicationsMarkdown(markdown);
+            displayPublications(publications);
+          })
+          .catch(error => {
+            console.error('Error loading publications:', error);
+            document.getElementById('publications-container').innerHTML = `
+              <li>
+                <h3>Error loading publications</h3>
+                <p>Please try again later.</p>
+              </li>
+            `;
+          });
+      }
+
+      // Parse the publications markdown file
+      function parsePublicationsMarkdown(markdown) {
+        const publications = [];
+        const lines = markdown.split('\n');
+        
+        let currentPublication = null;
+        
+        for (let i = 0; i < lines.length; i++) {
+          const line = lines[i].trim();
+          
+          if (line.startsWith('## ')) {
+            // New publication title
+            if (currentPublication) {
+              publications.push(currentPublication);
+            }
+            
+            currentPublication = {
+              title: line.substring(3),
+              details: '',
+              url: ''
+            };
+          } else if (line.startsWith('http')) {
+            // URL line
+            if (currentPublication) {
+              currentPublication.url = line;
+            }
+          } else if (line && currentPublication && !line.startsWith('#')) {
+            // Publication details (not a markdown heading)
+            currentPublication.details = line;
+          }
+        }
+        
+        // Add the last publication
+        if (currentPublication) {
+          publications.push(currentPublication);
+        }
+        
+        return publications;
+      }
+
+      // Display the publications in the DOM
+      function displayPublications(publications) {
+        const container = document.getElementById('publications-container');
+        
+        if (publications.length === 0) {
+          container.innerHTML = `
+            <li>
+              <h3>No publications found</h3>
+              <p>Check back later for updates.</p>
+            </li>
+          `;
+          return;
+        }
+        
+        let html = '';
+        
+        publications.forEach(pub => {
+          html += `
+            <li>
+              <h3>"${pub.title}"</h3>
+              <p>${pub.details}</p>
+              <a href="${pub.url}" class="pdf-link" target="_blank">
+                <i class="fab fa-medium"></i> Read on Medium
+              </a>
+            </li>
+          `;
+        });
+        
+        container.innerHTML = html;
+      }
     </script>
   </body>
 </html>
