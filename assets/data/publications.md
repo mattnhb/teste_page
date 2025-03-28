@@ -27,3 +27,10 @@ AWS Community Publication, 2022
 This article explores how event-driven architecture (EDA) can transform data engineering workflows. Drawing from real-world implementations, I discuss patterns for building loosely coupled, resilient data systems that adapt quickly to changing business requirements while maintaining data consistency and reliability.
 
 https://medium.com/@mateus.nicolas/event-driven-architecture-for-modern-data-engineering-c84e2f7db12b
+
+## Optimizinsfdsfdfor Analytics Workloads
+Published in Modern Data Engineering Journal, 2023
+
+This comprehensive guide explores strategies for dessfdsfdm my experience implementing large-scale data lakes on AWS, I discuss partitioning strategies, data cataloging best practices, and query optimization techniques that significantly reduce costs while improving performance.
+
+https://medium.com/@mateus.nicolas/optimizing-data-lake-architecture-for-analytics-workloads-37f9c2a1b5d4
