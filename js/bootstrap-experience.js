@@ -47,7 +47,7 @@ function renderExperience(experienceData) {
     return;
   }
   
-  let html = '';
+  let html = '<div class="experience-timeline">';
   
   experienceData.forEach(experience => {
     // Create technology tags HTML
@@ -59,7 +59,7 @@ function renderExperience(experienceData) {
     const highlights = experience.highlights && experience.highlights.length > 0 ?
       `
       <div class="experience-highlights">
-        <h4><i class="fas fa-star"></i> Key Achievements</h4>
+        <h4>Key Achievements</h4>
         <ul>
           ${experience.highlights.map(highlight => `<li>${highlight}</li>`).join('')}
         </ul>
@@ -68,34 +68,26 @@ function renderExperience(experienceData) {
     
     html += `
       <div class="experience-card">
-        <div class="experience-icon">
-          <i class="${experience.icon || 'fas fa-briefcase'}"></i>
-        </div>
         <span class="experience-period">${experience.period}</span>
         <h3 class="experience-role">${experience.role}</h3>
         <h4 class="experience-company">${experience.company}</h4>
         <p class="experience-description">${experience.description}</p>
         ${highlights}
         ${techTags ? `<div class="experience-tech">${techTags}</div>` : ''}
-        <a href="${experience.documentLink}" class="experience-link" target="_blank">
-          <i class="fas fa-file-pdf"></i> ${experience.documentLabel || 'View Details'}
-          <i class="fas fa-arrow-right ml-1"></i>
-        </a>
       </div>
     `;
   });
   
+  html += '</div>';
   container.innerHTML = html;
   
   // Add animation to reveal cards sequentially
   const cards = container.querySelectorAll('.experience-card');
   cards.forEach((card, index) => {
     card.style.opacity = '0';
-    card.style.transform = 'translateY(20px)';
     setTimeout(() => {
-      card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+      card.style.transition = 'opacity 0.5s ease';
       card.style.opacity = '1';
-      card.style.transform = 'translateY(0)';
     }, 100 * index);
   });
 }
