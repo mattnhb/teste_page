@@ -301,7 +301,7 @@
       .carousel-container {
         position: relative;
         margin: 2rem auto;
-        max-width: 800px;
+        max-width: 100%;
         overflow: hidden;
         border-radius: 15px;
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
@@ -316,10 +316,35 @@
         position: relative;
       }
 
+      .loading-slide {
+        min-width: 100%;
+        padding: 2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .loading-content {
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 10px;
+        overflow: hidden;
+        padding: 2rem;
+        width: 100%;
+        max-width: 400px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 250px;
+      }
+
       .carousel-slide {
         min-width: 100%;
         padding: 2rem;
         position: relative;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
       }
 
       .carousel-nav {
@@ -392,7 +417,7 @@
         background: rgba(255, 255, 255, 0.05);
         border-radius: 10px;
         overflow: hidden;
-        padding: 2rem;
+        padding: 1.5rem;
         height: 100%;
         display: flex;
         flex-direction: column;
@@ -515,6 +540,12 @@
         animation: pulse 1.5s infinite ease-in-out;
       }
 
+      @media (max-width: 992px) {
+        .carousel-slide {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
       @media (max-width: 768px) {
         .carousel-container {
           max-width: 100%;
@@ -522,6 +553,7 @@
         
         .carousel-slide {
           padding: 1rem;
+          grid-template-columns: 1fr;
         }
         
         .carousel-slide-content {
@@ -1186,8 +1218,8 @@
         <div class="card">
           <div class="carousel-container">
             <div class="carousel-track">
-              <div class="carousel-slide">
-                <div class="carousel-slide-content">
+              <div class="loading-slide">
+                <div class="loading-content">
                   <h3>Loading certifications...</h3>
                   <div class="loading-indicator">
                     <i class="fas fa-spinner fa-pulse" style="font-size: 2rem; color: var(--primary);"></i>
@@ -1355,10 +1387,13 @@
           .catch(error => {
             console.error('Error loading certifications:', error);
             document.querySelector('.carousel-track').innerHTML = `
-              <div class="carousel-slide">
-                <div class="carousel-slide-content">
+              <div class="loading-slide">
+                <div class="loading-content">
                   <h3>Error loading certifications</h3>
                   <p>Please try again later.</p>
+                  <div class="loading-indicator">
+                    <i class="fas fa-exclamation-circle" style="font-size: 2rem; color: #ff6b6b;"></i>
+                  </div>
                 </div>
               </div>
             `;
@@ -1376,37 +1411,54 @@
         
         if (!certifications || certifications.length === 0) {
           carouselTrack.innerHTML = `
-            <div class="carousel-slide">
-              <div class="carousel-slide-content">
+            <div class="loading-slide">
+              <div class="loading-content">
                 <h3>No certifications found</h3>
                 <p>Check back later for updates.</p>
+                <div class="loading-indicator">
+                  <i class="fas fa-certificate" style="font-size: 2rem; color: var(--primary); opacity: 0.5;"></i>
+                </div>
               </div>
             </div>
           `;
           return;
         }
+
+        // Group certifications into slides of 3
+        const itemsPerSlide = 3;
+        const numberOfSlides = Math.ceil(certifications.length / itemsPerSlide);
         
         // Create slides
-        certifications.forEach((cert, index) => {
+        for(let slideIndex = 0; slideIndex < numberOfSlides; slideIndex++) {
           const slide = document.createElement('div');
           slide.className = 'carousel-slide';
           
-          // Format issue date if available
-          let issueDateText = '';
-          if (cert.issueDate) {
-            try {
-              const issueDate = new Date(cert.issueDate);
-              issueDateText = issueDate.toLocaleDateString('en-US', { 
-                year: 'numeric', 
-                month: 'long' 
-              });
-            } catch (e) {
-              issueDateText = cert.issueDate; // Use as is if parsing fails
+          // Add certification items to this slide
+          for(let itemIndex = 0; itemIndex < itemsPerSlide; itemIndex++) {
+            const certIndex = slideIndex * itemsPerSlide + itemIndex;
+            
+            // Break if we've reached the end of certifications
+            if(certIndex >= certifications.length) break;
+            
+            const cert = certifications[certIndex];
+            
+            // Format issue date if available
+            let issueDateText = '';
+            if (cert.issueDate) {
+              try {
+                const issueDate = new Date(cert.issueDate);
+                issueDateText = issueDate.toLocaleDateString('en-US', { 
+                  year: 'numeric', 
+                  month: 'long' 
+                });
+              } catch (e) {
+                issueDateText = cert.issueDate; // Use as is if parsing fails
+              }
             }
-          }
-          
-          slide.innerHTML = `
-            <div class="carousel-slide-content">
+            
+            const certItem = document.createElement('div');
+            certItem.className = 'carousel-slide-content';
+            certItem.innerHTML = `
               <a href="${cert.verifyUrl}" target="_blank" title="Click to verify certification">
                 <img src="${cert.imageUrl}" alt="${cert.title}" 
                      onerror="this.onerror=null; this.src='https://via.placeholder.com/500x300/ff9900/10002b?text=${encodeURIComponent(cert.title)}';" />
@@ -1418,32 +1470,36 @@
                 ${cert.organization ? `<div class="cert-issuer"><i class="fas fa-building"></i> ${cert.organization}</div>` : ''}
                 ${issueDateText ? `<div class="cert-date"><i class="fas fa-calendar-alt"></i> ${issueDateText}</div>` : ''}
               </div>
-            </div>
-          `;
+            `;
+            
+            slide.appendChild(certItem);
+          }
           
           carouselTrack.appendChild(slide);
           
           // Create navigation dot
           const dot = document.createElement('div');
           dot.className = 'carousel-dot';
-          if (index === 0) dot.classList.add('active');
-          dot.dataset.index = index;
+          if (slideIndex === 0) dot.classList.add('active');
+          dot.dataset.index = slideIndex;
           navContainer.appendChild(dot);
-        });
+        }
         
         // Add counter
         const counter = document.createElement('div');
         counter.className = 'carousel-counter';
-        counter.textContent = `1 of ${certifications.length}`;
+        counter.textContent = `1 of ${numberOfSlides}`;
         
         // Add prev/next buttons
         const prevBtn = document.createElement('button');
         prevBtn.className = 'carousel-btn prev';
         prevBtn.innerHTML = '<i class="fas fa-chevron-left"></i>';
+        prevBtn.setAttribute('aria-label', 'Previous slide');
         
         const nextBtn = document.createElement('button');
         nextBtn.className = 'carousel-btn next';
         nextBtn.innerHTML = '<i class="fas fa-chevron-right"></i>';
+        nextBtn.setAttribute('aria-label', 'Next slide');
         
         const carouselContainer = document.querySelector('.carousel-container');
         carouselContainer.appendChild(counter);
@@ -1474,24 +1530,32 @@
           return;
         }
         
+        // Set the width of track based on the number of slides
         const slideWidth = slides[0].getBoundingClientRect().width;
+        track.style.width = slideWidth * slides.length + 'px';
         
-        // Arrange the slides next to one another
-        const setSlidePosition = (slide, index) => {
+        // Position slides next to one another
+        slides.forEach((slide, index) => {
           slide.style.left = slideWidth * index + 'px';
-        };
+        });
+
+        // Track the current slide
+        let currentSlideIndex = 0;
         
-        slides.forEach(setSlidePosition);
-        
-        const moveToSlide = (track, currentSlide, targetSlide) => {
-          const targetIndex = slides.findIndex(slide => slide === targetSlide);
-          track.style.transform = 'translateX(-' + (targetIndex * slideWidth) + 'px)';
+        const moveToSlide = (targetIndex) => {
+          // Ensure targetIndex is within bounds
+          if (targetIndex < 0) targetIndex = slides.length - 1;
+          if (targetIndex >= slides.length) targetIndex = 0;
+          
+          currentSlideIndex = targetIndex;
+          
+          // Move the track to the target slide
+          track.style.transform = `translateX(-${slideWidth * targetIndex}px)`;
           
           // Update active dot
-          const currentDot = dotsNav.querySelector('.active');
-          const targetDot = dots[targetIndex];
-          if (currentDot) currentDot.classList.remove('active');
-          if (targetDot) targetDot.classList.add('active');
+          dots.forEach((dot, index) => {
+            dot.classList.toggle('active', index === targetIndex);
+          });
           
           // Update counter
           if (counter) {
@@ -1500,32 +1564,25 @@
           
           // Update ARIA attributes for accessibility
           slides.forEach((slide, index) => {
-            slide.setAttribute('aria-hidden', index !== targetIndex);
+            const isCurrentSlide = index === targetIndex;
+            slide.setAttribute('aria-hidden', !isCurrentSlide);
             
             // Make links in inactive slides unfocusable
             const focusableElements = slide.querySelectorAll('a, button');
             focusableElements.forEach(el => {
-              if (index !== targetIndex) {
-                el.setAttribute('tabindex', '-1');
-              } else {
-                el.removeAttribute('tabindex');
-              }
+              el.setAttribute('tabindex', isCurrentSlide ? '0' : '-1');
             });
           });
         };
         
-        // Move to previous slide
-        const moveToPrevSlide = () => {
-          const currentSlide = track.querySelector('.carousel-slide[style*="left: 0px"]') || slides[0];
-          const prevSlide = currentSlide.previousElementSibling || slides[slides.length - 1];
-          moveToSlide(track, currentSlide, prevSlide);
-        };
-        
         // Move to next slide
         const moveToNextSlide = () => {
-          const currentSlide = track.querySelector('.carousel-slide[style*="left: 0px"]') || slides[0];
-          const nextSlide = currentSlide.nextElementSibling || slides[0];
-          moveToSlide(track, currentSlide, nextSlide);
+          moveToSlide(currentSlideIndex + 1);
+        };
+        
+        // Move to previous slide
+        const moveToPrevSlide = () => {
+          moveToSlide(currentSlideIndex - 1);
         };
         
         // Add click event listeners
@@ -1535,14 +1592,10 @@
         // When I click the nav indicators, move to that slide
         dotsNav.addEventListener('click', e => {
           const targetDot = e.target.closest('div.carousel-dot');
-          
           if (!targetDot) return;
           
-          const currentSlide = track.querySelector('.carousel-slide[style*="left: 0px"]') || slides[0];
-          const targetIndex = dots.findIndex(dot => dot === targetDot);
-          const targetSlide = slides[targetIndex];
-          
-          moveToSlide(track, currentSlide, targetSlide);
+          const targetIndex = parseInt(targetDot.dataset.index);
+          moveToSlide(targetIndex);
         });
         
         // Touch swipe functionality
@@ -1587,13 +1640,12 @@
         dots.forEach((dot, index) => {
           dot.setAttribute('tabindex', '0');
           dot.setAttribute('role', 'button');
-          dot.setAttribute('aria-label', `Show certification ${index + 1}`);
+          dot.setAttribute('aria-label', `Show certifications group ${index + 1}`);
           
           dot.addEventListener('keydown', e => {
             if (e.key === 'Enter' || e.key === ' ') {
               e.preventDefault();
-              const currentSlide = track.querySelector('.carousel-slide[style*="left: 0px"]') || slides[0];
-              moveToSlide(track, currentSlide, slides[index]);
+              moveToSlide(index);
             }
           });
         });
@@ -1618,22 +1670,8 @@
           interval = setInterval(moveToNextSlide, 5000);
         }, true);
         
-        // Set initial slide (for accessibility)
-        slides.forEach((slide, index) => {
-          if (index === 0) {
-            slide.setAttribute('aria-hidden', 'false');
-          } else {
-            slide.setAttribute('aria-hidden', 'true');
-            // Make links in inactive slides unfocusable
-            const focusableElements = slide.querySelectorAll('a, button');
-            focusableElements.forEach(el => {
-              el.setAttribute('tabindex', '-1');
-            });
-          }
-        });
-        
-        // Initial positioning
-        moveToSlide(track, slides[0], slides[0]);
+        // Set initial state
+        moveToSlide(0);
       }
       
       // Function to load publications from markdown file
