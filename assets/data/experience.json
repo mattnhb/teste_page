@@ -4,11 +4,8 @@
     "role": "Senior Data Engineer - Asset Custody Services",
     "company": "Itaú Unibanco",
     "logo": "assets/images/itau_logo.jpg",
-    "description": "Leading a team of data engineers in designing and implementing scalable data platforms. Architecting cloud-based data solutions on AWS and GCP, optimizing data pipelines, and establishing data governance practices. Reduced processing costs by 35% while increasing data throughput.",
+    "description": "",
     "highlights": [
-      "Led a team of 5 data engineers across 3 major projects",
-      "Reduced cloud infrastructure costs by 35% while improving performance",
-      "Implemented data governance framework adopted company-wide"
     ],
     "technologies": ["AWS", "GCP", "Python", "Terraform", "Spark", "Airflow"]
   },
