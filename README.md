@@ -8,29 +8,71 @@ This is my professional portfolio website built with GitHub Pages. The site show
 - Elegant dark theme with purple and black gradient accents
 - Support for PDF file links (resume, project documentation, publications)
 - Image support for profile photo, project screenshots, and certifications
-- Lightbox view for certification images
+- Bootstrap-powered carousel for certifications display
+- Bootstrap pagination for publications section
+- Dynamic experience timeline
+- Clean and modular code structure following best practices
 - Animated elements for a dynamic user experience
-- Typing effect in the header
 - Card-based project layout with hover effects
-- Timeline for experience display
 - Interactive skill tags with hover effects
 - Social media links including PDF resume
-- Sections for certifications, publications, and open source projects
+- Sections for certifications, publications, and experience
 
 ## Technologies Used
 
 - HTML5
 - CSS3 (with CSS Variables, Flexbox, Grid)
-- JavaScript (for animations, effects, and image handling)
+- JavaScript (ES Modules, OOP principles, clean code)
+- Bootstrap 5 (Carousel, Pagination, Grid System)
 - Font Awesome icons
 - Intersection Observer API for scroll animations
+- Fetch API for loading data from JSON and markdown files
+
+## Project Structure
+
+The codebase follows a modular approach with clean separation of concerns:
+
+```
+├── index.html             # Main HTML file
+├── css/                   # Modular CSS files
+│   ├── main.css           # Base styles and variables
+│   ├── components.css     # Reusable component styles
+│   ├── animations.css     # Animation definitions
+│   ├── carousel.css       # Certification carousel styles
+│   ├── publications.css   # Publication section styles
+│   ├── experience.css     # Experience section styles
+│   └── sections.css       # Section-specific styles
+├── js/                    # Modular JavaScript files
+│   ├── constants.js       # Shared constants and configuration
+│   ├── utilities.js       # Utility/helper functions
+│   ├── main.js            # Core initialization and features
+│   ├── bootstrap-carousel.js    # Certifications carousel
+│   ├── bootstrap-publications.js # Publications with pagination
+│   └── bootstrap-experience.js  # Experience timeline loading
+└── assets/                # Static assets
+    ├── data/              # Data files (JSON, markdown)
+    ├── images/            # Image files
+    └── pdf/               # PDF documents
+```
+
+## Code Standards
+
+This project follows these clean code principles:
+
+- **Single Responsibility Principle**: Each module has one responsibility
+- **DRY (Don't Repeat Yourself)**: Common functionality is extracted to utilities
+- **Constants over Magic Numbers**: All magic numbers and strings are defined as constants
+- **Meaningful Names**: Variables and functions have descriptive names
+- **Smart Comments**: JSDoc style documentation for functions
+- **Clean Structure**: Organized directory and file structure
+- **Error Handling**: Proper error states and fallbacks
 
 ## Setup
 
 To run this website locally:
 
 1. Clone this repository
-2. Open `index.html` in your browser
+2. Open `index.html` in your browser (use a local server for ES modules support)
 
 To deploy to GitHub Pages:
 
@@ -38,24 +80,22 @@ To deploy to GitHub Pages:
 2. Enable GitHub Pages in your repository settings
 3. Your site will be available at https://mattnhb.github.io
 
-## Image and PDF Files
+## Data Files
 
-For the portfolio to display correctly, add the following files to the repository:
+The portfolio uses the following data files:
 
-- `profile.jpg` - Your profile photo
-- `project1.jpg`, `project2.jpg`, `project3.jpg` - Project screenshots
-- `cert1.jpg`, `cert2.jpg`, `cert3.jpg`, `cert4.jpg` - Certification images
-- `resume.pdf` - Your resume
-- PDF files for project documentation and other linked resources
+- `assets/data/certifications.json` - Certification data
+- `assets/data/publications.md` - Publications in markdown format
+- `assets/data/experience.json` - Work experience data
 
 ## Customization
 
-You can further customize this template by:
+You can customize this template by:
 
-- Updating your project descriptions and links
-- Adding more skills or certifications
-- Changing the color scheme (edit the CSS variables in `:root`)
-- Adding or removing sections as needed
+- Editing the data files to update content
+- Modifying the constants in `js/constants.js` to change behavior
+- Updating CSS variables in `:root` to change the color scheme
+- Adding or removing sections in the HTML as needed
 
 ## Contact
 
