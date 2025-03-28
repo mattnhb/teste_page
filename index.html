@@ -81,13 +81,25 @@
         backdrop-filter: blur(5px);
         border: 1px solid rgba(255, 255, 255, 0.1);
         min-height: 280px;
+        transition: box-shadow 0.3s ease, border-color 0.3s ease;
       }
+      
+      .cert-item:hover {
+        box-shadow: 0 5px 15px rgba(157, 78, 221, 0.3);
+        border-color: var(--primary);
+      }
+      
       .cert-item img {
         max-width: 90%;
         height: 140px;
         margin-bottom: 1rem;
         border-radius: 8px;
         border: 3px solid rgba(255, 255, 255, 0.1);
+        transition: border-color 0.3s ease;
+      }
+      
+      .cert-item:hover img {
+        border-color: var(--accent);
       }
       .cert-item h3 {
         color: var(--light);
@@ -96,7 +108,13 @@
         font-size: 1.2rem;
         position: relative;
         padding-bottom: 0.6rem;
+        transition: color 0.3s ease;
       }
+
+      .cert-item:hover h3 {
+        color: var(--accent);
+      }
+
       .cert-item h3::after {
         content: '';
         position: absolute;
@@ -107,7 +125,13 @@
         height: 3px;
         background: linear-gradient(to right, var(--primary), var(--accent));
         border-radius: 3px;
+        transition: width 0.3s ease;
       }
+      
+      .cert-item:hover h3::after {
+        width: 70px;
+      }
+
       .cert-info {
         width: 100%;
         text-align: center;
@@ -121,10 +145,21 @@
         align-items: center;
         justify-content: center;
         gap: 0.5rem;
+        transition: opacity 0.3s ease;
       }
       .cert-issuer i, .cert-date i {
         color: var(--accent);
         font-size: 0.9rem;
+        transition: color 0.3s ease, transform 0.3s ease;
+      }
+      .cert-item:hover .cert-issuer,
+      .cert-item:hover .cert-date {
+        opacity: 1;
+      }
+      .cert-item:hover .cert-issuer i,
+      .cert-item:hover .cert-date i {
+        color: var(--primary);
+        transform: scale(1.1);
       }
       .loading-certifications {
         min-height: 250px;
