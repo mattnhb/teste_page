@@ -157,4 +157,9 @@
   color: var(--light);
   font-size: 1.2rem;
   margin-bottom: 0.5rem;
+}
+
+/* About section */
+#about p {
+  color: var(--light);
 } 

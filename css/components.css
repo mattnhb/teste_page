@@ -50,6 +50,7 @@
   line-height: 1.6;
   margin-bottom: 1.5rem;
   font-weight: 400;
+  color: var(--light);
 }
 
 .card-icon {
@@ -90,6 +91,7 @@
 
 .profile-content {
   flex: 1;
+  color: var(--light);
 }
 
 /* Project images */
