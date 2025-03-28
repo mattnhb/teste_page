@@ -1,57 +1,57 @@
 [
   {
     "title": "AWS Certified Solutions Architect - Associate",
-    "imageUrl": "assets/images/SAA.png",
+    "imageUrl": "assets/images/certifications/SAA.png",
     "verifyUrl": "https://www.credly.com/badges/47aab480-9f01-4be1-b5f5-2cff9adab13b/public_url"
   },
   {
     "title": "AWS Certified Data Engineer – Associate",
-    "imageUrl": "assets/images/DEA.png",
+    "imageUrl": "assets/images/certifications/DEA.png",
     "verifyUrl": "https://www.credly.com/badges/3884c795-e125-4199-8897-f498fd3109ca/public_url"
   },
   {
     "title": "AWS Certified AI Practitioner",
-    "imageUrl": "assets/images/AIF.png",
+    "imageUrl": "assets/images/certifications/AIF.png",
     "verifyUrl": "https://www.credly.com/badges/95d59989-d9d0-4117-aae2-0756f54e4765/public_url"
   },
   {
     "title": "AWS Certified Cloud Practitioner",
-    "imageUrl": "assets/images/CCP.png",
+    "imageUrl": "assets/images/certifications/CCP.png",
     "verifyUrl": "https://www.credly.com/badges/9c9b09dd-b597-494e-a4c3-148baa286aba/public_url"
   },
   {
     "title": "HashiCorp Certified: Terraform Associate (003)",
-    "imageUrl": "assets/images/terraform.png",
+    "imageUrl": "assets/images/certifications/terraform.png",
     "verifyUrl": "https://www.credly.com/badges/95d59989-d9d0-4117-aae2-0756f54e4765/public_url"
   },
   {
     "title": "[PCAP-31-03] PCAP™ – Certified Associate Python Programmer",
-    "imageUrl": "assets/images/pcap.png",
+    "imageUrl": "assets/images/certifications/pcap.png",
     "verifyUrl": "https://www.credly.com/badges/c895c4ca-0559-413e-9bef-4a094c4e1567/public_url"
   },
   {
     "title": "Astronomer Certification for Apache Airflow Fundamentals",
-    "imageUrl": "assets/images/ast1.png",
+    "imageUrl": "assets/images/certifications/ast1.png",
     "verifyUrl": "https://www.credly.com/badges/b2d82adf-c395-47e1-8e9c-e4c05e16aedf/public_url"
   },
   {
     "title": "Astronomer Certification DAG Authoring for Apache Airflow",
-    "imageUrl": "assets/images/ast2.png",
+    "imageUrl": "assets/images/certifications/ast2.png",
     "verifyUrl": "https://www.credly.com/badges/5ae5e240-7f71-4f22-8c0a-26080a1ae213/public_url"
   },
   {
     "title": "GitHub Foundations",
-    "imageUrl": "assets/images/github.png",
+    "imageUrl": "assets/images/certifications/github.png",
     "verifyUrl": "https://www.credly.com/badges/9c9b09dd-b597-494e-a4c3-148baa286aba/public_url"
   },
   {
     "title": "Linux Professional Institute Linux Essentials",
-    "imageUrl": "assets/images/linux.png",
+    "imageUrl": "assets/images/certifications/linux.png",
     "verifyUrl": "https://cs.lpi.org/caf/Xamman/certification/verify/LPI000640712/vshq66j6hs"
   },
   {
     "title": "[PCEP-30-02] PCEP™ – Certified Entry-Level Python Programmer",
-    "imageUrl": "assets/images/pcep.png",
+    "imageUrl": "assets/images/certifications/pcep.png",
     "verifyUrl": "https://www.credly.com/badges/8f0009f6-0a64-4631-8959-90e3220041c6/public_url"
   }
 ] 
