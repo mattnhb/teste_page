@@ -340,11 +340,11 @@
 
       .carousel-slide {
         min-width: 100%;
-        padding: 2rem;
+        padding: 1.5rem;
         position: relative;
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        gap: 1.5rem;
+        gap: 1rem;
       }
 
       .carousel-nav {
@@ -417,7 +417,7 @@
         background: rgba(255, 255, 255, 0.05);
         border-radius: 10px;
         overflow: hidden;
-        padding: 1.5rem;
+        padding: 1.2rem;
         height: 100%;
         display: flex;
         flex-direction: column;
@@ -425,7 +425,7 @@
         backdrop-filter: blur(5px);
         border: 1px solid rgba(255, 255, 255, 0.1);
         transition: all 0.3s ease;
-        min-height: 300px;
+        min-height: 280px;
         justify-content: center;
       }
 
@@ -438,8 +438,8 @@
       .carousel-slide-content img {
         width: auto;
         max-width: 90%;
-        height: 180px;
-        margin-bottom: 1.5rem;
+        height: 140px;
+        margin-bottom: 1rem;
         border-radius: 8px;
         transition: all 0.4s ease;
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
@@ -454,11 +454,11 @@
 
       .carousel-slide-content h3 {
         color: var(--light);
-        margin-bottom: 1rem;
+        margin-bottom: 0.8rem;
         text-align: center;
-        font-size: 1.4rem;
+        font-size: 1.2rem;
         position: relative;
-        padding-bottom: 0.8rem;
+        padding-bottom: 0.6rem;
       }
 
       .carousel-slide-content h3::after {
@@ -1373,15 +1373,21 @@
       
       // Function to load certifications from JSON file
       function loadCertifications() {
+        console.log('Loading certifications from JSON...');
         fetch('assets/data/certifications.json')
           .then(response => {
             if (!response.ok) {
+              console.error('Failed to load certifications - response not OK');
               throw new Error('Failed to load certifications');
             }
             return response.json();
           })
           .then(certifications => {
             console.log("Loaded certifications:", certifications);
+            console.log(`Found ${certifications.length} certification items`);
+            if (certifications.length > 0) {
+              console.log('First certification:', certifications[0]);
+            }
             initCarousel(certifications);
           })
           .catch(error => {
@@ -1428,18 +1434,21 @@
         const itemsPerSlide = 3;
         const numberOfSlides = Math.ceil(certifications.length / itemsPerSlide);
         
+        console.log(`Creating carousel with ${certifications.length} items across ${numberOfSlides} slides`);
+        
         // Create slides
         for(let slideIndex = 0; slideIndex < numberOfSlides; slideIndex++) {
           const slide = document.createElement('div');
           slide.className = 'carousel-slide';
           
+          // Calculate range for this slide
+          const startIndex = slideIndex * itemsPerSlide;
+          const endIndex = Math.min(startIndex + itemsPerSlide, certifications.length);
+          
+          console.log(`Slide ${slideIndex+1}: Items ${startIndex+1} to ${endIndex} (of ${certifications.length})`);
+          
           // Add certification items to this slide
-          for(let itemIndex = 0; itemIndex < itemsPerSlide; itemIndex++) {
-            const certIndex = slideIndex * itemsPerSlide + itemIndex;
-            
-            // Break if we've reached the end of certifications
-            if(certIndex >= certifications.length) break;
-            
+          for(let certIndex = startIndex; certIndex < endIndex; certIndex++) {
             const cert = certifications[certIndex];
             
             // Format issue date if available
@@ -1530,6 +1539,8 @@
           return;
         }
         
+        console.log(`Carousel setup: ${slides.length} slides detected`);
+        
         // Set the width of track based on the number of slides
         const slideWidth = slides[0].getBoundingClientRect().width;
         track.style.width = slideWidth * slides.length + 'px';
@@ -1537,6 +1548,7 @@
         // Position slides next to one another
         slides.forEach((slide, index) => {
           slide.style.left = slideWidth * index + 'px';
+          console.log(`Positioned slide ${index+1} at ${slideWidth * index}px`);
         });
 
         // Track the current slide
@@ -1546,6 +1558,8 @@
           // Ensure targetIndex is within bounds
           if (targetIndex < 0) targetIndex = slides.length - 1;
           if (targetIndex >= slides.length) targetIndex = 0;
+          
+          console.log(`Moving to slide ${targetIndex + 1} of ${slides.length}`);
           
           currentSlideIndex = targetIndex;
           
@@ -1586,8 +1600,15 @@
         };
         
         // Add click event listeners
-        prevButton.addEventListener('click', moveToPrevSlide);
-        nextButton.addEventListener('click', moveToNextSlide);
+        prevButton.addEventListener('click', (e) => {
+          e.preventDefault();
+          moveToPrevSlide();
+        });
+        
+        nextButton.addEventListener('click', (e) => {
+          e.preventDefault();
+          moveToNextSlide();
+        });
         
         // When I click the nav indicators, move to that slide
         dotsNav.addEventListener('click', e => {
@@ -1650,28 +1671,10 @@
           });
         });
         
-        // Auto-advance the carousel
-        let interval = setInterval(moveToNextSlide, 5000);
-        
-        // Pause auto-advance on hover or focus
-        carouselContainer.addEventListener('mouseenter', () => {
-          clearInterval(interval);
-        });
-        
-        carouselContainer.addEventListener('mouseleave', () => {
-          interval = setInterval(moveToNextSlide, 5000);
-        });
-        
-        carouselContainer.addEventListener('focus', () => {
-          clearInterval(interval);
-        }, true);
-        
-        carouselContainer.addEventListener('blur', () => {
-          interval = setInterval(moveToNextSlide, 5000);
-        }, true);
-        
         // Set initial state
         moveToSlide(0);
+        
+        console.log('Carousel setup complete - manual navigation only');
       }
       
       // Function to load publications from markdown file
