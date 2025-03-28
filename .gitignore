@@ -1,2 +1,59 @@
-.cursor
-.vscode
+# Editor directories and files
+.cursor/
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# System files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Dependency directories
+node_modules/
+jspm_packages/
+bower_components/
+
+# Distribution directories
+dist/
+build/
+out/
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Cache directories
+.npm/
+.eslintcache
+.stylelintcache
+.cache/
+
+# Temporary files
+*.tmp
+*.swp
+*.swo
+*~
+
+# Local development files
+*.local
+
+# Production build files
+*.min.js
+*.min.css
+
+# Miscellaneous
+.htaccess.local
+config.local.js
+coverage/
