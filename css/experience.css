@@ -1,0 +1,226 @@
+/* Experience section styling */
+.experience-card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 2rem;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+  margin-bottom: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.experience-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  border-color: var(--primary);
+}
+
+.experience-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--primary), var(--secondary));
+  opacity: 0.7;
+  transition: all 0.3s ease;
+}
+
+.experience-card:hover::before {
+  width: 6px;
+  opacity: 1;
+}
+
+.experience-period {
+  font-weight: 600;
+  color: var(--secondary);
+  margin-bottom: 0.5rem;
+  display: inline-block;
+  background: rgba(90, 24, 154, 0.1);
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.experience-card:hover .experience-period {
+  background: rgba(90, 24, 154, 0.2);
+  padding-left: 1rem;
+}
+
+.experience-role {
+  font-size: 1.5rem;
+  color: var(--light);
+  margin-bottom: 0.3rem;
+  transition: color 0.3s ease;
+}
+
+.experience-card:hover .experience-role {
+  color: var(--accent);
+}
+
+.experience-company {
+  font-size: 1.1rem;
+  color: var(--light);
+  opacity: 0.8;
+  margin-bottom: 1rem;
+  font-weight: 500;
+  transition: opacity 0.3s ease;
+}
+
+.experience-card:hover .experience-company {
+  opacity: 1;
+}
+
+.experience-description {
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+  color: var(--light);
+}
+
+.experience-highlights {
+  margin-bottom: 1.5rem;
+}
+
+.experience-highlights h4 {
+  font-size: 1.1rem;
+  color: var(--light);
+  margin-bottom: 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.experience-highlights h4 i {
+  color: var(--accent);
+  font-size: 0.9rem;
+}
+
+.experience-highlights ul {
+  list-style-type: none;
+  padding-left: 1.5rem;
+}
+
+.experience-highlights li {
+  position: relative;
+  margin-bottom: 0.5rem;
+  color: var(--light);
+  opacity: 0.9;
+  transition: all 0.3s ease;
+}
+
+.experience-highlights li::before {
+  content: "•";
+  position: absolute;
+  left: -1rem;
+  color: var(--primary);
+  transition: all 0.3s ease;
+}
+
+.experience-card:hover .experience-highlights li {
+  opacity: 1;
+}
+
+.experience-card:hover .experience-highlights li::before {
+  color: var(--accent);
+  left: -0.8rem;
+}
+
+.experience-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.experience-tech-tag {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--light);
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  transition: all 0.3s ease;
+}
+
+.experience-card:hover .experience-tech-tag {
+  background: rgba(157, 78, 221, 0.15);
+}
+
+.experience-link {
+  display: inline-flex;
+  align-items: center;
+  color: var(--light);
+  text-decoration: none;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 30px;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.experience-link:hover {
+  background: var(--primary);
+  color: white;
+  transform: translateY(-2px);
+}
+
+.experience-link i {
+  transition: transform 0.3s ease;
+}
+
+.experience-link:hover i {
+  transform: translateX(3px);
+}
+
+.experience-icon {
+  position: absolute;
+  top: -15px;
+  right: -15px;
+  font-size: 8rem;
+  color: rgba(157, 78, 221, 0.05);
+  transition: all 0.5s ease;
+  transform: rotate(-15deg);
+  z-index: 0;
+}
+
+.experience-card:hover .experience-icon {
+  color: rgba(157, 78, 221, 0.08);
+  transform: rotate(0deg) scale(1.1);
+}
+
+/* Loading state */
+.loading-experience {
+  min-height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 2rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .experience-card {
+    padding: 1.5rem;
+  }
+  
+  .experience-icon {
+    font-size: 6rem;
+    opacity: 0.03;
+  }
+}
+
+@media (max-width: 768px) {
+  .experience-role {
+    font-size: 1.3rem;
+  }
+  
+  .experience-company {
+    font-size: 1rem;
+  }
+} 

@@ -27,6 +27,7 @@
     <link rel="stylesheet" href="css/animations.css" />
     <link rel="stylesheet" href="css/carousel.css" />
     <link rel="stylesheet" href="css/publications.css" />
+    <link rel="stylesheet" href="css/experience.css" />
     <link rel="stylesheet" href="css/sections.css" />
   </head>
   <body>
@@ -207,58 +208,15 @@
 
       <section id="experience">
         <h2 class="section-title">Experience</h2>
-        <div class="timeline">
-          <div class="timeline-item">
-            <div class="timeline-date">2021 - Present</div>
-            <h3>Senior Data Engineer at Tech Solutions Inc.</h3>
-            <p>
-              Leading a team of data engineers in designing and implementing
-              scalable data platforms. Architecting cloud-based data solutions
-              on AWS and GCP, optimizing data pipelines, and establishing data
-              governance practices. Reduced processing costs by 35% while
-              increasing data throughput.
-            </p>
-            <a
-              href="assets/pdf/experience1.pdf"
-              class="pdf-link"
-              target="_blank"
-            >
-              <i class="fas fa-file-pdf"></i> View Project Summary
-            </a>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-date">2019 - 2021</div>
-            <h3>Data Engineer at DataStream Analytics</h3>
-            <p>
-              Developed and maintained data pipelines using Apache Airflow,
-              Spark, and Kafka. Built real-time streaming solutions for
-              high-volume data processing. Collaborated with data scientists to
-              implement ML models in production environments.
-            </p>
-            <a
-              href="assets/pdf/experience2.pdf"
-              class="pdf-link"
-              target="_blank"
-            >
-              <i class="fas fa-file-pdf"></i> View Achievements
-            </a>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-date">2017 - 2019</div>
-            <h3>Data Analyst at Global Insights Corp</h3>
-            <p>
-              Created data visualizations and dashboards for business metrics
-              using Tableau and PowerBI. Wrote complex SQL queries for data
-              analysis and reporting. Automated reporting workflows, saving over
-              20 hours of manual work weekly.
-            </p>
-            <a
-              href="assets/pdf/experience3.pdf"
-              class="pdf-link"
-              target="_blank"
-            >
-              <i class="fas fa-file-pdf"></i> View Portfolio
-            </a>
+        <div class="container-fluid p-0" id="experience-container">
+          <!-- Experience items will be loaded dynamically from experience.json -->
+          <div class="loading-experience">
+            <div class="text-center">
+              <div class="spinner-border text-primary mb-3" role="status">
+                <span class="visually-hidden">Loading...</span>
+              </div>
+              <h3>Loading experience...</h3>
+            </div>
           </div>
         </div>
       </section>
@@ -328,5 +286,6 @@
     <script src="js/main.js"></script>
     <script src="js/bootstrap-carousel.js"></script>
     <script src="js/bootstrap-publications.js"></script>
+    <script src="js/bootstrap-experience.js"></script>
   </body>
 </html> 

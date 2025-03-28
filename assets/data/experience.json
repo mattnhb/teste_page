@@ -1,0 +1,47 @@
+[
+  {
+    "period": "2021 - Present",
+    "role": "Senior Data Engineer",
+    "company": "Tech Solutions Inc.",
+    "description": "Leading a team of data engineers in designing and implementing scalable data platforms. Architecting cloud-based data solutions on AWS and GCP, optimizing data pipelines, and establishing data governance practices. Reduced processing costs by 35% while increasing data throughput.",
+    "documentLink": "assets/pdf/experience1.pdf",
+    "documentLabel": "View Project Summary",
+    "icon": "fas fa-building",
+    "highlights": [
+      "Led a team of 5 data engineers across 3 major projects",
+      "Reduced cloud infrastructure costs by 35% while improving performance",
+      "Implemented data governance framework adopted company-wide"
+    ],
+    "technologies": ["AWS", "GCP", "Python", "Terraform", "Spark", "Airflow"]
+  },
+  {
+    "period": "2019 - 2021",
+    "role": "Data Engineer",
+    "company": "DataStream Analytics",
+    "description": "Developed and maintained data pipelines using Apache Airflow, Spark, and Kafka. Built real-time streaming solutions for high-volume data processing. Collaborated with data scientists to implement ML models in production environments.",
+    "documentLink": "assets/pdf/experience2.pdf",
+    "documentLabel": "View Achievements",
+    "icon": "fas fa-chart-line",
+    "highlights": [
+      "Architected real-time streaming pipeline processing 50M+ events daily",
+      "Reduced data processing time from hours to seconds",
+      "Built data quality monitoring framework with automated alerts"
+    ],
+    "technologies": ["Apache Kafka", "PySpark", "Airflow", "Python", "SQL", "Docker"]
+  },
+  {
+    "period": "2017 - 2019",
+    "role": "Data Analyst",
+    "company": "Global Insights Corp",
+    "description": "Created data visualizations and dashboards for business metrics using Tableau and PowerBI. Wrote complex SQL queries for data analysis and reporting. Automated reporting workflows, saving over 20 hours of manual work weekly.",
+    "documentLink": "assets/pdf/experience3.pdf",
+    "documentLabel": "View Portfolio",
+    "icon": "fas fa-chart-pie",
+    "highlights": [
+      "Created executive dashboards used by C-level management for decision making",
+      "Automated weekly reports saving 20+ hours of manual work",
+      "Developed ad-hoc analysis tools for the marketing department"
+    ],
+    "technologies": ["SQL", "Tableau", "PowerBI", "Excel", "Python", "R"]
+  }
+] 
