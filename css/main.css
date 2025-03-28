@@ -109,11 +109,20 @@ footer {
 /* Responsive adjustments */
 @media (max-width: 768px) {
   h1 {
-    font-size: 2.5rem;
+    font-size: 2rem;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+  }
+
+  .name-text {
+    font-size: 1.8rem;
+    display: inline;
   }
 
   .subtitle {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
+    padding: 0 1rem;
   }
 
   .card-container {
@@ -122,5 +131,23 @@ footer {
 
   .section-title {
     font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  .name-text {
+    font-size: 1.6rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  main {
+    padding: 2rem 1rem;
   }
 } 
