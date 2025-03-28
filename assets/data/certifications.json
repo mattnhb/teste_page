@@ -3,5 +3,15 @@
     "title": "AWS Certified Solutions Architect - Associate",
     "imageUrl": "assets/images/SAA.png",
     "verifyUrl": "https://www.credly.com/badges/47aab480-9f01-4be1-b5f5-2cff9adab13b/public_url"
+  },
+  {
+    "title": "AWS Certified Data Engineer – Associate",
+    "imageUrl": "assets/images/DEA.png",
+    "verifyUrl": "https://www.credly.com/badges/3884c795-e125-4199-8897-f498fd3109ca/public_url"
+  },
+  {
+    "title": "AWS Certified Solutions Architect - Associate",
+    "imageUrl": "assets/images/SAA.png",
+    "verifyUrl": "https://www.credly.com/badges/47aab480-9f01-4be1-b5f5-2cff9adab13b/public_url"
   }
 ] 

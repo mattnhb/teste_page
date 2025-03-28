@@ -922,7 +922,7 @@
       <section id="certifications">
         <h2 class="section-title">Certifications</h2>
         <div class="card">
-          <div class="card-icon"><i class="fas fa-certificate"></i></div>
+          <div class="card-icon"><i class="fas fa-certificate"></i> <span style="font-size: 1rem; opacity: 0.8; font-weight: normal; margin-left: 0.5rem;">(Click to Verify)</span></div>
           <ul class="publication-list" id="certifications-container">
             <li class="loading-certifications">
               <h3>Loading certifications...</h3>
@@ -1109,7 +1109,9 @@
         certifications.forEach(cert => {
           html += `
             <li>
-              <h3>${cert.title}</h3>
+              <a href="${cert.verifyUrl}" target="_blank" title="Click to verify certification" style="text-decoration: none;">
+                <h3 style="color: var(--light);">${cert.title}</h3>
+              </a>
               <p>
                 <a href="${cert.verifyUrl}" target="_blank" title="Click to verify certification">
                   <img src="${cert.imageUrl}" alt="${cert.title}" 
