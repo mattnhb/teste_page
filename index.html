@@ -1152,11 +1152,20 @@
         let html = '';
         
         certifications.forEach(cert => {
+          // Fix image URL path if it starts with a / to ensure it's relative to the current domain
+          let imageUrl = cert.imageUrl;
+          // Remove leading slash for relative paths
+          if (imageUrl.startsWith('/')) {
+            imageUrl = imageUrl.substring(1);
+          }
+          
           html += `
             <li>
               <h3>${cert.title}</h3>
               <p>
-                <img src="${cert.imageUrl}" alt="${cert.title}" style="height: 100px; margin-bottom: 10px; display: block;" />
+                <img src="${imageUrl}" alt="${cert.title}" 
+                     style="height: 100px; margin-bottom: 10px; display: block;" 
+                     onerror="this.onerror=null; this.src='https://via.placeholder.com/500x300/ff9900/10002b?text=AWS+Certification';" />
               </p>
               <a href="${cert.verifyUrl}" class="pdf-link" target="_blank">
                 <i class="fas fa-certificate"></i> Verify Certification
@@ -1166,6 +1175,15 @@
         });
         
         container.innerHTML = html;
+        
+        // Add specific handler for certification images
+        document.querySelectorAll('#certifications-container img').forEach(img => {
+          console.log("Loading certification image:", img.src);
+          img.onerror = function() {
+            console.log("Error loading image:", this.src);
+            this.src = "https://via.placeholder.com/500x300/ff9900/10002b?text=AWS+Certification";
+          };
+        });
       }
 
       // Function to load publications from markdown file
