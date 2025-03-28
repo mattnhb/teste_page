@@ -48,5 +48,10 @@
     "title": "Linux Professional Institute Linux Essentials",
     "imageUrl": "assets/images/linux.png",
     "verifyUrl": "https://cs.lpi.org/caf/Xamman/certification/verify/LPI000640712/vshq66j6hs"
+  },
+  {
+    "title": "[PCEP-30-02] PCEP™ – Certified Entry-Level Python Programmer",
+    "imageUrl": "assets/images/pcep.png",
+    "verifyUrl": "https://www.credly.com/badges/8f0009f6-0a64-4631-8959-90e3220041c6/public_url"
   }
 ] 
