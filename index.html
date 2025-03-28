@@ -924,7 +924,6 @@
         <div class="card">
           <div class="card-icon"><i class="fas fa-certificate"></i></div>
           <ul class="publication-list" id="certifications-container">
-            <!-- Certifications will be loaded dynamically from certifications.md -->
             <li class="loading-certifications">
               <h3>Loading certifications...</h3>
             </li>
@@ -1068,17 +1067,16 @@
         loadCertifications();
       };
       
-      // Function to load certifications from markdown file
+      // Function to load certifications from JSON file
       function loadCertifications() {
-        fetch('assets/data/certifications.md')
+        fetch('assets/data/certifications.json')
           .then(response => {
             if (!response.ok) {
               throw new Error('Failed to load certifications');
             }
-            return response.text();
+            return response.json();
           })
-          .then(markdown => {
-            const certifications = parseCertificationsMarkdown(markdown);
+          .then(certifications => {
             displayCertifications(certifications);
           })
           .catch(error => {
@@ -1090,49 +1088,6 @@
               </li>
             `;
           });
-      }
-      
-      // Parse markdown content to extract certifications
-      function parseCertificationsMarkdown(markdown) {
-        const certifications = [];
-        let currentCertification = null;
-        
-        const lines = markdown.split('\n').filter(line => line.trim());
-        
-        for (const line of lines) {
-          if (line.startsWith('## ')) {
-            // If we were processing a certification, push it to the array
-            if (currentCertification && currentCertification.title) {
-              certifications.push(currentCertification);
-            }
-            
-            // Start a new certification
-            currentCertification = {
-              title: line.replace('## ', '').trim(),
-              imageUrl: '',
-              verifyUrl: ''
-            };
-          } else if (line.startsWith('![') && currentCertification) {
-            // This is an image reference: ![alt text](url)
-            const match = line.match(/!\[.*?\]\((.*?)\)/);
-            if (match && match[1]) {
-              currentCertification.imageUrl = match[1].trim();
-            }
-          } else if (line.startsWith('[Verify') && currentCertification) {
-            // This is a verification link: [Verify](url)
-            const match = line.match(/\[Verify.*?\]\((.*?)\)/);
-            if (match && match[1]) {
-              currentCertification.verifyUrl = match[1].trim();
-            }
-          }
-        }
-        
-        // Don't forget to add the last certification
-        if (currentCertification && currentCertification.title) {
-          certifications.push(currentCertification);
-        }
-        
-        return certifications;
       }
       
       // Display certifications in the DOM
@@ -1152,19 +1107,12 @@
         let html = '';
         
         certifications.forEach(cert => {
-          // Fix image URL path if it starts with a / to ensure it's relative to the current domain
-          let imageUrl = cert.imageUrl;
-          // Remove leading slash for relative paths
-          if (imageUrl.startsWith('/')) {
-            imageUrl = imageUrl.substring(1);
-          }
-          
           html += `
             <li>
               <h3>${cert.title}</h3>
               <p>
-                <img src="${imageUrl}" alt="${cert.title}" 
-                     style="height: 100px; margin-bottom: 10px; display: block;" 
+                <img src="${cert.imageUrl}" alt="${cert.title}" 
+                     style="height: 120px; margin-bottom: 15px; display: block;" 
                      onerror="this.onerror=null; this.src='https://via.placeholder.com/500x300/ff9900/10002b?text=AWS+Certification';" />
               </p>
               <a href="${cert.verifyUrl}" class="pdf-link" target="_blank">
@@ -1175,15 +1123,6 @@
         });
         
         container.innerHTML = html;
-        
-        // Add specific handler for certification images
-        document.querySelectorAll('#certifications-container img').forEach(img => {
-          console.log("Loading certification image:", img.src);
-          img.onerror = function() {
-            console.log("Error loading image:", this.src);
-            this.src = "https://via.placeholder.com/500x300/ff9900/10002b?text=AWS+Certification";
-          };
-        });
       }
 
       // Function to load publications from markdown file
