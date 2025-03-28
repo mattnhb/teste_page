@@ -1,6 +1,6 @@
 [
   {
-    "period": "2021 - Present",
+    "period": "Nov 2024 - Present",
     "role": "Senior Data Engineer - Asset Custody Services",
     "company": "Itaú Unibanco",
     "logo": "assets/images/itau_logo.jpg",
@@ -13,7 +13,7 @@
     "technologies": ["AWS", "GCP", "Python", "Terraform", "Spark", "Airflow"]
   },
   {
-    "period": "2019 - 2021",
+    "period": "Jun 2023 - Oct 2024",
     "role": "Senior Data Engineer - Fraud Prevention",
     "company": "Itaú Unibanco",
     "logo": "assets/images/itau_logo.jpg",
@@ -26,16 +26,68 @@
     "technologies": ["Apache Kafka", "PySpark", "Airflow", "Python", "SQL", "Docker"]
   },
   {
-    "period": "2017 - 2019",
-    "role": "Data Analyst",
-    "company": "Global Insights Corp",
-    "logo": "assets/images/company-global-insights.png",
-    "description": "Created data visualizations and dashboards for business metrics using Tableau and PowerBI. Wrote complex SQL queries for data analysis and reporting. Automated reporting workflows, saving over 20 hours of manual work weekly.",
+    "period": "Nov 2022 - Jun 2023",
+    "role": "Senior Data Engineer",
+    "company": "Banco Inter",
+    "logo": "assets/images/inter_logo.jpg",
+    "description": "Developed and maintained data pipelines using Apache Airflow, Spark, and Kafka. Built real-time streaming solutions for high-volume data processing. Collaborated with data scientists to implement ML models in production environments.",
     "highlights": [
-      "Created executive dashboards used by C-level management for decision making",
-      "Automated weekly reports saving 20+ hours of manual work",
-      "Developed ad-hoc analysis tools for the marketing department"
+      "Architected real-time streaming pipeline processing 50M+ events daily",
+      "Reduced data processing time from hours to seconds",
+      "Built data quality monitoring framework with automated alerts"
     ],
-    "technologies": ["SQL", "Tableau", "PowerBI", "Excel", "Python", "R"]
+    "technologies": ["Apache Kafka", "PySpark", "Airflow", "Python", "SQL", "Docker"]
+  },
+  {
+    "period": "Jan 2022 - Nov 2022",
+    "role": "Data Engineer",
+    "company": "Banco Inter",
+    "logo": "assets/images/inter_logo.jpg",
+    "description": "Developed and maintained data pipelines using Apache Airflow, Spark, and Kafka. Built real-time streaming solutions for high-volume data processing. Collaborated with data scientists to implement ML models in production environments.",
+    "highlights": [
+      "Architected real-time streaming pipeline processing 50M+ events daily",
+      "Reduced data processing time from hours to seconds",
+      "Built data quality monitoring framework with automated alerts"
+    ],
+    "technologies": ["Apache Kafka", "PySpark", "Airflow", "Python", "SQL", "Docker"]
+  },
+  {
+    "period": "Jan 2021 - Jan 2022",
+    "role": "Junior Data Engineer",
+    "company": "Banco Inter",
+    "logo": "assets/images/inter_logo.jpg",
+    "description": "Developed and maintained data pipelines using Apache Airflow, Spark, and Kafka. Built real-time streaming solutions for high-volume data processing. Collaborated with data scientists to implement ML models in production environments.",
+    "highlights": [
+      "Architected real-time streaming pipeline processing 50M+ events daily",
+      "Reduced data processing time from hours to seconds",
+      "Built data quality monitoring framework with automated alerts"
+    ],
+    "technologies": ["Apache Kafka", "PySpark", "Airflow", "Python", "SQL", "Docker"]
+  },
+  {
+    "period": "Mar 2020 - Jan 2021",
+    "role": "Intern Data Engineer",
+    "company": "Opala Studios",
+    "logo": "assets/images/opalastudios_logo.jpg",
+    "description": "Developed and maintained data pipelines using Apache Airflow, Spark, and Kafka. Built real-time streaming solutions for high-volume data processing. Collaborated with data scientists to implement ML models in production environments.",
+    "highlights": [
+      "Architected real-time streaming pipeline processing 50M+ events daily",
+      "Reduced data processing time from hours to seconds",
+      "Built data quality monitoring framework with automated alerts"
+    ],
+    "technologies": ["Apache Kafka", "PySpark", "Airflow", "Python", "SQL", "Docker"]
+  },
+  {
+    "period": "Apr 2019 - Mar 2020",
+    "role": "Python Developer",
+    "company": "Universidade Federal do Paraná",
+    "logo": "assets/images/ufpr_logo.jpg",
+    "description": "Developed and maintained data pipelines using Apache Airflow, Spark, and Kafka. Built real-time streaming solutions for high-volume data processing. Collaborated with data scientists to implement ML models in production environments.",
+    "highlights": [
+      "Architected real-time streaming pipeline processing 50M+ events daily",
+      "Reduced data processing time from hours to seconds",
+      "Built data quality monitoring framework with automated alerts"
+    ],
+    "technologies": ["Apache Kafka", "PySpark", "Airflow", "Python", "SQL", "Docker"]
   }
 ] 
