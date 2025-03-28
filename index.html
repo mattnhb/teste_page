@@ -1111,13 +1111,14 @@
             <li>
               <h3>${cert.title}</h3>
               <p>
-                <img src="${cert.imageUrl}" alt="${cert.title}" 
-                     style="height: 120px; margin-bottom: 15px; display: block;" 
-                     onerror="this.onerror=null; this.src='https://via.placeholder.com/500x300/ff9900/10002b?text=AWS+Certification';" />
+                <a href="${cert.verifyUrl}" target="_blank" title="Click to verify certification">
+                  <img src="${cert.imageUrl}" alt="${cert.title}" 
+                       style="height: 120px; margin-bottom: 15px; display: block; cursor: pointer; transition: transform 0.3s ease;" 
+                       onmouseover="this.style.transform='scale(1.05)'" 
+                       onmouseout="this.style.transform='scale(1)'"
+                       onerror="this.onerror=null; this.src='https://via.placeholder.com/500x300/ff9900/10002b?text=AWS+Certification';" />
+                </a>
               </p>
-              <a href="${cert.verifyUrl}" class="pdf-link" target="_blank">
-                <i class="fas fa-certificate"></i> Verify Certification
-              </a>
             </li>
           `;
         });
